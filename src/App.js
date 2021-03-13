@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './Components/NavBar';
+import NavBar2 from './Components/NavBar2';
 
 function App() {
   return (
     <div>
-      <NavBar />
+      <NavBar2 />
       {/* render NavBar */}
       {/* Switch for Router */}
       {/* router options */}
