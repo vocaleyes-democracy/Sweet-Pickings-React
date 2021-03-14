@@ -1,7 +1,7 @@
 import React from 'react'
 // import SideBar from './SideBar'
 import { NavLink } from 'react-router-dom'
-import { Menu, Search, Item, Icon } from 'semantic-ui-react'
+import { Menu, Search, Dropdown, Icon } from 'semantic-ui-react'
 
 // -about sweet pickings, browse opportunties, get started, let us know about a Tree, contact
 // Sign Up / Log In
@@ -45,15 +45,63 @@ export default function NavBar2(){
                     borderless={true}
                     as={NavLink} 
                     to={"/about"}
-                    name="about"
-                    content="About Us"
+                    name="story"
+                    content="STORY"
+                    fontSize="24px"
+                >
+                </Menu.Item>
+
+                <Menu.Item 
+                    borderless={true}
+                    as={NavLink} 
+                    to={"/pickers"}
+                    name="pickers"
+                    content="PICKERS"
+                    fontSize="24px"
+                >
+                </Menu.Item>
+
+                <Menu.Item 
+                    borderless={true}
+                    as={NavLink} 
+                    to={"/growers"}
+                    name="growers"
+                    content="GROWERS"
+                    fontSize="24px"
+                >
+                </Menu.Item>
+
+                {/* <Menu.Item 
+                    borderless={true}
+                    as={NavLink} 
+                    to={"/recipients"}
+                    name="recipients"
+                    content="Recipients"
+                    fontSize="24px"
+                > */}
+                    <Dropdown item text='RECIPIENTS'>
+                    <Dropdown.Menu>
+                        {/* <Dropdown.Header>Options</Dropdown.Header> */} // 
+                        <Dropdown.Item as={NavLink} to={'/recipients'}>Request Information</Dropdown.Item>
+                        <Dropdown.Item>Sign Up</Dropdown.Item>
+                        <Dropdown.Item>Donate</Dropdown.Item>
+                    </Dropdown.Menu>
+                    </Dropdown>
+                {/* </Menu.Item> */}
+
+                <Menu.Item 
+                    borderless={true}
+                    as={NavLink} 
+                    to={"/gallery"}
+                    name="gallery"
+                    content="GALLERY"
                     fontSize="24px"
                 >
                 </Menu.Item>
 
 
                 <Menu.Menu position='right'>
-                    <Menu.Item 
+                    {/* <Menu.Item 
                         borderless={true}
                         as={NavLink} 
                         to={"/login"} // need routes for login/signup pages
@@ -71,7 +119,7 @@ export default function NavBar2(){
                         content="Sign Up"
                         fontSize="24px"
                     >
-                    </Menu.Item>
+                    </Menu.Item> */}
 
                     <Menu.Item>
                         <Search icon='search' 
