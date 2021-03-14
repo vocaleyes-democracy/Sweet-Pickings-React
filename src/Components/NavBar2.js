@@ -16,6 +16,7 @@ export default function NavBar2(){
                 color="white" // need to figure out how to add primary color #7FA11C
                 stackable
                 borderless
+                // widths="7"
                 // secondary
             >
 
@@ -33,13 +34,9 @@ export default function NavBar2(){
                     as={NavLink} 
                     to={"/"}
                     name="sweetPickings"
-                    content="Sweet Pickings 🍎"
+                    content="🍎" // SHOULD HAVE ONE ITEM LINKING TO HOME
                     fontSize="24px"
-                >
-                    {/* <Item.Content >
-                            <img src=""  style={{width: "56px"}} alt="" /> 
-                    </Item.Content> */}
-                </Menu.Item>
+                ></Menu.Item> 
 
                 <Menu.Item 
                     borderless={true}
@@ -100,7 +97,7 @@ export default function NavBar2(){
                 </Menu.Item>
 
 
-                <Menu.Menu position='right'>
+                {/* <Menu.Menu position='right'> */}
                     {/* <Menu.Item 
                         borderless={true}
                         as={NavLink} 
@@ -121,14 +118,14 @@ export default function NavBar2(){
                     >
                     </Menu.Item> */}
 
-                    <Menu.Item>
+                    <Menu.Item position='right'>
                         <Search icon='search' 
                             placeholder="search"
                             // value={this.state.search} 
                             // results={this.matchingNames(this.state.search)} 
                             // onSearchChange={this.handleSearch}
                             // onResultSelect={this.handleClick}
-                            style={{fontSize: "14px"}}
+                            // style={{fontSize: "14px"}}
                         />
                     </Menu.Item>
 
@@ -151,7 +148,7 @@ export default function NavBar2(){
                         Log Out
                     </Menu.Item>
                 : null } */}
-                </Menu.Menu>
+                {/* </Menu.Menu> */}
             </Menu>
     )
 }
