@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar2 from './Components/NavBar2';
+import TopNav from './Components/TopNav';
 
 function App() {
   return (
     <div>
-      <NavBar2 />
+      <div className="navbar-container">
+        <TopNav />
+        <NavBar2 />
+      </div>
       {/* render NavBar */}
       {/* Switch for Router */}
       {/* router options */}
