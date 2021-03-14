@@ -3,10 +3,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Menu, Search, Item, Icon } from 'semantic-ui-react'
 
+// -about sweet pickings, browse opportunties, get started, let us know about a Tree, contact
+// Sign Up / Log In
+
 
 export default function NavBar2(){
     return (
-            <Menu fixed="top" inverted={true} size="mini" color="7FA11C">
+            <Menu 
+                fixed="top" 
+                inverted={true} 
+                size="tiny" 
+                color="olive" // need to figure out how to add primary color #7FA11C
+                stackable
+            >
 
                 <Menu.Item>
                     <Icon 
@@ -17,12 +26,27 @@ export default function NavBar2(){
                     />
                 </Menu.Item>
 
-                <Menu.Item as={NavLink} to={"/"}
-                    name="Sweet Pickings"
+                <Menu.Item 
+                    borderless={true}
+                    as={NavLink} 
+                    to={"/"}
+                    name="sweetPickings"
+                    content="Sweet Pickings 🍎"
+                    fontSize="24px"
                 >
                     {/* <Item.Content >
-                            <img src="/images/goodfriendwhitetransparent.png"  style={{width: "56px"}}alt="goodfriend logo" /> 
+                            <img src=""  style={{width: "56px"}} alt="" /> 
                     </Item.Content> */}
+                </Menu.Item>
+
+                <Menu.Item 
+                    borderless={true}
+                    as={NavLink} 
+                    to={"/about"}
+                    name="about"
+                    content="About Us"
+                    fontSize="24px"
+                >
                 </Menu.Item>
 
 
