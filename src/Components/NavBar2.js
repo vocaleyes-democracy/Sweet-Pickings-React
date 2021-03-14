@@ -6,7 +6,7 @@ import { Menu, Search, Item, Icon } from 'semantic-ui-react'
 
 export default function NavBar2(){
     return (
-            <Menu fixed="top" inverted={true} size="mini">
+            <Menu fixed="top" inverted={true} size="mini" color="7FA11C">
 
                 <Menu.Item>
                     <Icon 
@@ -20,9 +20,9 @@ export default function NavBar2(){
                 <Menu.Item as={NavLink} to={"/"}
                     name="Sweet Pickings"
                 >
-                    <Item.Content >
+                    {/* <Item.Content >
                             <img src="/images/goodfriendwhitetransparent.png"  style={{width: "56px"}}alt="goodfriend logo" /> 
-                    </Item.Content>
+                    </Item.Content> */}
                 </Menu.Item>
 
 
