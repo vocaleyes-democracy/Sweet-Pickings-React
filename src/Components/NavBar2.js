@@ -51,16 +51,36 @@ export default function NavBar2(){
 
 
                 <Menu.Menu position='right'>
-                <Menu.Item>
-                    <Search icon='search' 
-                        placeholder="search"
-                        // value={this.state.search} 
-                        // results={this.matchingNames(this.state.search)} 
-                        // onSearchChange={this.handleSearch}
-                        // onResultSelect={this.handleClick}
-                        style={{fontSize: "14px"}}
-                    />
-                </Menu.Item>
+                    <Menu.Item 
+                        borderless={true}
+                        as={NavLink} 
+                        to={"/login"} // need routes for login/signup pages
+                        name="login"
+                        content="Log In"
+                        fontSize="24px"
+                    >
+                    </Menu.Item>
+
+                    <Menu.Item 
+                        borderless
+                        as={NavLink} 
+                        to={"/signup"} // need routes for login/signup pages
+                        name="signup"
+                        content="Sign Up"
+                        fontSize="24px"
+                    >
+                    </Menu.Item>
+
+                    <Menu.Item>
+                        <Search icon='search' 
+                            placeholder="search"
+                            // value={this.state.search} 
+                            // results={this.matchingNames(this.state.search)} 
+                            // onSearchChange={this.handleSearch}
+                            // onResultSelect={this.handleClick}
+                            style={{fontSize: "14px"}}
+                        />
+                    </Menu.Item>
 
                 {/* {this.props.currentUser.id ?
                 <Menu.Item as={NavLink} to={this.props.currentUser && this.props.currentUser.id ? `/users/${this.props.currentUser.id}` : '/'}>
