@@ -12,18 +12,6 @@ export default function About() {
             About Page
             <NavBar2 />
 
-            {/* <ul>
-        <li>
-          <Link to={`${url}/story`}>Story Page</Link>
-        </li>
-        <li>
-          <Link to={`${url}/pickers`}>Pickers About Page</Link>
-        </li>
-        <li>
-          <Link to={`${url}/growers`}>Growers About Page</Link>
-        </li>
-      </ul> */}
-
       <Switch>
         <Route exact path={path}>
           <h3>Please select a topic.</h3>

@@ -51,7 +51,6 @@ export default function NavBar2(){
                     borderless={true}
                     as={NavLink} 
                     to={`${url}/story`}
-                    // to={"/about/story"}
                     name="story"
                     content="STORY"
                     fontSize="24px"
@@ -62,7 +61,6 @@ export default function NavBar2(){
                     borderless={true}
                     as={NavLink} 
                     to={`${url}/pickers`}
-                    // to={"about/pickers"}
                     name="pickers"
                     content="PICKERS"
                     fontSize="24px"
@@ -73,7 +71,6 @@ export default function NavBar2(){
                     borderless={true}
                     as={NavLink} 
                     to={`${url}/growers`}
-                    // to={"about/growers"}
                     name="growers"
                     content="GROWERS"
                     fontSize="24px"
