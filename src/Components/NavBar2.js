@@ -1,10 +1,10 @@
 import React from 'react'
 // import SideBar from './SideBar'
-import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
+import { NavLink, useRouteMatch } from 'react-router-dom'
 import { Menu, Search, Dropdown, Icon } from 'semantic-ui-react'
 
 import Home from '../Pages/Home';
-import About from '../Pages/About/About';
+import Story from '../Pages/About/Story';
 import Pickers from '../Pages/About/Pickers';
 import Growers from '../Pages/About/Growers';
 // import Opportunity from '../Pages/Opportunity';
@@ -14,8 +14,10 @@ import Growers from '../Pages/About/Growers';
 
 
 export default function NavBar2(){
+
+    let { url } = useRouteMatch();
+
     return (
-        <Router>
             <Menu 
                 attached="bottom"  // seems like we can also use "attached" if we add a second header piece
                 // inverted={true} 
@@ -48,27 +50,30 @@ export default function NavBar2(){
                 <Menu.Item 
                     borderless={true}
                     as={NavLink} 
-                    to={"/about"}
+                    to={`${url}/story`}
+                    // to={"/about/story"}
                     name="story"
                     content="STORY"
                     fontSize="24px"
-                >
+                    >
                 </Menu.Item>
 
                 <Menu.Item 
                     borderless={true}
                     as={NavLink} 
-                    to={"/pickers"}
+                    to={`${url}/pickers`}
+                    // to={"about/pickers"}
                     name="pickers"
                     content="PICKERS"
                     fontSize="24px"
-                >
+                    >
                 </Menu.Item>
 
                 <Menu.Item 
                     borderless={true}
                     as={NavLink} 
-                    to={"/growers"}
+                    to={`${url}/growers`}
+                    // to={"about/growers"}
                     name="growers"
                     content="GROWERS"
                     fontSize="24px"
@@ -157,25 +162,6 @@ export default function NavBar2(){
                 : null } */}
                 {/* </Menu.Menu> */}
             </Menu>
-
-          <Switch>
-            <Route exact path="/">
-              <Home  />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/pickers">
-              <Pickers />
-            </Route>
-            <Route path="/growers">
-              <Growers />
-            </Route>
-            {/* <Route path="/opportunity">
-              <Opportunity />
-            </Route> */}
-          </Switch>
-        </Router>
     )
 }
 
