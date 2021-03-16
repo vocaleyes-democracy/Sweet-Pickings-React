@@ -1,7 +1,13 @@
 import React from 'react'
 // import SideBar from './SideBar'
-import { NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
 import { Menu, Search, Dropdown, Icon } from 'semantic-ui-react'
+
+import Home from '../Pages/Home';
+import About from '../Pages/About/About';
+import Pickers from '../Pages/About/Pickers';
+import Growers from '../Pages/About/Growers';
+// import Opportunity from '../Pages/Opportunity';
 
 // -about sweet pickings, browse opportunties, get started, let us know about a Tree, contact
 // Sign Up / Log In
@@ -9,6 +15,7 @@ import { Menu, Search, Dropdown, Icon } from 'semantic-ui-react'
 
 export default function NavBar2(){
     return (
+        <Router>
             <Menu 
                 attached="bottom"  // seems like we can also use "attached" if we add a second header piece
                 // inverted={true} 
@@ -18,7 +25,7 @@ export default function NavBar2(){
                 borderless
                 // widths="7"
                 // secondary
-            >
+                >
 
                 <Menu.Item>
                     <Icon 
@@ -105,17 +112,17 @@ export default function NavBar2(){
                         name="login"
                         content="Log In"
                         fontSize="24px"
-                    >
-                    </Menu.Item>
-
-                    <Menu.Item 
+                        >
+                        </Menu.Item>
+                        
+                        <Menu.Item 
                         borderless
                         as={NavLink} 
                         to={"/signup"} // need routes for login/signup pages
                         name="signup"
                         content="Sign Up"
                         fontSize="24px"
-                    >
+                        >
                     </Menu.Item> */}
 
                     <Menu.Item position='right'>
@@ -131,25 +138,44 @@ export default function NavBar2(){
 
                 {/* {this.props.currentUser.id ?
                 <Menu.Item as={NavLink} to={this.props.currentUser && this.props.currentUser.id ? `/users/${this.props.currentUser.id}` : '/'}>
-                    <Item.Content >
-                        {this.props.currentUser.profile_picture ? 
-                            <Image src={this.props.currentUser.profile_picture.url} circular size="mini"/> 
-                            :
-                            null
-                        }
-                    </Item.Content>
+                <Item.Content >
+                {this.props.currentUser.profile_picture ? 
+                    <Image src={this.props.currentUser.profile_picture.url} circular size="mini"/> 
+                    :
+                    null
+                }
+                </Item.Content>
                 </Menu.Item>
                 :
                 null
-                } */}
+            } */}
 
                 {/* {this.props.currentUser.id ? 
                     <Menu.Item onClick={this.logOut}>
-                        Log Out
+                    Log Out
                     </Menu.Item>
                 : null } */}
                 {/* </Menu.Menu> */}
             </Menu>
+
+          <Switch>
+            <Route exact path="/">
+              <Home  />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/pickers">
+              <Pickers />
+            </Route>
+            <Route path="/growers">
+              <Growers />
+            </Route>
+            {/* <Route path="/opportunity">
+              <Opportunity />
+            </Route> */}
+          </Switch>
+        </Router>
     )
 }
 

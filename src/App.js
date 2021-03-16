@@ -11,9 +11,9 @@ function App() {
         <TopNav />
         <NavBar2 />
       </div>
-      <HeaderImg />
       {/* Switch for Router */}
       {/* router options */}
+      <HeaderImg />
     </div>
   );
 }
