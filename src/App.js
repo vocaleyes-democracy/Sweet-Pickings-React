@@ -2,11 +2,12 @@
 import './App.css';
 // import NavBar2 from './Components/NavBar2';
 import TopNav from './Components/TopNav';
-import HeaderImg from './Components/HeaderImg';
+// import HeaderImg from './Components/HeaderImg';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './Pages/Home';
 import About from './Pages/About/About.js';
+import Signup from './Pages/Signup';
 
 function App() {
   return (
@@ -22,9 +23,12 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
+            <Route>
+              <Signup path="/signup" />
+            </Route>
           </Switch>
         </Router>
-        <HeaderImg />
+        {/* <HeaderImg /> */}
       </div>
     </div>
   );
