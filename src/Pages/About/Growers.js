@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Opportunity() {
+export default function Growers() {
     return (
         <div>
-            Opportunity Page
+            Growers About Page
         </div>
     )
 }

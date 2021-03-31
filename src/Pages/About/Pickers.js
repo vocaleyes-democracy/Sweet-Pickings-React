@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Opportunity() {
+export default function Pickers() {
     return (
         <div>
-            Opportunity Page
+            Pickers About Page
         </div>
     )
 }
