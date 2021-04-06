@@ -15,5 +15,25 @@
   ],
   "profile": {
     "name": "typicode"
+  },
+  "trees": [
+    {
+    "Variety": "Apple-Bramley",
+    "Number of Trees": 1,
+    "Address1": "17 Glan yr Afon Gardens",
+    "Address2": "Sketty, Swansea SA2 9HX, UK"
+  },
+  {
+    "Variety": "Apple-Unknown",
+    "Number of Trees": 4,
+    "Address1": "Ty Coch Road",
+    "Address2": "Sketty, Swansea SA2 9EB, UK"
+  },
+  {
+    "Variety": "Apple-Unknown",
+    "Number of Trees": 100,
+    "Address1": "Fairy Lodge",
+    "Address2": "Burry/Gower SA3 1BH, UK"
   }
+]
 }
