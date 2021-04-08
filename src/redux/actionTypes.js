@@ -1,0 +1,1 @@
+export const GET_GEO = "GET_GEO"

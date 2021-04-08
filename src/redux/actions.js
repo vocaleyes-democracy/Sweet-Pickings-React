@@ -1,4 +1,5 @@
-import { APPLICATION_ID, API_KEY, GET_GEO } from './variables'
+import { APPLICATION_ID, API_KEY } from './travelTimeAPI'
+import { GET_GEO } from './actionTypes'
 
 
 export const sendGeocodingRequest = (location) => {
