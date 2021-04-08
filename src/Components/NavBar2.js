@@ -22,9 +22,9 @@ export default function NavBar2(){
                 attached="bottom"  // seems like we can also use "attached" if we add a second header piece
                 // inverted={true} 
                 size="small" 
-                color="white" // need to figure out how to add primary color #7FA11C
+                color="green" // need to figure out how to add primary color #7FA11C
                 stackable
-                borderless
+                borderless={true}
                 // widths="7"
                 // secondary
                 >
@@ -87,7 +87,7 @@ export default function NavBar2(){
                 > */}
                     <Dropdown item text='RECIPIENTS'>
                     <Dropdown.Menu>
-                        {/* <Dropdown.Header>Options</Dropdown.Header> */} // 
+                        {/* <Dropdown.Header>Options</Dropdown.Header> */} 
                         <Dropdown.Item as={NavLink} to={'/recipients'}>Request Information</Dropdown.Item>
                         <Dropdown.Item>Sign Up</Dropdown.Item>
                         <Dropdown.Item>Donate</Dropdown.Item>
