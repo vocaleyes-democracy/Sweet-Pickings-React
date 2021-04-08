@@ -1,8 +1,9 @@
-import { APPLICATION_ID, API_KEY } from './travelTimeAPI'
+import { APPLICATION_ID, API_KEY } from '../APIs/travelTimeAPI.js'
 import { GET_GEO } from './actionTypes'
 
 
 export const sendGeocodingRequest = (location) => {
+  console.log(location)
   return function(dispatch) {
     fetch(`https://api.traveltimeapp.com/v4/geocoding/search?query=` + location, {
     method: "GET",
@@ -10,7 +11,8 @@ export const sendGeocodingRequest = (location) => {
     headers: {
     "Content-Type": "application/json",
     "X-Application-Id": APPLICATION_ID,
-    "X-Api-Key": API_KEY
+    "X-Api-Key": API_KEY,
+    "Accept-Language": "en-GB"
     }
     
     })

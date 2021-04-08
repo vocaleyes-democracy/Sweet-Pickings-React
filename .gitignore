@@ -10,7 +10,7 @@
 
 # production
 /build
-/travelTimeAPI.js
+/src/APIs/travelTimeAPI.js
 
 # misc
 .DS_Store
