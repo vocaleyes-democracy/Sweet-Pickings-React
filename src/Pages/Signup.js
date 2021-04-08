@@ -22,7 +22,7 @@ export default function Signup() {
     }
 
     return (
-        <div>
+        <div id="form">
             <h2>Create Account</h2>
 
             <form className="ui form" onSubmit={handleOnSubmit}>
