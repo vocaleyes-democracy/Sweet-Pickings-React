@@ -1,3 +1,12 @@
+Sweet Pickings would like to thank Shajia Abidi for help using leaflet.js
+https://www.smashingmagazine.com/2020/02/javascript-maps-react-leaflet/
+
+
+
+
+
+
+
 
 # Getting Started with Create React App
 
