@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { GET_GEO } from './variables'
+import { GET_GEO } from './actionTypes'
 
 const defaultState = {
   geoData: []
