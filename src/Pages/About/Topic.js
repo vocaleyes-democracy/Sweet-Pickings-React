@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import MapPage from '../MapPage'
+import TreeForm from '../TreeForm';
 
 export default function Topic() {
     let { topicId } = useParams();
@@ -16,9 +17,10 @@ export default function Topic() {
             )
         } else if ((topicId === 'growers')) {
             return (
-              <>
-                <p>Growers About Info</p>
-                <MapPage />
+                <>
+                    <p>Growers About Info</p>
+                    <TreeForm />
+                    <MapPage />
                 </>
             )
         }
