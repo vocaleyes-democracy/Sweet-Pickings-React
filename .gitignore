@@ -10,7 +10,7 @@
 
 # production
 /build
-/redux/travelTimeAPI.js
+/src/redux/travelTimeAPI.js
 
 # misc
 .DS_Store
