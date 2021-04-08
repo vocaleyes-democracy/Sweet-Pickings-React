@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+// obv we aren't yet using Marker or Popup components
 
 function MapPage() {
 
