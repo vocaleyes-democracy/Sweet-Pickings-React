@@ -2,9 +2,10 @@ import { React, useState } from 'react'
 import { Header, Form, Icon } from 'semantic-ui-react'
 
 export default function TreeForm() {   
+    // CONTACT INFO STATE
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    
+
     const [email, setEmail] = useState('');
     const [telephone, setTelephone] = useState('');
     
@@ -13,6 +14,9 @@ export default function TreeForm() {
     const [city, setCity] = useState('');
     const [country, setCountry] = useState('');
     const [zip, setZip] = useState('');
+
+    // TREE INFO STATE
+    const [treeType, setTreeType] = useState('');
     
     const treeOptions = [
         {
@@ -36,13 +40,18 @@ export default function TreeForm() {
             value: "Walnuts"
         },
     ]
+    
+    const handleOnSubmit = e => {
+        e.preventDefault();
+        console.log(treeType);
+    }
 
     return (
         <div id="form">
         <Header as="h2" textAlign="center">Sweet Pickings Tree Location Form</Header>
         
         <Header as="h3"><Icon name="address card" color="green" />Your Contact Information</Header>
-        <Form>
+        <Form onSubmit={handleOnSubmit}>
             <Form.Group widths="equal">
                 <Form.Input 
                     label="First Name" 
@@ -125,6 +134,9 @@ export default function TreeForm() {
                     fluid
                     selection
                     options={treeOptions}
+                    
+                    // Need to get state from here
+                
                 />
                 <Form.Input 
                     label="Number of Trees"
