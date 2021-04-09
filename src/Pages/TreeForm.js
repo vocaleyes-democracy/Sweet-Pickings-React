@@ -1,5 +1,5 @@
 import { React, useState } from 'react'
-import { Header, Form } from 'semantic-ui-react'
+import { Header, Form, Icon } from 'semantic-ui-react'
 
 export default function TreeForm() {   
     const [firstName, setFirstName] = useState('');
@@ -41,88 +41,98 @@ export default function TreeForm() {
         <div id="form">
         <Header as="h2" textAlign="center">Sweet Pickings Tree Location Form</Header>
         
-        <Header as="h3" textAlign="center">Your Contact Information</Header>
+        <Header as="h3"><Icon name="address card" color="green" />Your Contact Information</Header>
         <Form>
-            <Form.Input 
-                label="First Name" 
-                name="first-name"
-                type="text"
-                placeholder="First Name"
-                onChange={e => setFirstName(e.target.value)} 
-            />
-            <Form.Input 
-                label="Last Name" 
-                name="last-name"
-                type="text"
-                placeholder="Last Name" 
-                onChange={e => setLastName(e.target.value)} 
-            />
-            <Form.Input 
-                label="Email"
-                name="email"
-                type="email"
-                placeholder="sweet.pickings@mail.com"
-                onChange={e => setEmail(e.target.value)}
-            />
-            <Form.Input 
-                label="Telephone"
-                name="telephone"
-                type="tel"
-                placeholder="012-345-6789"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                maxlength="12"
-                onChange={e => setTelephone}
-            />
-            <Form.Input 
-                label="Address 1"
-                name="address1"
-                type="text"
-                placeholder="Address 1"
-                onChange={e => setAddress1(e.target.value)}
+            <Form.Group widths="equal">
+                <Form.Input 
+                    label="First Name" 
+                    name="first-name"
+                    type="text"
+                    placeholder="First Name"
+                    onChange={e => setFirstName(e.target.value)} 
                 />
-            <Form.Input 
-                label="Address 2"
-                name="address2"
-                type="text"
-                placeholder="Address 2"
-                onChange={e => setAddress2(e.target.value)}
+                <Form.Input 
+                    label="Last Name" 
+                    name="last-name"
+                    type="text"
+                    placeholder="Last Name" 
+                    onChange={e => setLastName(e.target.value)} 
                 />
-            <Form.Input 
-                label="City"
-                name="city"
-                type="text"
-                placeholder="City"
-                onChange={e => setCity(e.target.value)}
+            </Form.Group>
+            <Form.Group widths="equal">
+                <Form.Input 
+                    label="Email"
+                    name="email"
+                    type="email"
+                    placeholder="sweet.pickings@mail.com"
+                    onChange={e => setEmail(e.target.value)}
                 />
-            <Form.Input 
-                label="Country"
-                name="country"
-                type="text"
-                placeholder="Country"
-                onChange={e => setCountry(e.target.value)}
+                <Form.Input 
+                    label="Telephone"
+                    name="telephone"
+                    type="tel"
+                    placeholder="012-345-6789"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                    maxlength="12"
+                    onChange={e => setTelephone}
                 />
-            <Form.Input 
-                label="Zip Code"
-                name="zip"
-                type="num"
-                placeholder="Zip Code"
-                onChange={e => setZip(e.target.value)}
-            />
+            </Form.Group>
+            <Form.Group widths="equal">
+                <Form.Input 
+                    label="Address 1"
+                    name="address1"
+                    type="text"
+                    placeholder="Address 1"
+                    onChange={e => setAddress1(e.target.value)}
+                />
+                <Form.Input 
+                    label="Address 2"
+                    name="address2"
+                    type="text"
+                    placeholder="Address 2"
+                    onChange={e => setAddress2(e.target.value)}
+                />
+            </Form.Group>
+            <Form.Group widths="equal">
+                <Form.Input 
+                    label="City"
+                    name="city"
+                    type="text"
+                    placeholder="City"
+                    onChange={e => setCity(e.target.value)}
+                />
+                <Form.Input 
+                    label="Country"
+                    name="country"
+                    type="text"
+                    placeholder="Country"
+                    onChange={e => setCountry(e.target.value)}
+                />
+                <Form.Input 
+                    label="Zip Code"
+                    name="zip"
+                    type="num"
+                    placeholder="Zip Code"
+                    onChange={e => setZip(e.target.value)}
+                />
+            </Form.Group>
 
-        <Header as="h3" textAlign="center">Tree Information</Header>
-            <Form.Select 
-                label="Select Tree Type"
-                placeholder="Select Tree Type"
-                fluid
-                selection
-                options={treeOptions}
-            />
-            <Form.Input 
-                label="Number of Trees"
-                type="number"
-                name="tree-count"
-                min="1"
-            />
+        <Header as="h3"><Icon name="leaf" color="green" />Tree Information</Header>
+            <Form.Group widths="equal">
+                <Form.Select 
+                    label="Select Tree Type"
+                    placeholder="Select Tree Type"
+                    fluid
+                    selection
+                    options={treeOptions}
+                />
+                <Form.Input 
+                    label="Number of Trees"
+                    type="number"
+                    name="tree-count"
+                    min="1"
+                />
+            </Form.Group>
             <Form.Group grouped>
                 <label>Owner Type</label>
                 <Form.Field 
@@ -161,7 +171,7 @@ export default function TreeForm() {
                 placeholder="Tell us more here"
             />
 
-            <Form.Button type="submit">Submit</Form.Button>
+            <Form.Button type="submit" color="primary" >Submit</Form.Button>
         </Form>
         </div>
     )
