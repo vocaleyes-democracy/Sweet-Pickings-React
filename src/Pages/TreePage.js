@@ -13,7 +13,7 @@ function TreePage(props) {
   return (
     <>
       <TreeList trees={props.treeArray}/>
-      <MapPage />
+      <MapPage trees={props.treeArray}/>
     </>
   )
 }
