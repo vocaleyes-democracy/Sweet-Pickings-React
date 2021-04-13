@@ -18,8 +18,8 @@ export const sendGeocodingRequest = (location) => {
     })
     .then(response => response.json()) // parses JSON response into native Javascript objects
     .then(data => {
-    // data array is returned as [lng, lat]
-    console.log(data.features)
+    // data array is returned in order of: [lng, lat]
+    console.log(data.features[0].geometry.coordinates)
     dispatch({ type: GET_GEO, payload: data})
     })
     }
@@ -33,7 +33,7 @@ export const sendGeocodingRequest = (location) => {
        throw new Error(`HTTP error! status: ${resp.status}`);
      }
      let treeArray = await resp.json()
-     console.log(treeArray)
+    //  console.log(treeArray)
      return dispatch({type: GET_TREES, payload: treeArray})
     }
   }

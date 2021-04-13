@@ -42,7 +42,6 @@ function MapPage(props) {
 
 const mdp = (dispatch) => {
   return {
-    treeData: () => dispatch(getTreeData()),
     geoData: (location) => dispatch(sendGeocodingRequest(location))
   }
 }
