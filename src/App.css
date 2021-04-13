@@ -38,13 +38,13 @@
 }
 
 .map-container {
-  width: 65vw;
+  width: 60vw;
   height: 750px;
   float: right;
 }
 .tree-page{
 display: inline-block;
-width: 30vw;
+width: 35vw;
 height: 750px;
 margin: 1.25rem;
 padding: 1rem;
