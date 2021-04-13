@@ -16,9 +16,10 @@
   "profile": {
     "name": "typicode"
   },
-  "trees": [
+  "assets": [
     {
     "id": 1,
+    "type": "Tree",
     "variety": "Apple-Bramley",
     "numberOfTrees": 1,
     "address1": "17 Glan yr Afon Gardens",
@@ -26,6 +27,7 @@
   },
   {
     "id": 2,
+    "type": "Tree",
     "variety": "Apple-Unknown",
     "numberOfTrees": 4,
     "address1": "Ty Coch Road",
@@ -33,6 +35,7 @@
   },
   {
     "id": 3,
+    "type": "Tree",
     "variety": "Apple-Unknown",
     "numberOfTrees": 100,
     "address1": "Fairy Lodge",

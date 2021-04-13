@@ -49,3 +49,7 @@ height: 750px;
 margin: 1.25rem;
 padding: 1rem;
 }
+
+.list-item {
+  line-height: 1.6rem;
+}

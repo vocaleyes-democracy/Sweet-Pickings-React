@@ -8,7 +8,7 @@ function TreePage(props) {
 
   useEffect(() => {
     props.treeData()
-  }, [])
+  },[])
 
   return (
     <>

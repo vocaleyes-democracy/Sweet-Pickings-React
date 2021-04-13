@@ -28,7 +28,7 @@ export const sendGeocodingRequest = (location) => {
 
   export const getTreeData = () => {
     return async function (dispatch) {
-     let resp = await fetch("http://localhost:4000/trees")
+     let resp = await fetch("http://localhost:4000/assets")
      if (!resp.ok) {
        throw new Error(`HTTP error! status: ${resp.status}`);
      }
