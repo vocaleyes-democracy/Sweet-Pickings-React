@@ -1,9 +1,9 @@
 import { APPLICATION_ID, API_KEY } from '../APIs/travelTimeAPI.js'
-import { GET_GEO } from './actionTypes'
+import { GET_GEO, GET_TREES } from './actionTypes'
 
 
 export const sendGeocodingRequest = (location) => {
-  console.log(location)
+  // console.log(location)
   return function(dispatch) {
     fetch(`https://api.traveltimeapp.com/v4/geocoding/search?query=` + location, {
     method: "GET",
@@ -18,12 +18,24 @@ export const sendGeocodingRequest = (location) => {
     })
     .then(response => response.json()) // parses JSON response into native Javascript objects
     .then(data => {
-    
-    console.log(data)
-    dispatch({ type: GET_GEO, payload: data })
+    // data array is returned as [lng, lat]
+    console.log(data.features)
+    dispatch({ type: GET_GEO, payload: data})
     })
     }
 
+  }
+
+  export const getTreeData = () => {
+    return async function (dispatch) {
+     let resp = await fetch("http://localhost:4000/trees")
+     if (!resp.ok) {
+       throw new Error(`HTTP error! status: ${resp.status}`);
+     }
+     let treeArray = await resp.json()
+     console.log(treeArray)
+     return dispatch({type: GET_TREES, payload: treeArray})
+    }
   }
 
   
