@@ -20,21 +20,21 @@
     {
     "id": 1,
     "variety": "Apple-Bramley",
-    "number of trees": 1,
+    "numberOfTrees": 1,
     "address1": "17 Glan yr Afon Gardens",
     "address2": "Sketty, Swansea SA2 9HX, UK"
   },
   {
     "id": 2,
     "variety": "Apple-Unknown",
-    "number of trees": 4,
+    "numberOfTrees": 4,
     "address1": "Ty Coch Road",
     "address2": "Sketty, Swansea SA2 9EB, UK"
   },
   {
     "id": 3,
     "variety": "Apple-Unknown",
-    "number of trees": 100,
+    "numberOfTrees": 100,
     "address1": "Fairy Lodge",
     "address2": "Burry/Gower SA3 1BH, UK"
   }
