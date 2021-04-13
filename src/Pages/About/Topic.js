@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import MapPage from '../MapPage'
 import TreeForm from '../TreeForm';
+import TreePage from '../TreePage'
 
 export default function Topic() {
     let { topicId } = useParams();
@@ -20,7 +20,7 @@ export default function Topic() {
                 <>
                     <p>Growers About Info</p>
                     <TreeForm />
-                    <MapPage />
+                    <TreePage />
                 </>
             )
         }

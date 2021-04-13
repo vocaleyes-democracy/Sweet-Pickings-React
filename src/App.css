@@ -42,3 +42,10 @@
   height: 750px;
   float: right;
 }
+.tree-page{
+display: inline-block;
+width: 30vw;
+height: 750px;
+margin: 1.25rem;
+padding: 1rem;
+}

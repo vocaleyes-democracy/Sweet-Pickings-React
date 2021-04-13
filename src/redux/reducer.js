@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-import { GET_GEO } from './actionTypes'
+import { GET_GEO, GET_TREES } from './actionTypes'
 
 const defaultState = {
-  geoData: []
+  geoData: [],
+  trees: []
 }
 
 
@@ -15,9 +16,19 @@ function geoReducer(currentState = defaultState.geoData, action) {
   }
 }
 
+function treeReducer(currentState = defaultState.trees, action) {
+  switch(action.type) {
+    case GET_TREES:
+      return action.payload
+      default:
+        return currentState
+  }
+}
+
 
 const rootReducer = combineReducers({
-  geoData: geoReducer
+  geoData: geoReducer,
+  trees: treeReducer
 })
 
 export default rootReducer

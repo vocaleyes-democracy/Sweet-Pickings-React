@@ -82,7 +82,7 @@ export default function TreeForm() {
                     type="tel"
                     placeholder="012-345-6789"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                    maxlength="12"
+                    maxLength="12"
                     onChange={e => setTelephone}
                 />
             </Form.Group>
@@ -183,7 +183,7 @@ export default function TreeForm() {
                 placeholder="Tell us more here"
             />
 
-            <Form.Button type="submit" color="primary" >Submit</Form.Button>
+            <Form.Button type="submit" color="blue" >Submit</Form.Button>
         </Form>
         </div>
     )
