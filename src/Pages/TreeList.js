@@ -1,10 +1,10 @@
 import React from 'react'
 import Tree from './Tree.js'
 
-function TreeList({ trees }){
+function TreeList({ assets }){
 
   const renderTrees = () => {
-    return trees.map(tree => <Tree key={tree.id} tree={tree}/> )
+    return assets.map(tree => <Tree key={tree.id} tree={tree}/> )
   } 
 
   return(
