@@ -20,7 +20,7 @@ export const sendGeocodingRequest = (location) => {
     .then(data => {
     // data array is returned in order of: [lng, lat] which is backwards for our purposes
     console.log(data.features[0].geometry.coordinates)
-    dispatch({ type: GET_GEO, payload: data})
+    dispatch({ type: GET_GEO, payload: data.features[0].geometry.coordinates})
     })
     }
 
@@ -33,7 +33,6 @@ export const sendGeocodingRequest = (location) => {
        throw new Error(`HTTP error! status: ${resp.status}`);
      }
      let treeArray = await resp.json()
-    //  console.log(treeArray)
      return dispatch({type: GET_TREES, payload: treeArray})
     }
   }

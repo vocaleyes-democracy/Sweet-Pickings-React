@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { sendGeocodingRequest, getTreeData } from '../redux/actions'
@@ -7,12 +7,21 @@ import { sendGeocodingRequest, getTreeData } from '../redux/actions'
 
 function MapPage(props) {
 
+  const renderMarkers = () => {
+    // const geodata = props.geoData(props.trees[0].address1, props.trees[0].address2)
+    // return props.trees.map(tree => <Marker position={[lat, lng]}>
+    //   <Popup>
+    //     You are in {props.trees.address2}!
+    // </Popup>
+    // </Marker>)
+    console.log(props.assets.address1, props.assets.address2)
+  }
   
 
   
 
   const [map, setMap] = useState({ lat: 51.6182, lng: -3.9864, zoom: 11, city: "Sketty" })
-  // const [geo, setGeo] = useState({data: props.geoData("17 Glan yr Afon Gardens, Sketty, Swansea SA2 9HX, UK")})
+  const [geo, setGeo] = useState({data: props.geoData("17 Glan yr Afon Gardens, Sketty, Swansea SA2 9HX, UK")})
 
   return (
     <>
@@ -27,9 +36,10 @@ function MapPage(props) {
 
         <Marker position={[map.lat, map.lng]}>
           <Popup>
-            Welcome to {map.city}!
+            You are in {map.city}!
         </Popup>
         </Marker>
+        {renderMarkers()}
       </MapContainer>
     </>
 

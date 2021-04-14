@@ -12,8 +12,8 @@ function TreePage(props) {
 
   return (
     <>
-      <TreeList trees={props.treeArray}/>
-      <MapPage trees={props.treeArray}/>
+      <TreeList assets={props.treeArray}/>
+      <MapPage assets={props.treeArray}/>
     </>
   )
 }
