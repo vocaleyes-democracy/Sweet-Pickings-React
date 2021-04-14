@@ -8,13 +8,18 @@ import { sendGeocodingRequest, getTreeData } from '../redux/actions'
 function MapPage(props) {
 
   const renderMarkers = () => {
-    // const geodata = props.geoData(props.trees[0].address1, props.trees[0].address2)
-    // return props.trees.map(tree => <Marker position={[lat, lng]}>
+    const addressArray = props.assets.map(asset => `${asset.address1}, ${asset.address2}`)
+    console.log(addressArray) // address array - success!
+
+    const data = props.geoData(addressArray[0])
+    console.log(data) // comes thru as undefined
+
+    // const [lng, lat] = props.geoData(props.trees[0].address1, props.trees[0].address2)
+    // return props.assets.map(tree => <Marker position={[lat, lng]}>
     //   <Popup>
     //     You are in {props.trees.address2}!
     // </Popup>
     // </Marker>)
-    console.log(props.assets.address1, props.assets.address2)
   }
   
 
