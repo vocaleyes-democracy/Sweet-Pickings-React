@@ -24,9 +24,8 @@ export default function NavBar2(){
                 size="small" 
                 color="green" // need to figure out how to add primary color #7FA11C
                 stackable
-                borderless={true}
                 // widths="7"
-                // secondary
+                secondary
                 >
 
                 <Menu.Item>
@@ -39,7 +38,6 @@ export default function NavBar2(){
                 </Menu.Item>
 
                 <Menu.Item 
-                    borderless={true}
                     as={NavLink} 
                     to={"/"}
                     name="sweetPickings"
@@ -48,7 +46,7 @@ export default function NavBar2(){
                 ></Menu.Item> 
 
                 <Menu.Item 
-                    borderless={true}
+                    
                     as={NavLink} 
                     to={`${url}/story`}
                     name="story"
@@ -58,7 +56,7 @@ export default function NavBar2(){
                 </Menu.Item>
 
                 <Menu.Item 
-                    borderless={true}
+                    
                     as={NavLink} 
                     to={`${url}/pickers`}
                     name="pickers"
@@ -68,7 +66,7 @@ export default function NavBar2(){
                 </Menu.Item>
 
                 <Menu.Item 
-                    borderless={true}
+                    
                     as={NavLink} 
                     to={`${url}/growers`}
                     name="growers"
@@ -96,7 +94,7 @@ export default function NavBar2(){
                 {/* </Menu.Item> */}
 
                 <Menu.Item 
-                    borderless={true}
+                    
                     as={NavLink} 
                     to={"/gallery"}
                     name="gallery"
