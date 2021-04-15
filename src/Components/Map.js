@@ -11,8 +11,8 @@ function Map(props) {
 
 
   const [map, setMap] = useState({ lat: 40.744385, lng: -73.9573038, zoom: 11, city: "LIC" })
-  const [geo, setGeo] = useState({ data: props.geoData("17 Glan yr Afon Gardens, Sketty, Swansea SA2 9HX, UK") })
-  
+  const [geo, setGeo] = useState({ address: "17 Glan yr Afon Gardens, Sketty, Swansea SA2 9HX, UK" })
+
 
 
   const addressArray = props.assets.map(asset => `${asset.address1}, ${asset.address2}`)
@@ -20,29 +20,15 @@ function Map(props) {
 
 
   useEffect(() => {
-
-    addressArray.map(address => props.geoData(address))
+    props.geoData(geo.address)
   }, [])
 
+  
 
-const seeCoordinates = () => {
-  console.log(props.coordinates)
-}
-
-
-  const renderMarkers = () => {
-
-    // const [lng, lat] = props.geoData(addressArray[0])
-    // return <Marker position={[lat, lng]}>
-    //   <Popup>
-    //     You are in {props.trees.address2}!
-    // </Popup>
-    // </Marker>
-  }
 
   return (
     <>
-    {seeCoordinates()}
+    
       <MapContainer className="map-container"
         center={[map.lat, map.lng]}
         zoom={map.zoom}
@@ -57,7 +43,6 @@ const seeCoordinates = () => {
             You are in {map.city}!
         </Popup>
         </Marker>
-        {renderMarkers()}
       </MapContainer>
     </>
 
@@ -75,4 +60,4 @@ const mdp = (dispatch) => {
   }
 }
 
-export default connect(null, mdp)(Map)
+export default connect(msp, mdp)(Map)
