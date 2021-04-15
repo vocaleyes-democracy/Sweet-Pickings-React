@@ -10,7 +10,7 @@ const defaultState = {
 function geoReducer(currentState = defaultState.geoData, action) {
   switch(action.type) {
     case GET_GEO:
-      return action.payload
+        console.log([...currentState, action.payload])
       default: 
       return currentState
   }
