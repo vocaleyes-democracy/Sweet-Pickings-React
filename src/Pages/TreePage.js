@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import TreeList from './TreeList'
-import MapPage from './MapPage'
+import TreeList from '../Components/TreeList'
+import Map from '../Components/Map'
 import { getTreeData } from '../redux/actions.js'
 
 function TreePage(props) {
@@ -13,7 +13,7 @@ function TreePage(props) {
   return (
     <>
       <TreeList assets={props.treeArray}/>
-      <MapPage assets={props.treeArray}/>
+      <Map assets={props.treeArray}/>
     </>
   )
 }
