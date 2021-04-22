@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { sendGeocodingRequest } from '../redux/actions'
+import { APPLICATION_ID, API_KEY } from '../APIs/travelTimeAPI'
 
 
 
@@ -11,24 +12,48 @@ function Map(props) {
 
 
   const [map, setMap] = useState({ lat: 40.744385, lng: -73.9573038, zoom: 11, city: "LIC" })
-  const [geo, setGeo] = useState({ address: "17 Glan yr Afon Gardens, Sketty, Swansea SA2 9HX, UK" })
-
+  const [geo, setGeo] = useState({ address: "Buckingham Palace Road, London, UK" })
+  const [array, setArray] = useState([])
 
 
   const addressArray = props.assets.map(asset => `${asset.address1}, ${asset.address2}`)
   console.log(addressArray) // address array - success!
 
+  // function useSetCoordinates(){
+  //   const [long, latt] = props.coordinates
+  //   setMap({lat: latt, lng: long, zoom: 11, city: "London" })
+  // }
 
   useEffect(() => {
     props.geoData(geo.address)
   }, [])
+
+  // useEffect(() => {
+  //   addressArray.map(address => {
+  //     fetch(`https://api.traveltimeapp.com/v4/geocoding/search?query=` + address, {
+  //       method: "GET",
+  //       credentials: "same-origin",
+  //       headers: {
+  //       "Content-Type": "application/json",
+  //       "X-Application-Id": APPLICATION_ID,
+  //       "X-Api-Key": API_KEY,
+  //       "Accept-Language": "en-GB"
+  //       }
+        
+  //       })
+  //       .then(response => response.json()) // parses JSON response into native Javascript objects
+  //       .then(data => {
+  //         setArray(data.features)
+  //         console.log(array)
+  //       })
+  //   })
+  // },[])
 
   
 
 
   return (
     <>
-    
       <MapContainer className="map-container"
         center={[map.lat, map.lng]}
         zoom={map.zoom}

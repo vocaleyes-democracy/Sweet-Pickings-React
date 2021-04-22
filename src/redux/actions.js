@@ -19,7 +19,7 @@ export const sendGeocodingRequest = (location) => {
     .then(response => response.json()) // parses JSON response into native Javascript objects
     .then(data => {
     // data array is returned in order of: [lng, lat] which is backwards for our purposes
-    console.log(data.features[0].geometry.coordinates) //coordinates come back that are from MapPage [getGeo] for Sketty
+    console.log(data.features[0].geometry.coordinates) //coordinates come back that are from MapPage [getGeo]
     dispatch({ type: GET_GEO, payload: data.features[0].geometry.coordinates})
     })
     }
