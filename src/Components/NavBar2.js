@@ -39,7 +39,7 @@ export default function NavBar2(){
 
                 <Menu.Item 
                     as={NavLink} 
-                    to={"/"}
+                    to={"/home"}
                     name="sweetPickings"
                     content="🍎" // SHOULD HAVE ONE ITEM LINKING TO HOME
                     fontSize="24px"
@@ -83,18 +83,18 @@ export default function NavBar2(){
                     content="Recipients"
                     fontSize="24px"
                 > */}
+                
                     <Dropdown item text='RECIPIENTS'>
                     <Dropdown.Menu>
                         {/* <Dropdown.Header>Options</Dropdown.Header> */} 
                         <Dropdown.Item as={NavLink} to={'/recipients'}>Request Information</Dropdown.Item>
-                        <Dropdown.Item>Sign Up</Dropdown.Item>
-                        <Dropdown.Item>Donate</Dropdown.Item>
+                        <Dropdown.Item as={NavLink} to={'/signup'} text="Sign Up"></Dropdown.Item>
+                        <Dropdown.Item as={NavLink} to={'/donate'} text="Donate"></Dropdown.Item>
                     </Dropdown.Menu>
                     </Dropdown>
                 {/* </Menu.Item> */}
 
                 <Menu.Item 
-                    
                     as={NavLink} 
                     to={"/gallery"}
                     name="gallery"
@@ -102,8 +102,7 @@ export default function NavBar2(){
                     fontSize="24px"
                 >
                 </Menu.Item>
-
-
+                
                 {/* <Menu.Menu position='right'> */}
                     {/* <Menu.Item 
                         borderless={true}
