@@ -2,6 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import TreeForm from '../TreeForm';
 import TreePage from '../TreePage'
+import GalleryPage from '../GalleryPage'
+import Story from './Story'
+import Pickers from './Pickers'
+import Growers from './Growers'
+
 
 export default function Topic() {
     let { topicId } = useParams();
@@ -9,22 +14,36 @@ export default function Topic() {
     const AboutContent = () => {
         if ((topicId === 'story')) {
             return (
-                <p>Story About Info</p>
+                <Story />
             )
         } else if ((topicId === 'pickers')) {
             return (
-                <p>Pickers About Info</p>
+              <Pickers />
             )
         } else if ((topicId === 'growers')) {
             return (
                 <>
-                    <p>Growers About Info</p>
+                    <Growers />
                     <TreeForm />
                     <TreePage />
                 </>
             )
-        }
-        // Need to add info for Recipients and Gallery
+        } 
+         // Need to add more info for Recipients and Gallery
+        else if ((topicId === 'recipients')) {
+          return (
+              <>
+                  <p>Recipients Info</p>
+              </>
+          )
+      } else if ((topicId === 'gallery')) {
+        return (
+            <>
+                <GalleryPage />
+            </>
+        )
+    }
+       
     }
 
     return (

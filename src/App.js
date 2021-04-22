@@ -17,15 +17,19 @@ function App() {
         <TopNav />
     
         <Switch>
-            <Route exact path="/">
+
+            <Route exact path="/home">
               <Home />
             </Route>
+
             <Route path="/about">
               <About />
             </Route>
+
             <Route>
               <Signup path="/signup" />
             </Route>
+
           </Switch>
         </Router>
         {/* <HeaderImg /> */}
