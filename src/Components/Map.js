@@ -17,7 +17,7 @@ function Map(props) {
       // console.log(asset)
       return (<Marker  key={asset.id} position={[asset.coordinates[1], asset.coordinates[0]]}>
         <Popup>
-          Asset #{asset.id}
+          Asset #{asset.id}, {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} trees`: `${asset.numberOfTrees} tree`}
     </Popup>
       </Marker>)
     })
