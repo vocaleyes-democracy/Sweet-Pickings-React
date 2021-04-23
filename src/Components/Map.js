@@ -9,8 +9,11 @@ import { sendGeocodingRequest } from '../redux/actions'
 function Map(props) {
 
 
-  const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367, zoom: 11, city: "Swansea" })
+  const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367, zoom: 11 })
 
+  // useEffect(() => {
+  //   return setMap(() => ({ lat: props.assets[0].coordinates[1], lng: props.assets[0].coordinates[0], zoom: 11 }))
+  // , []})
 
   const renderMarkers = () => {
     return props.assets.map(asset => {
@@ -29,6 +32,7 @@ function Map(props) {
       <MapContainer className="map-container"
         center={[map.lat, map.lng]}
         zoom={map.zoom}
+        
       >
         <TileLayer
           attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
