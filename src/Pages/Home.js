@@ -11,7 +11,7 @@ export default function Home() {
     return (
             <React.Fragment>
                 <Container maxWidth="sm">
-                    <HeaderImg />
+                    <HeaderImg /> // this is broken, please fix me!
                     <Typography variant="h1" component="div" align="center" style={{ backgroundColor:  '#cfe8fc', height: '40vh', paddingTop: '4vh', marginTop: '5vh', marginBottom: '5vh' }}>
                         SWEET PICKINGS
                     </Typography>
