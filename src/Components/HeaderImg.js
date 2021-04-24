@@ -5,7 +5,7 @@ export default function HeaderImg(){
 
     return (
         <Image 
-            src='/images/applepic.jpg' 
+            src='/public/images/applepic.jpg' 
             alt="apples hanging from tree" 
             fluid 
             // content="testing testing"
