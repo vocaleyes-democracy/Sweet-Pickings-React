@@ -17,6 +17,7 @@ export default function TreeForm() {
 
     // TREE INFO STATE
     const [treeType, setTreeType] = useState('');
+    const [treeCount, setTreeCount] = useState(0);
     
     const treeOptions = [
         {
@@ -44,6 +45,42 @@ export default function TreeForm() {
     const handleOnSubmit = e => {
         e.preventDefault();
         console.log(treeType);
+
+        const userObj = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            telephone: telephone,
+            address1: address1,
+            address2: address2,
+            city: city,
+            country: country,
+            zip: zip
+        }
+
+        const assetObj = {
+
+        }
+
+        fetch("http://localhost:4000/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userObj)
+        })
+        .then(r => r.json())
+        .then(console.log)
+
+        // fetch("http://localhost:4000/assets", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify(assetObj)
+        // })
+        // .then(r => r.json())
+        // .then(console.log)
     }
 
     return (
@@ -83,7 +120,7 @@ export default function TreeForm() {
                     placeholder="012-345-6789"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
                     maxLength="12"
-                    onChange={e => setTelephone}
+                    onChange={e => setTelephone(e.target.value)}
                 />
             </Form.Group>
             <Form.Group widths="equal">
@@ -134,17 +171,19 @@ export default function TreeForm() {
                     fluid
                     selection
                     options={treeOptions}
-                    
+                    onChange={e => setTreeType(e.target.value)}
                     // Need to get state from here
-                
                 />
+
                 <Form.Input 
                     label="Number of Trees"
                     type="number"
                     name="tree-count"
                     min="1"
+                    onChange={e => setTreeCount(e.target.value)}
                 />
             </Form.Group>
+
             <Form.Group grouped>
                 <label>Owner Type</label>
                 <Form.Field 
