@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About/About.js';
 import Signup from './Pages/Signup';
+// import Gallery from './Pages/About/Gallery'
 
 function App() {
   return (
@@ -27,8 +28,12 @@ function App() {
             </Route>
 
             <Route>
-              <Signup path="/signup" />
+              <Signup exact path="/signup" />
             </Route>
+
+            {/* <Route>
+              <Gallery exact path="/gallery" />
+            </Route> */}
 
           </Switch>
         </Router>

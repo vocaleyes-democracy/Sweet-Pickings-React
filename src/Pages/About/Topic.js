@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import TreeForm from '../TreeForm';
 import TreePage from '../TreePage'
-import GalleryPage from '../GalleryPage'
+import Gallery from './Gallery'
 import Story from './Story'
 import Pickers from './Pickers'
 import Growers from './Growers'
@@ -18,7 +18,7 @@ export default function Topic() {
             )
         } else if ((topicId === 'pickers')) {
             return (
-              <Pickers />
+                <Pickers />
             )
         } else if ((topicId === 'growers')) {
             return (
@@ -31,19 +31,20 @@ export default function Topic() {
         } 
          // Need to add more info for Recipients and Gallery
         else if ((topicId === 'recipients')) {
-          return (
-              <>
-                  <p>Recipients Info</p>
-              </>
-          )
-      } else if ((topicId === 'gallery')) {
+            return (
+                <>
+                    <p>Recipients Info</p>
+                </>
+            )
+        } 
+        else if ((topicId === 'gallery')) {
         return (
             <>
-                <GalleryPage />
+                <Gallery />
             </>
         )
-    }
-       
+        }
+
     }
 
     return (

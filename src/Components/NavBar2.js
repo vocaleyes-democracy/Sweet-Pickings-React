@@ -9,7 +9,7 @@ import Pickers from '../Pages/About/Pickers';
 import Growers from '../Pages/About/Growers';
 // import Opportunity from '../Pages/Opportunity';
 
-// -about sweet pickings, browse opportunties, get started, let us know about a Tree, contact
+// -about sweet pickings, browse opportunities, get started, let us know about a Tree, contact
 // Sign Up / Log In
 
 
