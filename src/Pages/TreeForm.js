@@ -36,6 +36,8 @@ export default function TreeForm() {
     const [quantity, setQuantity] = useState(0)
     const [ownerType, setOwnerType] = useState(null)
     
+    const handleChange = (e) => setOwnerType(e.target.firstChild.data)
+    
     const handleOnSubmit = e => {
         e.preventDefault()
 
@@ -64,8 +66,6 @@ export default function TreeForm() {
         // .then(console.log)
     }
 
-    const handleChange = (e, { ownerType }) => setOwnerType({ ownerType })
-    console.log(ownerType)
     return (
         <div id="form">
         <Header as="h2" textAlign="center">LET US KNOW ABOUT A TREE</Header>
@@ -110,7 +110,7 @@ export default function TreeForm() {
                 <Form.Field
                     control={Radio} 
                     label="Council Land"
-                    // value="Council Land"
+                    value="Council Land"
                     checked={ownerType === 'Council Land'}
                     name="owner-type"
                     onChange={handleChange}
@@ -118,7 +118,7 @@ export default function TreeForm() {
                 <Form.Field
                     control={Radio} 
                     label="Private Property"
-                    // value="Private Property"
+                    value="Private Property"
                     checked={ownerType === 'Private Property'}
                     name="owner-type"
                     onChange={handleChange}
@@ -126,7 +126,7 @@ export default function TreeForm() {
                 <Form.Field
                     control={Radio} 
                     label="Not Sure"
-                    // value="Not Sure"
+                    value="Not Sure"
                     checked={ownerType === 'Not Sure'}
                     name="owner-type"
                     onChange={handleChange}
@@ -135,7 +135,7 @@ export default function TreeForm() {
                     control={Radio}
                     inline
                     label="Other"
-                    // value="Other"
+                    value="Other"
                     checked={ownerType === 'Other'}
                     name="owner-type"
                     onChange={handleChange}
