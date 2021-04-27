@@ -5,10 +5,10 @@ import { Menu, Search, Item, Icon } from 'semantic-ui-react'
 
 export default function TopNav(){
     return (
-            <Menu 
+            <Menu
                 // fixed="top"  // seems like we can also use "attached" if we add a second header piece
                 attached="top"
-                inverted={true} 
+                inverted 
                 size="tiny" 
                 color="olive" // need to figure out how to add primary color #7FA11C
                 stackable

@@ -6,16 +6,32 @@ import { sendGeocodingRequest } from '../redux/actions'
 
 
 
-function Map(props) {
+function Map({assets}) {
+
+    // const tree1 = assets[0]
+    // console.log(tree1.coordinates)
+    // const [long, lat] = tree1.coordinates
+    // console.log(long)
+
+  const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367 })
+
+  
+// useEffect(() => {
+//   const tree1 = assets[1]
+//   console.log(tree1)
+//   const [long, lat] = tree1.geometry.coordinates
+//   console.log(long)
+//   console.log(lat)
+//   return setMap({lat: lat, lng: long})
+// }, [])
 
 
-  const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367, zoom: 11 })
+
 
 
   const renderMarkers = () => {
-    return props.assets.map(asset => {
-      console.log(asset.coordinates)
-      return (<Marker  key={asset.id} position={[asset.coordinates[1], asset.coordinates[0]]}>
+    return assets.map(asset => {
+      return (<Marker  key={asset.id} position={[asset.geometry.coordinates[1], asset.geometry.coordinates[0]]}>
         <Popup>
           Asset #{asset.id}, {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} trees`: `${asset.numberOfTrees} tree`}
     </Popup>
@@ -28,7 +44,7 @@ function Map(props) {
     <>
       <MapContainer className="map-container"
         center={[map.lat, map.lng]}
-        zoom={map.zoom}
+        zoom={11}
         
       >
         <TileLayer

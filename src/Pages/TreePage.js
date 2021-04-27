@@ -4,16 +4,16 @@ import TreeList from '../Components/TreeList'
 import Map from '../Components/Map'
 import { getTreeData } from '../redux/actions.js'
 
-function TreePage(props) {
+function TreePage({treeArray, treeData}) {
 
   useEffect(() => {
-    props.treeData()
+    treeData()
   },[])
 
   return (
     <>
-      <TreeList assets={props.treeArray}/>
-      <Map assets={props.treeArray}/>
+      <TreeList assets={treeArray}/>
+      <Map assets={treeArray}/>
     </>
   )
 }

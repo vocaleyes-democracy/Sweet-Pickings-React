@@ -10,6 +10,7 @@ export default function HeaderImg() {
       fluid
       as='a'
       href='/about'
+      centered={true}
     // content="testing testing"
     />
   )

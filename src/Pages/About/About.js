@@ -11,10 +11,9 @@ export default function About() {
         <div>
             About Page
             <NavBar2 />
-
             <Switch>
               <Route path={`${path}/:topicId`}>
-                <Topic />
+                <Topic/>
               </Route>
             </Switch>
         </div>

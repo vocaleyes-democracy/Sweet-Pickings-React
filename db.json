@@ -37,14 +37,6 @@
       "country": "United States",
       "zip": "11218",
       "id": 2
-    },
-    {
-      "address": "4 Times Sq",
-      "id": 3
-    },
-    {
-      "address": "Fairwood Common, Swansea SA2 7JU",
-      "id": 4
     }
   ],
   "assets": [
@@ -55,10 +47,13 @@
       "numberOfTrees": 1,
       "address1": "17 Glan yr Afon Gardens",
       "address2": "Sketty, Swansea SA2 9HX, UK",
-      "coordinates": [
-        -3.9942229729238115,
-        51.61902699211486
-      ]
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.9942229729238115,
+          51.61902699211486
+        ]
+      }
     },
     {
       "id": 2,
@@ -67,10 +62,13 @@
       "numberOfTrees": 4,
       "address1": "Tycoch Coch Road",
       "address2": "Sketty, Swansea SA2 9EB, UK",
-      "coordinates": [
-        -3.9843888301621457,
-        51.622073225737374
-      ]
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.9843888301621457,
+          51.622073225737374
+        ]
+      }
     },
     {
       "id": 3,
@@ -79,10 +77,13 @@
       "numberOfTrees": 100,
       "address1": "Fairy Lodge",
       "address2": "Burry, Reynoldston, Swansea SA3 1BH, UK",
-      "coordinates": [
-        -4.21534063059567,
-        51.59200841408888
-      ]
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.21534063059567,
+          51.59200841408888
+        ]
+      }
     }
   ]
 }

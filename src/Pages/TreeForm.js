@@ -85,14 +85,6 @@ export default function TreeForm() {
           onChange={e => setAddress(e.target.value)}
         />
 
-        {/* <Form.Input
-          label="Coordinates"
-          name="coordinates"
-          type="text"
-          placeholder="lat/long"
-          onChange={e => setCoordinates([e.target.value])}
-        /> */}
-
         <Form.Select
           label="Fruit Type"
           placeholder="Select Fruit Type"
