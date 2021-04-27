@@ -1,14 +1,16 @@
 import React from 'react'
 import { Image } from 'semantic-ui-react'
 
-export default function HeaderImg(){
+export default function HeaderImg() {
 
-    return (
-        <Image 
-            src='/public/images/applepic.jpg' 
-            alt="apples hanging from tree" 
-            fluid 
-            // content="testing testing"
-        />
-    )
+  return (
+    <Image
+      src='/images/applepic.jpg'
+      alt="apples hanging from tree"
+      fluid
+      as='a'
+      href='/about'
+    // content="testing testing"
+    />
+  )
 }

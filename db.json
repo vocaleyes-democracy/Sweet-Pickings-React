@@ -37,6 +37,14 @@
       "country": "United States",
       "zip": "11218",
       "id": 2
+    },
+    {
+      "address": "4 Times Sq",
+      "id": 3
+    },
+    {
+      "address": "Fairwood Common, Swansea SA2 7JU",
+      "id": 4
     }
   ],
   "assets": [
@@ -75,12 +83,6 @@
         -4.21534063059567,
         51.59200841408888
       ]
-    },
-    {
-      "": [
-        null
-      ],
-      "id": 4
     }
   ]
 }

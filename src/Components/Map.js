@@ -11,13 +11,10 @@ function Map(props) {
 
   const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367, zoom: 11 })
 
-  // useEffect(() => {
-  //   return setMap(() => ({ lat: props.assets[0].coordinates[1], lng: props.assets[0].coordinates[0], zoom: 11 }))
-  // , []})
 
   const renderMarkers = () => {
     return props.assets.map(asset => {
-      // console.log(asset)
+      console.log(asset.coordinates)
       return (<Marker  key={asset.id} position={[asset.coordinates[1], asset.coordinates[0]]}>
         <Popup>
           Asset #{asset.id}, {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} trees`: `${asset.numberOfTrees} tree`}
