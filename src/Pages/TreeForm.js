@@ -1,44 +1,46 @@
 import { React, useState } from 'react'
-import { Header, Form } from 'semantic-ui-react'
+import { Header, Form, Radio } from 'semantic-ui-react'
+
+// Data to be moved elsewhere
+const fruitTypes = [
+    {
+        key: "Apple",
+        text: "Apple",
+        value: "Apple"
+    },
+    {
+        key: "Pear",
+        text: "Pear",
+        value: "Pear"
+    },
+    {
+        key: "Cherry",
+        text: "Cherry",
+        value: "Cherry"
+    },
+    {
+        key: "Walnuts",
+        text: "Walnuts",
+        value: "Walnuts"
+    },
+]
+
+// Need to nest varieties under each fruit type
+// const fruitVarieties = [
+
+// ]
 
 export default function TreeForm() {     
-    const [address, setAddress] = useState('');
-    const [fruitType, setFruitType] = useState('');
-    const [quantity, setQuantity] = useState(0);
-    
-    const fruitTypes = [
-        {
-            key: "Apple",
-            text: "Apple",
-            value: "Apple"
-        },
-        {
-            key: "Pear",
-            text: "Pear",
-            value: "Pear"
-        },
-        {
-            key: "Cherry",
-            text: "Cherry",
-            value: "Cherry"
-        },
-        {
-            key: "Walnuts",
-            text: "Walnuts",
-            value: "Walnuts"
-        },
-    ]
-
-    // Need to nest varieties under each fruit type
-    // const fruitVarieties = [
-
-    // ]
+    const [address, setAddress] = useState('')
+    const [fruitType, setFruitType] = useState('')
+    const [quantity, setQuantity] = useState(0)
+    const [ownerType, setOwnerType] = useState(null)
     
     const handleOnSubmit = e => {
-        e.preventDefault();
+        e.preventDefault()
 
         const userObj = {
-            address: address
+            address: address, 
         }
 
         fetch("http://localhost:4000/users", {
@@ -62,6 +64,8 @@ export default function TreeForm() {
         // .then(console.log)
     }
 
+    const handleChange = (e, { ownerType }) => setOwnerType({ ownerType })
+    console.log(ownerType)
     return (
         <div id="form">
         <Header as="h2" textAlign="center">LET US KNOW ABOUT A TREE</Header>
@@ -82,8 +86,7 @@ export default function TreeForm() {
                 fluid
                 selection
                 options={fruitTypes}
-                onChange={e => setFruitType(e.target.value)}
-                // Need to get state from here
+                onChange={e => setFruitType(e.target.firstChild.innerHTML)}
             />
             {/* <Form.Select 
                 label="Variety"
@@ -103,30 +106,38 @@ export default function TreeForm() {
 
             <Form.Group grouped>
                 <label>Owner Type</label>
-                <Form.Field 
+                <Form.Field
+                    control={Radio} 
                     label="Council Land"
-                    type="radio"
-                    control="input"
+                    // value="Council Land"
+                    checked={ownerType === 'Council Land'}
                     name="owner-type"
-                />
-                <Form.Field 
-                    label="Private Property"
-                    type="radio"
-                    control="input"
-                    name="owner-type"
-                />
-                <Form.Field 
-                    label="Not Sure"
-                    type="radio"
-                    control="input"
-                    name="owner-type"
+                    onChange={handleChange}
                 />
                 <Form.Field
+                    control={Radio} 
+                    label="Private Property"
+                    // value="Private Property"
+                    checked={ownerType === 'Private Property'}
+                    name="owner-type"
+                    onChange={handleChange}
+                />
+                <Form.Field
+                    control={Radio} 
+                    label="Not Sure"
+                    // value="Not Sure"
+                    checked={ownerType === 'Not Sure'}
+                    name="owner-type"
+                    onChange={handleChange}
+                />
+                <Form.Field
+                    control={Radio}
                     inline
                     label="Other"
-                    type="radio"
-                    control="input"
+                    // value="Other"
+                    checked={ownerType === 'Other'}
                     name="owner-type"
+                    onChange={handleChange}
                 />
             </Form.Group>
             
