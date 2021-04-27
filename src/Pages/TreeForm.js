@@ -88,7 +88,7 @@ export default function TreeForm() {
                 options={fruitTypes}
                 onChange={e => setFruitType(e.target.firstChild.innerHTML)}
             />
-            {/* <Form.Select 
+            {/* <Form.Select
                 label="Variety"
                 placeholder="Select Fruit Variety"
                 name="variety"
@@ -101,6 +101,7 @@ export default function TreeForm() {
                 type="number"
                 name="quantity"
                 min="1"
+                width="4"
                 onChange={e => setQuantity(e.target.value)}
             />
 
