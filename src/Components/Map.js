@@ -9,13 +9,15 @@ import { sendGeocodingRequest } from '../redux/actions'
 function Map({assets}) {
 
     const tree1 = assets[0]
-    // console.log(tree1.geometry.coordinates)
-    // const [long, lat] = tree1.coordinates
+    console.log(tree1)
+    const [long, lat] = tree1.geometry.coordinates
+// having async issues with these variables.....
     // console.log(long)
+    // console.log(lat)
 
   const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367 })
 
-  
+  // wellll this wasn't helpful. at all.
 // useEffect(() => {
 //   const tree1 = assets[1]
 //   console.log(tree1)
