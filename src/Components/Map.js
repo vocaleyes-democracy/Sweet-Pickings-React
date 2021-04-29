@@ -8,8 +8,8 @@ import { sendGeocodingRequest } from '../redux/actions'
 
 function Map({assets}) {
 
-    // const tree1 = assets[0]
-    // console.log(tree1.coordinates)
+    const tree1 = assets[0]
+    // console.log(tree1.geometry.coordinates)
     // const [long, lat] = tree1.coordinates
     // console.log(long)
 

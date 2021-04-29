@@ -27,13 +27,10 @@ export const sendGeocodingRequest = (location) => {
   }
 
   export const getTreeData = () => {
-    return async function (dispatch) {
-     let resp = await fetch("http://localhost:4000/assets")
-     if (!resp.ok) {
-       throw new Error(`HTTP error! status: ${resp.status}`);
-     }
-     let treeArray = await resp.json()
-     return dispatch({type: GET_TREES, payload: treeArray})
+    return function (dispatch) {
+     fetch("http://localhost:4000/assets")
+     .then(r => r.json())
+     .then(treeArray => dispatch({type: GET_TREES, payload: treeArray}))
     }
   }
 
