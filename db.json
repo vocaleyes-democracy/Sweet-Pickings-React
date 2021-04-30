@@ -126,6 +126,21 @@
       },
       "comment": "Enjoy Chinese food and walnuts",
       "id": 6
+    },
+    {
+      "type": "Tree",
+      "variety": "Apple",
+      "numberOfTrees": "10",
+      "address1": "TR's Apple Orchard",
+      "address2": "LIC, NY 11109",
+      "geometry": {
+        "coordinates": [
+          -3.982533593112686,
+          51.62994483888624
+        ]
+      },
+      "comment": "Ruff Ruff!",
+      "id": 7
     }
   ]
 }

@@ -1,6 +1,5 @@
 import { APPLICATION_ID, API_KEY } from '../APIs/travelTimeAPI.js'
-import { GET_GEO, GET_TREES } from './actionTypes'
-
+import { GET_GEO, GET_TREES, ADD_A_TREE } from './actionTypes'
 
 export const sendGeocodingRequest = (location) => {
   // console.log(location)
@@ -31,6 +30,22 @@ export const sendGeocodingRequest = (location) => {
       fetch("http://localhost:4000/assets")
       .then(r => r.json())
       .then(treeArray => dispatch({type: GET_TREES, payload: treeArray}))
+    }
+  }
+
+
+  export const addATree = (assetObj) => {
+    return function (dispatch) {
+      fetch("http://localhost:4000/assets", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(assetObj)
+    })
+    .then(r => r.json())
+    .then(treeObj => dispatch({type: ADD_A_TREE, payload: treeObj}))
     }
   }
 

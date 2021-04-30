@@ -1,5 +1,7 @@
+import { connect } from 'react-redux'
 import { React, useState } from 'react'
 import { Header, Form, Radio } from 'semantic-ui-react'
+import { addATree } from '../redux/actions'
 
 // Data to be moved elsewhere
 const fruitTypes = [
@@ -30,7 +32,7 @@ const fruitTypes = [
 
 // ]
 
-export default function TreeForm() {
+function TreeForm(props) {
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
   // const [coordinates, setCoordinates] = useState([])
@@ -66,25 +68,27 @@ export default function TreeForm() {
       comment: comment
     }
 
-    fetch("http://localhost:4000/assets", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(assetObj)
-    })
-    .then(r => r.json())
-    .then(console.log)
-    .then(()=> { 
-      setAddress1('')
-      setAddress2('')
-      setFruitType('')
-      setQuantity(0)
-      setOwnerType(null)
-      setLatitude(0)
-      setLongitude(0)
-      setComment('')
-    })
+    props.treePost(assetObj)
+
+    // fetch("http://localhost:4000/assets", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(assetObj)
+    // })
+    // .then(r => r.json())
+    // .then(console.log)
+    // .then(()=> { 
+    //   setAddress1('')
+    //   setAddress2('')
+    //   setFruitType('')
+    //   setQuantity(0)
+    //   setOwnerType(null)
+    //   setLatitude(0)
+    //   setLongitude(0)
+    //   setComment('')
+    // })
   }
 
   return (
@@ -204,3 +208,11 @@ export default function TreeForm() {
     </div>
   )
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    treePost: (treeObj) => dispatch(addATree(treeObj))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(TreeForm)
