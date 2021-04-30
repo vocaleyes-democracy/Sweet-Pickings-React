@@ -84,6 +84,48 @@
           51.59200841408888
         ]
       }
+    },
+    {
+      "type": "Tree",
+      "numberOfTrees": "5",
+      "address1": "Ari's House",
+      "address2": "Brooklyn, NY 11218",
+      "geometry": {
+        "coordinates": [
+          -3.9596806597695333,
+          51.63019953098332
+        ]
+      },
+      "id": 4
+    },
+    {
+      "type": "Tree",
+      "variety": "Pear",
+      "numberOfTrees": "4",
+      "address1": "Ari's House",
+      "address2": "Brooklyn, NY 11218",
+      "geometry": {
+        "coordinates": [
+          -3.9695838880604555,
+          51.62859953985216
+        ]
+      },
+      "comment": "Come pick fruit!",
+      "id": 5
+    },
+    {
+      "type": "Tree",
+      "numberOfTrees": "6",
+      "address1": "Ziggy's Dog Haus",
+      "address2": "Bronx, NY 11225",
+      "geometry": {
+        "coordinates": [
+          -3.9798406551831786,
+          51.628786019345405
+        ]
+      },
+      "comment": "Enjoy Chinese food and walnuts",
+      "id": 6
     }
   ]
 }

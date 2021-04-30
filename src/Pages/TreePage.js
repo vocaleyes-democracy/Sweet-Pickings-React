@@ -8,7 +8,7 @@ function TreePage({treeArray, treeData}) {
 
   useEffect(() => {
     treeData()
-  },[])
+  },[treeData])
 
   return (
     <>

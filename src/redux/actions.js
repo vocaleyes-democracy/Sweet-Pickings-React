@@ -28,9 +28,9 @@ export const sendGeocodingRequest = (location) => {
 
   export const getTreeData = () => {
     return function (dispatch) {
-     fetch("http://localhost:4000/assets")
-     .then(r => r.json())
-     .then(treeArray => dispatch({type: GET_TREES, payload: treeArray}))
+      fetch("http://localhost:4000/assets")
+      .then(r => r.json())
+      .then(treeArray => dispatch({type: GET_TREES, payload: treeArray}))
     }
   }
 

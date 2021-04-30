@@ -33,19 +33,26 @@ const fruitTypes = [
 export default function TreeForm() {
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
-  const [coordinates, setCoordinates] = useState([])
+  // const [coordinates, setCoordinates] = useState([])
   const [fruitType, setFruitType] = useState('')
   const [quantity, setQuantity] = useState(0)
   const [ownerType, setOwnerType] = useState(null)
+  const [latitude, setLatitude] = useState(0)
+  const [longitude, setLongitude] = useState(0)
+  const [comment, setComment] = useState('')
 
   const handleChange = (e) => setOwnerType(e.target.firstChild.data)
 
+  // const CoordinateLatLong = (e) => {
+  //   const coordinates = []
+    
+  //   coordinates.push(parseFloat(e.target.value))
+  
+  //   setCoordinates(coordinates)
+  // }
+
   const handleOnSubmit = e => {
     e.preventDefault()
-
-    // const userObj = {
-    //   address: address,
-    // }
 
     const assetObj = {
       type: "Tree",
@@ -54,19 +61,10 @@ export default function TreeForm() {
       address1: address1,
       address2: address2,
       geometry: {
-        coordinates: coordinates
-      }
+        coordinates: [longitude, latitude]
+      },
+      comment: comment
     }
-
-    // fetch("http://localhost:4000/users", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(userObj)
-    // })
-    //   .then(r => r.json())
-    //   .then(console.log)
 
     fetch("http://localhost:4000/assets", {
         method: "POST",
@@ -77,23 +75,17 @@ export default function TreeForm() {
     })
     .then(r => r.json())
     .then(console.log)
+    .then(()=> { 
+      setAddress1('')
+      setAddress2('')
+      setFruitType('')
+      setQuantity(0)
+      setOwnerType(null)
+      setLatitude(0)
+      setLongitude(0)
+      setComment('')
+    })
   }
-
-  // {
-  //   "id": 1,
-  //   "type": "Tree",
-  //   "variety": "Apple-Bramley",
-  //   "numberOfTrees": 1,
-  //   "address1": "17 Glan yr Afon Gardens",
-  //   "address2": "Sketty, Swansea SA2 9HX, UK",
-  //   "geometry": {
-  //     "type": "Point",
-  //     "coordinates": [
-  //       -3.9942229729238115,
-  //       51.61902699211486
-  //     ]
-  //   }
-  // },
 
   return (
     <div id="form">
@@ -107,12 +99,29 @@ export default function TreeForm() {
           placeholder="House Name/Number and Street Name"
           onChange={e => setAddress1(e.target.value)}
         />
+
         <Form.Input
           label="Address 2"
           name="address2"
           type="text"
           placeholder="Town/City, Postcode and Country"
           onChange={e => setAddress2(e.target.value)}
+        />
+
+        <Form.Input
+          label="Latitude"
+          name="latitude"
+          type="text"
+          placeholder="Please Enter Latitude --Test"
+          onChange={e => setLatitude(parseFloat(e.target.value))}
+        />
+
+        <Form.Input
+          label="Longitude"
+          name="longitude"
+          type="text"
+          placeholder="Please Enter Longitude --Test"
+          onChange={e => setLongitude(parseFloat(e.target.value))}
         />
 
         <Form.Select
@@ -185,7 +194,9 @@ export default function TreeForm() {
 
         <Form.TextArea
           label="Any additional comments or questions?"
+          name="comment"
           placeholder="Tell us more here"
+          onChange={e => setComment(e.target.value)}
         />
 
         <Form.Button type="submit" color="blue" >SIGN UP YOUR TREE</Form.Button>

@@ -21,6 +21,20 @@ export default function Signup() {
         console.log(`Phone: ${phone1} ${phone2} ${phone3}`);
     }
 
+    // const userObj = {
+    //   address: address,
+    // }
+
+    // fetch("http://localhost:4000/users", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(userObj)
+    // })
+    //   .then(r => r.json())
+    //   .then(console.log)
+
     return (
         <div id="form">
             <h2>Create Account</h2>

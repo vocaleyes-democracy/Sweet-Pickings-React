@@ -25,6 +25,13 @@ function Tree({ tree }) {
         <List.Content>
           <List.Description>Address #2: {tree.address2}</List.Description>
         </List.Content>
+      {tree.comment ? 
+        (<List.Content>
+          <List.Description>Comment: {tree.comment}</List.Description>
+        </List.Content>)
+        :
+        null
+      }
       </List.Item>
     </List>
   )
