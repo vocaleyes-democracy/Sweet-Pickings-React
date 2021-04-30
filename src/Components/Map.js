@@ -8,9 +8,9 @@ import { sendGeocodingRequest } from '../redux/actions'
 
 function Map({assets}) {
 
-    const tree1 = assets[0]
-    console.log(tree1)
-    const [long, lat] = tree1.geometry.coordinates
+    // const tree1 = assets[0]
+    // console.log(tree1)
+    // const [long, lat] = tree1.geometry.coordinates
 // having async issues with these variables.....
     // console.log(long)
     // console.log(lat)

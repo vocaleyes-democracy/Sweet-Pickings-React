@@ -31,7 +31,8 @@ const fruitTypes = [
 // ]
 
 export default function TreeForm() {
-  const [address, setAddress] = useState('')
+  const [address1, setAddress1] = useState('')
+  const [address2, setAddress2] = useState('')
   const [coordinates, setCoordinates] = useState([])
   const [fruitType, setFruitType] = useState('')
   const [quantity, setQuantity] = useState(0)
@@ -42,24 +43,30 @@ export default function TreeForm() {
   const handleOnSubmit = e => {
     e.preventDefault()
 
-    const userObj = {
-      address: address,
-    }
+    // const userObj = {
+    //   address: address,
+    // }
 
     const assetObj = {
-      address1: address,
-      // coordinates: coordinates
+      type: "Tree",
+      variety: fruitType,
+      numberOfTrees: quantity,
+      address1: address1,
+      address2: address2,
+      geometry: {
+        coordinates: coordinates
+      }
     }
 
-    fetch("http://localhost:4000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(userObj)
-    })
-      .then(r => r.json())
-      .then(console.log)
+    // fetch("http://localhost:4000/users", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(userObj)
+    // })
+    //   .then(r => r.json())
+    //   .then(console.log)
 
     fetch("http://localhost:4000/assets", {
         method: "POST",
@@ -72,17 +79,40 @@ export default function TreeForm() {
     .then(console.log)
   }
 
+  // {
+  //   "id": 1,
+  //   "type": "Tree",
+  //   "variety": "Apple-Bramley",
+  //   "numberOfTrees": 1,
+  //   "address1": "17 Glan yr Afon Gardens",
+  //   "address2": "Sketty, Swansea SA2 9HX, UK",
+  //   "geometry": {
+  //     "type": "Point",
+  //     "coordinates": [
+  //       -3.9942229729238115,
+  //       51.61902699211486
+  //     ]
+  //   }
+  // },
+
   return (
     <div id="form">
       <Header as="h2" textAlign="center">LET US KNOW ABOUT A TREE</Header>
 
       <Form onSubmit={handleOnSubmit}>
         <Form.Input
-          label="Address"
-          name="address"
+          label="Address 1"
+          name="address2"
           type="text"
-          placeholder="Address"
-          onChange={e => setAddress(e.target.value)}
+          placeholder="House Name/Number and Street Name"
+          onChange={e => setAddress1(e.target.value)}
+        />
+        <Form.Input
+          label="Address 2"
+          name="address2"
+          type="text"
+          placeholder="Town/City, Postcode and Country"
+          onChange={e => setAddress2(e.target.value)}
         />
 
         <Form.Select
@@ -103,9 +133,10 @@ export default function TreeForm() {
                 onChange={e => setFruitVariety(e.target.value)}
             /> */}
         <Form.Input
-          label="Quantity"
+          label="Quantity of Trees"
           type="number"
           name="quantity"
+          placeholder=">= 1"
           min="1"
           width="4"
           onChange={e => setQuantity(e.target.value)}
