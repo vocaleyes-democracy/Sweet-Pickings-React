@@ -3,7 +3,7 @@ import './App.css';
 // import NavBar2 from './Components/NavBar2';
 import TopNav from './Components/TopNav';
 // import HeaderImg from './Components/HeaderImg';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import Home from './Pages/Home';
 import About from './Pages/About/About.js';
@@ -19,21 +19,22 @@ function App() {
     
         <Switch>
 
-            <Route exact path="/home">
-              <Home />
-            </Route>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
 
-            <Route path="/about">
-              <About />
-            </Route>
-
-            <Route>
-              <Signup exact path="/signup" />
-            </Route>
-
-            {/* <Route>
-              <Gallery exact path="/gallery" />
-            </Route> */}
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route>
+            <Signup exact path="/signup" />
+          </Route>
+          {/* <Route>
+            <Gallery exact path="/gallery" />
+          </Route> */}
 
           </Switch>
         </Router>
