@@ -1,17 +1,20 @@
-// import logo from './logo.svg';
-import './App.css';
-import NavBar2 from './Components/NavBar2';
-import TopNav from './Components/TopNav';
-// import HeaderImg from './Components/HeaderImg';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+// import logo from './logo.svg'
+import './App.css'
+import NavBar2 from './Components/NavBar2'
+import TopNav from './Components/TopNav'
+// import HeaderImg from './Components/HeaderImg'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
-import Home from './Pages/Home';
-import About from './Pages/About/About.js';
-import Signup from './Pages/Signup';
-import Story from './Pages/About/Story';
-import Pickers from './Pages/About/Pickers';
-import Growers from './Pages/About/Growers';
-import Recipients from './Pages/About/Recipients';
+import Home from './Pages/Home'
+import About from './Pages/About/About.js'
+// import Signup from './Pages/Signup';
+import Story from './Pages/About/Story'
+import Pickers from './Pages/About/Pickers'
+import Growers from './Pages/About/Growers'
+import Recipients from './Pages/About/Recipients'
+import TreeForm from './Pages/TreeForm'
+import Contact from './Pages/Contact'
+import Opportunities from './Pages/Opportunities'
 // import Gallery from './Pages/About/Gallery'
 
 function App() {
@@ -50,6 +53,18 @@ function App() {
           
           <Route exact path="/recipients">
             <Recipients />
+          </Route>
+          
+          <Route exact path="/tree-form">
+            <TreeForm />
+          </Route>
+          
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          
+          <Route exact path="/opportunities">
+            <Opportunities />
           </Route>
           
           {/* Commented out Signup component to stop it from rendering everywhere */}

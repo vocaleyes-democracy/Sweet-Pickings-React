@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Opportunity() {
+export default function Contact() {
     return (
         <div>
-            Opportunity Page
+            CONTACT INFORMATION
         </div>
     )
 }
