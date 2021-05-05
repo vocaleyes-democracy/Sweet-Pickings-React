@@ -20,3 +20,11 @@ code {
   padding-left: 3em;
   padding-right: 3em;
 }
+
+.header-text {
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  padding-top: 8rem;
+  text-shadow: black;
+}

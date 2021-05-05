@@ -4,7 +4,7 @@ import TreeForm from '../TreeForm';
 import TreePage from '../TreePage'
 import Gallery from './Gallery'
 import Story from './Story'
-import Pickers from './Pickers'
+import Pickers from '../Pickers'
 import Growers from './Growers'
 
 

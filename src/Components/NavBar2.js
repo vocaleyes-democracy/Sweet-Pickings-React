@@ -58,7 +58,8 @@ export default function NavBar2(){
                 <Menu.Item 
                     
                     as={NavLink} 
-                    to={`${url}/pickers`}
+                    to={"/pickers"}
+                    // to={`${url}/pickers`}
                     name="pickers"
                     content="PICKERS"
                     fontSize="24px"
