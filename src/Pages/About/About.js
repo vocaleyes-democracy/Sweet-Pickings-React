@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import NavBar2 from '../../Components/NavBar2';
+// import NavBar2 from '../../Components/NavBar2';
 import Topic from './Topic';
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
     return (
         <div>
             About Page
-            <NavBar2 />
+            {/* <NavBar2 /> */}
             <Switch>
               <Route path={`${path}/:topicId`}>
                 <Topic/>
