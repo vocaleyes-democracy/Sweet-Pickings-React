@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Switch, useRouteMatch } from 'react-router-dom';
+// import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 // import NavBar2 from '../../Components/NavBar2';
 // import Topic from './Topic';
@@ -9,7 +10,11 @@ export default function About() {
 
     return (
         <div>
-            About Page
+            <h1>About Page</h1>
+            <NavLink to="/story">Story</NavLink> / 
+            <NavLink to="/pickers">Pickers</NavLink> / 
+            <NavLink to="/growers">Growers</NavLink> / 
+            <NavLink to="/recipients">Recipients</NavLink>
             {/* <Switch>
               <Route path={`${path}/:topicId`}>
                 <Topic/>
