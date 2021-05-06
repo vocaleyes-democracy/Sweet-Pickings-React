@@ -4,7 +4,15 @@ import { Header, Form, Radio } from "semantic-ui-react";
 import { addATree } from "../redux/actions";
 
 import clsx from "clsx";
-import { H2, P, InputText, InputSelect } from "@actionishope/shelley";
+import {
+  H2,
+  P,
+  Button,
+  InputText,
+  InputSelect,
+  InputSelection,
+  Label
+} from "@actionishope/shelley";
 
 import { classes as grid } from "@actionishope/shelley/styles/default/grid.st.css";
 import { classes as spacing } from "@actionishope/shelley/styles/default/spacing.st.css";
@@ -51,6 +59,7 @@ function TreeForm(props) {
 
   const handleChange = e => setOwnerType(e.target.firstChild.data);
 
+  const handleOwnerTypeChange = e => setOwnerType(e.target.value);
   // const CoordinateLatLong = (e) => {
   //   const coordinates = []
 
@@ -105,23 +114,135 @@ function TreeForm(props) {
       <div id="form">
         <form onSubmit={handleOnSubmit}>
           <InputText
-            id="id-required"
+            id="address1"
+            name="address1"
             label="Address 1"
             placeholder="House Name/Number and Street Name"
             onChange={e => setAddress1(e.target.value)}
           />
 
+          <InputText
+            id="address2"
+            name="address2"
+            label="Address 2"
+            placeholder="Town/City, Postcode and Country"
+            onChange={e => setAddress2(e.target.value)}
+          />
+
+          {/* https://developer.what3words.com/public-api Maybe? */}
+          <InputText
+            id="latitude"
+            name="latitude"
+            label="Latitude"
+            type="number"
+            placeholder="Please Enter Latitude --Test"
+            onChange={e => setLatitude(parseFloat(e.target.value))}
+          />
+
+          <InputText
+            id="longitude"
+            name="longitude"
+            label="Longitude"
+            type="number"
+            placeholder="Please Enter Longitude --Test"
+            onChange={e => setLongitude(parseFloat(e.target.value))}
+          />
+
+          <InputText
+            id="quantity"
+            name="quantity"
+            label="Quantity of Trees"
+            type="number"
+            placeholder=">= 1"
+            min="1"
+            width="4"
+            onChange={e => setQuantity(e.target.value)}
+          />
+
           <InputSelect
-            id={`select`}
-            onChange={e => setAddress1(e.target.value)}
+            id="select"
             label="Select option"
+            onChange={e => setFruitType(e.target.firstChild.innerHTML)}
           >
-            <option value={"option"}>Option</option>
+            {fruitTypes.map(({ value, key, text }) => (
+              <option {...{ value, key }}>{text}</option>
+            ))}
           </InputSelect>
+
+          <div>
+            <Label className={clsx(spacing.mt2)}>Owner Type</Label>
+            <br />
+            <InputSelection
+              id="owner-type-opt1"
+              type="radio"
+              label="Council Land"
+              value="Council Land"
+              checked={ownerType === "Council Land"}
+              name="owner-type"
+              inputPos="start"
+              onChange={handleOwnerTypeChange}
+            />
+            <br />
+            <InputSelection
+              id="owner-type-opt2"
+              type="radio"
+              label="Private Property"
+              value="Private Property"
+              checked={ownerType === "Private Property"}
+              name="owner-type"
+              inputPos="start"
+              onChange={handleOwnerTypeChange}
+            />
+            <br />
+            <InputSelection
+              id="owner-type-opt3"
+              type="radio"
+              label="Not Sure"
+              value="Not Sure"
+              checked={ownerType === "Not Sure"}
+              name="owner-type"
+              inputPos="start"
+              onChange={handleOwnerTypeChange}
+            />
+            <br />
+            <InputSelection
+              id="owner-type-opt4"
+              type="radio"
+              inline
+              label="Other"
+              value="Other"
+              checked={ownerType === "Other"}
+              name="owner-type"
+              inputPos="start"
+              onChange={handleOwnerTypeChange}
+            />
+          </div>
+
+          <InputSelection
+            id="owner-check"
+            className={spacing.mt2}
+            inputPos="start"
+            type="checkbox"
+            label="I am the owner"
+          />
+
+          <InputText
+            className={spacing.mt2}
+            label="Any additional comments or questions?"
+            id="comment"
+            name="comment"
+            placeholder="Tell us more here"
+            rows={2}
+            onChange={e => setComment(e.target.value)}
+          />
+
+          <Button vol={5} type="submit">
+            Sign up your tree
+          </Button>
         </form>
 
-        <Form onSubmit={handleOnSubmit}>
-          <Form.Input
+        {/* <Form onSubmit={handleOnSubmit}> */}
+        {/* <Form.Input
             label="Address 1"
             name="address2"
             type="text"
@@ -135,9 +256,9 @@ function TreeForm(props) {
             type="text"
             placeholder="Town/City, Postcode and Country"
             onChange={e => setAddress2(e.target.value)}
-          />
+          /> */}
 
-          <Form.Input
+        {/* <Form.Input
             label="Latitude"
             name="latitude"
             type="text"
@@ -151,9 +272,9 @@ function TreeForm(props) {
             type="text"
             placeholder="Please Enter Longitude --Test"
             onChange={e => setLongitude(parseFloat(e.target.value))}
-          />
+          /> */}
 
-          <Form.Select
+        {/* <Form.Select
             label="Fruit Type"
             placeholder="Select Fruit Type"
             name="fruit-type"
@@ -161,8 +282,8 @@ function TreeForm(props) {
             selection
             options={fruitTypes}
             onChange={e => setFruitType(e.target.firstChild.innerHTML)}
-          />
-          {/* <Form.Select
+          /> */}
+        {/* <Form.Select
                 label="Variety"
                 placeholder="Select Fruit Variety"
                 name="variety"
@@ -170,7 +291,7 @@ function TreeForm(props) {
                 options={fruitVarieties}
                 onChange={e => setFruitVariety(e.target.value)}
             /> */}
-          <Form.Input
+        {/* <Form.Input
             label="Quantity of Trees"
             type="number"
             name="quantity"
@@ -178,8 +299,8 @@ function TreeForm(props) {
             min="1"
             width="4"
             onChange={e => setQuantity(e.target.value)}
-          />
-
+          /> */}
+        {/* 
           <Form.Group grouped>
             <label>Owner Type</label>
             <Form.Field
@@ -217,19 +338,19 @@ function TreeForm(props) {
             />
           </Form.Group>
 
-          <Form.Checkbox label="I am the owner" />
+          <Form.Checkbox label="I am the owner" /> */}
 
-          <Form.TextArea
+        {/* <Form.TextArea
             label="Any additional comments or questions?"
             name="comment"
             placeholder="Tell us more here"
             onChange={e => setComment(e.target.value)}
-          />
+          /> */}
 
-          <Form.Button type="submit" color="blue">
+        {/* <Form.Button type="submit" color="blue">
             SIGN UP YOUR TREE
-          </Form.Button>
-        </Form>
+          </Form.Button> */}
+        {/* </Form> */}
       </div>
     </div>
   );
