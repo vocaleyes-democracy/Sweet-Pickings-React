@@ -11,7 +11,7 @@ export default function Home() {
                 <Header
                     as="h1"
                     style={{
-                      width: 1024,
+                      width: "100vw",
                       height: 320,
                       display: "inline-block",
                       backgroundImage: `url(${apples})`,

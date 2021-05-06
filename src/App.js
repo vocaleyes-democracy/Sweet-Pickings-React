@@ -15,6 +15,8 @@ import Recipients from './Pages/About/Recipients'
 import TreeForm from './Pages/TreeForm'
 import Contact from './Pages/Contact'
 import Opportunities from './Pages/Opportunities'
+import Login from './Pages/auth/Login'
+import Signup from './Pages/auth/Signup'
 // import Gallery from './Pages/About/Gallery'
 
 function App() {
@@ -65,6 +67,14 @@ function App() {
           
           <Route exact path="/opportunities">
             <Opportunities />
+          </Route>
+          
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          
+          <Route exact path="/signup">
+            <Signup />
           </Route>
           
           {/* Commented out Signup component to stop it from rendering everywhere */}

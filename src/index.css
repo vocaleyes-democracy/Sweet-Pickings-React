@@ -28,3 +28,8 @@ code {
   padding-top: 8rem;
   text-shadow: black;
 }
+
+div.navbar2 {
+  background-color: green;
+  color: white;
+}
