@@ -1,0 +1,131 @@
+/**
+ * = BUTTON - button.st.css
+ *
+ * You should have enough sizes and hooks
+ * but you can always add your own custom classes for whatever you need or 
+ * wrap this button up inside other buttons pre configured for your usecases.
+ * 
+ * ========================================================================= */
+
+
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Shelley;
+  -st-named:
+    /* = CSS3 Vars. */
+    --color-ui,
+    --color-ui-inverse,
+    --color-ui-raw,
+    --color-ui-raw-inverse,
+    --color-accent-1,
+    --color-accent-2,
+    --color-accent-3,
+    --color-accent-4;
+}
+
+/* = Import Button CSS API */
+:import {
+  -st-from: "@actionishope/shelley/components/Button/button.st.css";
+  -st-default: Button;
+  -st-named:
+    --bg-color,
+    --border-color,
+    --text-color;
+}
+
+/* = Import ButtonGroup CSS API */
+:import {
+  -st-from: "@actionishope/shelley/components/ButtonGroup/buttonGroup.st.css";
+  -st-default: ButtonGroup;
+  -st-named: --seperator-color;
+}
+
+/* = This is how we can scope the styles in Stylable. */
+@st-scope Shelley {
+
+  /* = = The base <button> element. */
+  Button {
+    /* We'll assign this via our variants but set it with our tone prop values. */
+    --accent: initial;
+  }
+
+  /* = 'Text'  */
+  Button:variant(1) {
+    --text-color: var(--accent);
+  }
+
+  Button:variant(1):hover,
+  Button:variant(1):focus {
+    background-color: rgba(var(--color-ui-raw), .02);
+  }
+
+  /* = We need to a seperator color for when in a group. */
+  ButtonGroup Button:variant(1) {
+    --seperator-color: var(--accent);
+  }
+
+
+  /* = 'Outline' */
+  Button:variant(2) {
+    --border-color: var(--accent);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* = 'Filled' */
+  Button:variant(3) {
+    --bg-color: var(--accent);
+    --text-color: var(--color-ui-inverse);
+  }
+
+  /* = We a seperator color for when in a group. */
+  ButtonGroup Button:variant(3) {
+    --seperator-color: rgba(var(--color-ui-raw-inverse), .4);
+  }
+
+  /* = 'Floating Action Button (FAB)' - Thank you Material! */
+  Button:variant(4) {
+    --bg-color: var(--accent);
+    --text-color: var(--color-ui-inverse);
+  }
+
+  ButtonGroup Button:variant(4) {
+    --seperator-color: rgba(var(--color-ui-raw-inverse), .4);
+  }
+
+  /* = Tones/Colours */
+  Button:tone(1) {
+    --accent: var(--color-accent-1);
+  }
+
+  Button:tone(2) {
+    --accent: var(--color-accent-2);
+  }
+
+  Button:tone(3) {
+    --accent: var(--color-accent-3);
+  }
+
+  Button:tone(4) {
+    --accent: var(--color-accent-4);
+  }
+
+  Button:tone(10) {
+    --text-color: inherit;
+    --accent: rgba(var(--color-ui-raw), 0);
+
+  }
+
+  Button:tone(10):hover,
+  Button:tone(10):focus {
+    --accent: rgba(var(--color-ui-raw), 0.1);
+    opacity: 1;
+  }
+}

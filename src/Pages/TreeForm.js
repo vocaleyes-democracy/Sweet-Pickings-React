@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { React, useState } from "react";
-import { Header, Form, Radio } from "semantic-ui-react";
+// import { Header, Form, Radio } from "semantic-ui-react";
 import { addATree } from "../redux/actions";
 
 import clsx from "clsx";
@@ -119,6 +119,7 @@ function TreeForm(props) {
             label="Address 1"
             placeholder="House Name/Number and Street Name"
             onChange={e => setAddress1(e.target.value)}
+            variant={3}
           />
 
           <InputText
@@ -127,6 +128,7 @@ function TreeForm(props) {
             label="Address 2"
             placeholder="Town/City, Postcode and Country"
             onChange={e => setAddress2(e.target.value)}
+            variant={3}
           />
 
           {/* https://developer.what3words.com/public-api Maybe? */}
@@ -236,7 +238,7 @@ function TreeForm(props) {
             onChange={e => setComment(e.target.value)}
           />
 
-          <Button vol={5} type="submit">
+          <Button className={spacing.mt2} variant={3} vol={5} type="submit">
             Sign up your tree
           </Button>
         </form>

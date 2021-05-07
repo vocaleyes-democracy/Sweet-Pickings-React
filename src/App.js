@@ -11,7 +11,11 @@ import Signup from "./Pages/Signup";
 // import Gallery from './Pages/About/Gallery'
 
 import Helmet from "react-helmet";
+import clsx from "clsx";
+
 import { Project as Default } from "@actionishope/shelley/styles/default";
+
+import { Project as Shelley } from "./styles/";
 
 function App() {
   return (
@@ -27,7 +31,7 @@ function App() {
         ]}
         htmlAttributes={{
           lang: "en",
-          class: Default
+          class: clsx(Default, Shelley)
         }}
       />
       {/* <div> */}

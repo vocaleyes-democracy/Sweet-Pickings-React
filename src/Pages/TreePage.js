@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 import TreeList from "../Components/TreeList";
 import Map from "../Components/Map";
 import { getTreeData } from "../redux/actions.js";
-import { grid } from "@actionishope/shelley/styles/default";
+
+import clsx from "clsx";
+import { Grid } from "@actionishope/shelley";
+import { classes as grid } from "@actionishope/shelley/styles/default/grid.st.css";
+import { classes as spacing } from "@actionishope/shelley/styles/default/spacing.st.css";
 
 function TreePage({ treeArray, treeData }) {
   useEffect(() => {
@@ -11,9 +15,12 @@ function TreePage({ treeArray, treeData }) {
   }, [treeData]);
 
   return (
-    <div className={grid.goal}>
-      <TreeList assets={treeArray} />
-      <Map assets={treeArray} />
+    <div className={clsx(grid.goal, spacing.mt4, spacing.mb4)}>
+      {/* Using the new grid variant 5 which we defined in styles/grid.st.css */}
+      <Grid variant={5}>
+        <TreeList assets={treeArray} />
+        <Map assets={treeArray} />
+      </Grid>
     </div>
   );
 }

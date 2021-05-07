@@ -1,0 +1,77 @@
+/**
+ * = INPUT BASE - inputBase.st.css
+ *
+ * This file applies the base styles to our textal form components such as 
+ * inputs, textareas and selects or any combo boxes we might construct.
+ *
+ * Most of the base styles live in the shelly default mixins so they can be shared 
+ * but the variants are styled here as they are more specific to our markup.
+ * 
+ * ========================================================================= */
+
+
+/* = Default project vars. */
+:import {
+  -st-from: "@actionishope/shelley/styles/default/project.st.css";
+  -st-named:
+    --spacing-unit;
+}
+
+/* = Shelley project scope and vars. */
+:import {
+  -st-from: "./project.st.css";
+  -st-default: Shelley;
+  -st-named:
+    --color-form-base-border,
+    --color-background-3;
+}
+
+
+/* = Root Component. */
+:import {
+  -st-from: "@actionishope/shelley/components/InputBase/inputBase.st.css";
+  -st-default: InputBase;
+}
+
+
+@st-scope Shelley {
+
+  /* = Example targeting the root. */
+  /* InputBase {} */
+
+  /*==== VARIANTS ====*/
+
+  /* = Variant 1 - "Body" */
+  InputBase:variant(1) {
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+  /* = Variant 2 - "Data" */
+
+  InputBase:variant(2) {
+    background-color: var(--color-background-3);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* = Variant 3 - "Boxed" */
+
+  InputBase:variant(3) {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  InputBase:variant(3) + InputBase {
+    margin-top: calc(var(--spacing-unit) * 1);
+  }
+
+  InputBase:variant(3)::fieldContainer {
+    background-color: var(--color-background-3);
+    margin-top: calc(var(--spacing-unit) * 0.5);
+    border: 1px solid var(--color-form-base-border)
+  }
+
+  InputBase:variant(3)::fieldContainer::before {
+    opacity: 0;
+  }
+
+}

@@ -46,17 +46,17 @@
 }
 
 .map-container {
-  width: 60vw;
+  width: 100%;
   height: 750px;
-  float: right;
+  /* float: right; */
 }
-.tree-page{
+/* .tree-page{
 display: inline-block;
 width: 35vw;
 height: 750px;
 margin: 1.25rem;
 padding: 1rem;
-}
+} */
 
 .list-item {
   line-height: 1.6rem;
