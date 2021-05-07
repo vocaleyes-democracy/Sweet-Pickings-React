@@ -35,8 +35,8 @@
 
   /**
    * Grid:variant(1 - 4) have been assigned as part of our default.
-   * You can overide those in your project file. Just import them 
-   * from our default and override.
+   * You can override those in your project file, just import them 
+   * from our default project.st.css (via -st-nnamed about) and override.
    */
 
   /* = Variant 5: ratio 3 : 7 */

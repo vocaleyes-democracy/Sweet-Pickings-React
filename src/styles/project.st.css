@@ -90,7 +90,7 @@
   --color-accent-4: rgb(134, 102, 30);
 
   /* = Background colours */
-  --color-background-1: rgba(239, 239, 239, 1) !important;
+  --color-background-1: rgba(239, 239, 239, 1);
   --color-background-2: rgb(255, 255, 255);
   --color-background-3: rgb(255, 255, 255);
   --color-background-4: rgb(255, 255, 255, 0.8);

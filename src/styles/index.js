@@ -4,7 +4,7 @@
  * You can grab example files from within the Shelley theme:
  * https://github.com/action-is-hope/shelley/tree/master/src/styles/shelley
  *
- * Copy the ones you need into styles/ annd uncommennt them as you go.
+ * Copy the ones you need into styles/ annd uncomment them as you go.
  *
  */
 
