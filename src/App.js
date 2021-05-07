@@ -25,17 +25,17 @@ import Signup from './Pages/auth/Signup'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#a2cf6e',
-      main: '#8bc34a',
-      dark: '#618833',
+      light: '#ccd45b',
+      main: '#c0ca33',
+      dark: '#868d23',
       contrastText: '#fff',
     },
-    // secondary: {
-    //   light: '#ff7961',
-    //   main: '#f44336',
-    //   dark: '#ba000d',
-    //   contrastText: '#000',
-    // },
+    secondary: {
+      // light: '#ff7961',
+      // main: '#f44336',
+      // main: '#a02725',
+      main: '#212121',
+    },
   },
 });
 
