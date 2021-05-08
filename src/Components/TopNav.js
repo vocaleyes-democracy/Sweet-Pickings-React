@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
-import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
+// import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
+// import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
 import Icon from '@material-ui/core/Icon'
 
 
@@ -13,9 +13,9 @@ const useStyles = makeStyles((theme) => ({
     padding: {
         marginLeft: 30
     }, 
-    root: {
-        display: 'flex'
-    },
+    // root: {
+    //     display: 'flex'
+    // },
     pushIcons: {
         flexGrow: 1,
         marginLeft: 30

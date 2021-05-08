@@ -13,13 +13,15 @@ export default function Home() {
 
     return (
         <div>
-          
           <HeaderImg />
-<Container>
-  <Button variant="contained" color="primary">
-  Get Started
-  </Button>
-</Container>
+          <Container align='center'>
+            <Button 
+            variant="contained" 
+            color="secondary"
+            href="/about">
+            Get Started
+            </Button>
+          </Container>
             {/* <Container center>
                 <Header
                     as="h1"

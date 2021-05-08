@@ -23,12 +23,18 @@ const useStyles = makeStyles((theme) => ({
 export default function HeaderImg() {
   const classes = useStyles()
   return (
-    <Card className={classes.root}>
-      <CardMedia className={classes.media}
+    <Card 
+      className={classes.root}>
+      <CardMedia 
+      className={classes.media}
         image={`${apples}`}
         alt="apples hanging from tree"
       >
-        <Typography variant='h1' align='center'>
+        <Typography 
+        variant='h2' 
+        align='center' 
+        color='secondary'
+        >
           SWEET PICKINGS
         </Typography>
       </CardMedia>
