@@ -20,29 +20,17 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         marginLeft: 30
     },
-    iconContainer: {
-        padding: 30,
-        display: 'flex',
-        flexDirection: 'row',
-        color: "primary"
-    }
-    // facebook: {
-    //     fb: "fab fa-facebook",
-    //     marginRight: 5,
-    //     color: "secondary"
-    // },
-    // twitter: {
-    //     twt: "fab fa-twitter",
-    //     marginRight: 5
-    // },
-    // youTube: {
-    //     twt: "fab fa-youtube",
-    //     marginRight: 5
-    // },
-    // linkedIn: {
-    //     lkn: "fab fa-linkedin-in",
-    //     marginRight: 5
-    // }
+    iconStyles: {
+        color: '#000',
+        marginRight: 10
+
+    },
+    headertext: {
+      color: '#000'
+    },
+      customizeToolbar: {
+        minHeight: 15
+      }
 }));
 
 export default function TopNav(){
@@ -54,26 +42,26 @@ export default function TopNav(){
             position="static"
             color="primary"
         >
-            <Toolbar>
-                <Typography variant="h6" >
+            <Toolbar className={classes.customizeToolbar}>
+                <Typography variant="h6" className={classes.headertext}>
                     Grow for us, pick with us
                 </Typography>
                 <Typography 
-                    className={classes.padding}
+                    className={`${classes.padding} ${classes.headertext}`}
                 >
                     United Kingdom, TXB273KE8
                 </Typography>
                 
                 <Typography 
-                    className={classes.pushIcons}
+                    className={`${classes.pushIcons} ${classes.headertext}`}
                 >
                     help@sweetpickings.com
                 </Typography>
 
-                <Icon className={`${classes.iconContainer} fab fa-facebook`} />
-                <Icon className={`${classes.iconContainer} fab fa-twitter`} />
-                <Icon className={`${classes.iconContainer} fab fa-youtube`} />
-                <Icon className={`${classes.iconContainer} fab fa-linkedin-in`} />
+                <Icon className={`${classes.iconStyles} fab fa-facebook`}/>
+                <Icon className={`${classes.iconStyles} fab fa-twitter`}/>
+                <Icon className={`${classes.iconStyles} fab fa-youtube`}/>
+                <Icon className={`${classes.iconStyles} fab fa-linkedin-in`} />
                 
             </Toolbar>
         </AppBar>
