@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     iconContainer: {
         padding: 30,
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        color: "primary"
     }
     // facebook: {
     //     fb: "fab fa-facebook",
