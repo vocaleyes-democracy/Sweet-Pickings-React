@@ -4,17 +4,18 @@ import apples from '../images/apples.jpg'
 import Card from '@material-ui/core/Card'
 import CardMedia from '@material-ui/core/CardMedia'
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
-    height: 500,
-    margin: 0
+    // width: '100%',
+    // margin: 0,
+    // position: 'relative'
   },
   media: {
-    width: '100%',
-    height: 500,
-    objectFit: 'cover'
+    // width: '100%',
+    height: 400,
+    // objectFit: 'cover',
   }
 })
 )
@@ -26,7 +27,11 @@ export default function HeaderImg() {
       <CardMedia className={classes.media}
         image={`${apples}`}
         alt="apples hanging from tree"
-      ></CardMedia>
+      >
+        <Typography variant='h1' align='center'>
+          SWEET PICKINGS
+        </Typography>
+      </CardMedia>
     </Card>
     // <Container center>
     //   <Header

@@ -1,14 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Button, Header } from 'semantic-ui-react'
+// import { Link } from 'react-router-dom';
+// import { Container, Button, Header } from 'semantic-ui-react'
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link'
+
 import apples from '../images/apples.jpg'
 import HeaderImg from '../Components/HeaderImg'
+
 
 export default function Home() {
 
     return (
         <div>
+          
           <HeaderImg />
+<Container>
+  <Button variant="contained" color="primary">
+  Get Started
+  </Button>
+</Container>
             {/* <Container center>
                 <Header
                     as="h1"
