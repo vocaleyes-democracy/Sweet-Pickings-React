@@ -23,6 +23,8 @@ import Login from './Pages/auth/Login'
 import Signup from './Pages/auth/Signup'
 // import Gallery from './Pages/About/Gallery'
 
+
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -37,6 +39,10 @@ const theme = createMuiTheme({
       dark: '#5f0937',
       contrastText: '#ffffff',
     },
+    // if we want to add a new font family we would do it here. don't forget to import at top of index.css or insert link tag in header of index.html:
+    // typography: {
+    //   fontFamily: 'family-name'
+    // }
   },
 });
 

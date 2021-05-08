@@ -7,15 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // width: '100%',
-    // margin: 0,
-    // position: 'relative'
-  },
   media: {
-    // width: '100%',
-    height: 400,
-    // objectFit: 'cover',
+    height: 400
   }
 })
 )
@@ -30,7 +23,7 @@ export default function HeaderImg() {
         image={`${apples}`}
         alt="apples hanging from tree"
       >
-        <Typography 
+        <Typography
         variant='h2' 
         align='center' 
         color='secondary'

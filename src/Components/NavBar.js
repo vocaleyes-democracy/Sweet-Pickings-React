@@ -14,6 +14,7 @@ import SearchIcon from '@material-ui/icons/Search'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
 import Link from '@material-ui/core/Link'
+import Home from '@material-ui/icons/Home';
 
 
 
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {
     padding: theme.spacing(2)
@@ -92,7 +93,7 @@ export default function NavBar() {
   }
 
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static" elevation={0}>
         <Toolbar>
           <IconButton
@@ -127,29 +128,52 @@ export default function NavBar() {
               // as={NavLink}
               // to="/about"
             >
-              <Link href="/about" underline="none">
+              <Link 
+              href="/about" 
+              underline="none"
+              >
                 About
               </Link>
             </MenuItem>
 
-            <MenuItem onClick={handleClose}>
-              <Link href="/opportunities" underline="none">
+            <MenuItem 
+            onClick={handleClose}
+            >
+              <Link 
+              href="/opportunities" 
+              underline="none"
+              >
                 Browse Opportunities
               </Link>
             </MenuItem>
 
-            <MenuItem onClick={handleClose}>
-              <Link href="/tree-form" underline="none">
+            <MenuItem 
+            onClick={handleClose}
+            >
+              <Link 
+              href="/tree-form" 
+              underline="none"
+              >
                 Let Us Know About A Tree
               </Link>
             </MenuItem>
 
-            <MenuItem onClick={handleClose}>
-              <Link href="/contact" underline="none">
+            <MenuItem 
+            onClick={handleClose}
+            >
+              <Link 
+              href="/contact" 
+              underline="none"
+              >
                 Contact Us
               </Link>
             </MenuItem>
           </Menu>
+
+          {/* <Home 
+          color='secondary' 
+          href="/home"
+          /> */}
 
           <Link href="/home" underline="none" className={classes.root}>
             🍎

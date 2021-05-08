@@ -4,22 +4,39 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link'
+import { makeStyles } from '@material-ui/core'
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 
 import apples from '../images/apples.jpg'
 import HeaderImg from '../Components/HeaderImg'
 
+const useStyles = makeStyles({
+  btn: {
+    fontSize: 20,
+    marginTop: 35,
+    '&:hover': {
+      backgroundColor: '#868d23',
+      color: 'white'
+    }
+  }
+})
+
 
 export default function Home() {
-
+const classes = useStyles()
     return (
         <div>
           <HeaderImg />
           <Container align='center'>
             <Button 
-            variant="contained" 
+            variant="contained"
+            size="large"
             color="secondary"
-            href="/about">
+            href="/about"
+            className={classes.btn}
+            endIcon={<KeyboardArrowRight/>}>
             Get Started
+            
             </Button>
           </Container>
             {/* <Container center>
