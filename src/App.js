@@ -56,47 +56,47 @@ function App() {
                 <Redirect to="/home" />
               </Route>
 
-              <Route exact path="/home">
+              <Route path="/home">
                 <Home />
               </Route>
 
-              <Route exact path="/about">
+              <Route path="/about">
                 <About />
               </Route>
 
-              <Route exact path="/story">
+              <Route path="/story">
                 <Story />
               </Route>
 
-              <Route exact path="/pickers">
+              <Route path="/pickers">
                 <Pickers />
               </Route>
 
-              <Route exact path="/growers">
+              <Route path="/growers">
                 <Growers />
               </Route>
               
-              <Route exact path="/recipients">
+              <Route path="/recipients">
                 <Recipients />
               </Route>
               
-              <Route exact path="/tree-form">
+              <Route path="/tree-form">
                 <TreeForm />
               </Route>
               
-              <Route exact path="/contact">
+              <Route path="/contact">
                 <Contact />
               </Route>
               
-              <Route exact path="/opportunities">
+              <Route path="/opportunities">
                 <Opportunities />
               </Route>
               
-              <Route exact path="/login">
+              <Route path="/login">
                 <Login />
               </Route>
               
-              <Route exact path="/signup">
+              <Route path="/signup">
                 <Signup />
               </Route>
               
