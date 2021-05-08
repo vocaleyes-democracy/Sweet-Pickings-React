@@ -26,22 +26,23 @@ import Signup from './Pages/auth/Signup'
 
 
 const theme = createMuiTheme({
+  // i've updated our color palette bc light and dark don't work using this theme. we'd have to import color objects from Material and then the light and dark versions come along by default. but i couldn't get this functionality to work the way i wanted. not all colors import correctly...
   palette: {
     primary: {
-      light: '#ccd45b',
       main: '#c0ca33',
-      dark: '#868d23',
       contrastText: '#ffffff',
     },
     secondary: {
-      light: '#9f3e72',
       main: '#880e4f',
-      dark: '#5f0937',
       contrastText: '#ffffff',
     },
-    // if we want to add a new font family we would do it here. don't forget to import at top of index.css or insert link tag in header of index.html:
+    // if we want to add a new font family we would do it here. don't forget to import at top of index.css or insert link tag in header of index.html. if we're updating font weights we'll need to import those as:
     // typography: {
-    //   fontFamily: 'family-name'
+    //   fontFamily: 'family-name',
+    //   fontWeightLight: 400,
+    //   fontWeightRegular: 500,
+    //   fontWeightMedium: 600,
+    //   fontWeightBold: 700
     // }
   },
 });
