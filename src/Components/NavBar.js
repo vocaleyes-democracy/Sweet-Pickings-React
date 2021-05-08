@@ -93,7 +93,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" elevation={0}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -159,7 +159,7 @@ export default function NavBar() {
             href="/signup"
             underline="none"
             variant="h6"
-            color="primary.contrastText"
+            color='inherit'
             className={classes.title} 
           >
             Login
@@ -169,7 +169,7 @@ export default function NavBar() {
             href="/signup"
             underline="none"
             variant="h6"
-            color="primary.contrastText"
+            color='inherit'
           >
             Sign Up
           </Link>

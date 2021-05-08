@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Button, Header } from 'semantic-ui-react'
 import apples from '../images/apples.jpg'
+import HeaderImg from '../Components/HeaderImg'
 
 export default function Home() {
 
     return (
         <div>
-            <Container center>
+          <HeaderImg />
+            {/* <Container center>
                 <Header
                     as="h1"
                     style={{
@@ -28,7 +30,7 @@ export default function Home() {
                 <Button size="massive" color="olive" >
                     <Link to="/about">Get Started</Link>
                 </Button>
-            </Container>
+            </Container> */}
         </div>
     )
 }
