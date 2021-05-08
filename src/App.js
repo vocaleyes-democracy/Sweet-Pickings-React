@@ -1,6 +1,7 @@
 // import logo from './logo.svg'
 import './App.css'
-import NavBar2 from './Components/NavBar2'
+// import NavBar2 from './Components/NavBar2'
+import NavBar from './Components/NavBar'
 import TopNav from './Components/TopNav'
 // import HeaderImg from './Components/HeaderImg'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
@@ -47,7 +48,7 @@ function App() {
           <Router>
             {/* <Layout> */}
             <TopNav />
-            <NavBar2 />
+            <NavBar />
         
             <Switch>
 

@@ -1,26 +1,27 @@
 import React from 'react'
 import { NavLink, useRouteMatch } from 'react-router-dom'
-import { Dropdown } from 'semantic-ui-react'
+import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
+import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
+// import { Dropdown } from 'semantic-ui-react'
 
 // -about sweet pickings, browse opportunities, get started, let us know about a Tree, contact
 // Sign Up / Log In
 
-export default function NavBar2(){
-
-    return (
-        <div className="navbar2">
-            <Dropdown
-                icon={{name: "bars", size: "big"}}
-            >
-                <Dropdown.Menu>
-                    <Dropdown.Item text="ABOUT" as={NavLink} to="/about" />
-                    <Dropdown.Item text="BROWSE OPPORTUNITIES" as={NavLink} to="/opportunities" />
-                    <Dropdown.Item text="LET US KNOW ABOUT A TREE" as={NavLink} to="/tree-form" />
-                    <Dropdown.Item text="CONTACT" as={NavLink} to="/contact" />
-                </Dropdown.Menu>
-            </Dropdown>
-
-
-        </div>
-    )
+export default function NavBar2() {
+  return (
+    <AppBar position="static" color="primary">
+      <Toolbar>
+        <IconButton edge="start" color="inherit" aria-label="menu">
+          <MenuIcon style={{ fontSize: 35 }} />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+  )
 }
