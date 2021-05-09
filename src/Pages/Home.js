@@ -13,7 +13,7 @@ import HeaderImg from '../Components/HeaderImg'
 const useStyles = makeStyles({
   btn: {
     fontSize: 20,
-    marginTop: 35,
+    marginTop: 550,
     '&:hover': {
       backgroundColor: '#868d23',
       color: 'white'
@@ -25,8 +25,8 @@ const useStyles = makeStyles({
 export default function Home() {
 const classes = useStyles()
     return (
-        <div>
-          <HeaderImg />
+        <div className={'home'}>
+          {/* <HeaderImg /> */}
           <Container align='center'>
             <Button 
             variant="contained"
