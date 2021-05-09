@@ -25,8 +25,16 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(1),
   },
+  menuItem: {
+    '&:hover': {
+      color: '#6B0F1A',
+    }
+  },
   title: {
-    padding: theme.spacing(2)
+    marginLeft: theme.spacing(3),
+    '&:hover': {
+      color: fade('#6B0F1A', 0.55),
+    },
     // flexGrow: 1,
     // display: 'none',
     // [theme.breakpoints.up('sm')]: {
@@ -131,6 +139,7 @@ export default function NavBar() {
               <Link 
               href="/about" 
               underline="none"
+              className={classes.menuItem}
               >
                 About
               </Link>
@@ -142,6 +151,7 @@ export default function NavBar() {
               <Link 
               href="/opportunities" 
               underline="none"
+              className={classes.menuItem}
               >
                 Browse Opportunities
               </Link>
@@ -153,6 +163,7 @@ export default function NavBar() {
               <Link 
               href="/tree-form" 
               underline="none"
+              className={classes.menuItem}
               >
                 Let Us Know About A Tree
               </Link>
@@ -164,6 +175,7 @@ export default function NavBar() {
               <Link 
               href="/contact" 
               underline="none"
+              className={classes.menuItem}
               >
                 Contact Us
               </Link>
@@ -192,6 +204,7 @@ export default function NavBar() {
             underline="none"
             variant="h6"
             color='inherit'
+            className={classes.title}
           >
             Sign Up
           </Link>

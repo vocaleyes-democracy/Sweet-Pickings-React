@@ -29,11 +29,11 @@ const theme = createMuiTheme({
   // i've updated our color palette bc light and dark don't work using this theme. we'd have to import color objects from Material and then the light and dark versions come along by default. but i couldn't get this functionality to work the way i wanted. not all colors import correctly...
   palette: {
     primary: {
-      main: '#c0ca33',
+      main: '#7FA11C',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#880e4f',
+      main: '#6B0F1A',
       contrastText: '#ffffff',
     },
     // if we want to add a new font family we would do it here. don't forget to import at top of index.css or insert link tag in header of index.html. if we're updating font weights we'll need to import those as:

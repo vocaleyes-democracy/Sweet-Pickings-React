@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     height: 400,
-    padding: theme.spacing(2)
+    padding: theme.spacing(1)
   },
   media: {
     height: 140,
@@ -35,7 +35,7 @@ function Tree({ tree }) {
 const classes = useStyles()
   return (
    <div>
-     <Card elevation={2} className={classes.root}>
+     <Card elevation={2} className={classes.root} style={{backgroundColor: '#7FA11C'}}>
      <CardActionArea>
         <CardMedia
           className={classes.media}
