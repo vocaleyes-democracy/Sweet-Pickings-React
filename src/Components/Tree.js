@@ -15,27 +15,35 @@ import apples from '../images/apples2.png'
 
 // import { List } from 'semantic-ui-react'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    height: 400,
+    padding: theme.spacing(2)
   },
   media: {
     height: 140,
   },
-});
+  deets: {
+    backgroundColor: 'rgba(237, 226, 225, 0.5)',
+    color: '#423e3e'
+  }
+}));
 
 
 function Tree({ tree }) {
 const classes = useStyles()
   return (
    <div>
-     <Card elevation={2}>
+     <Card elevation={2} className={classes.root}>
      <CardActionArea>
         <CardMedia
           className={classes.media}
           image={`${apples}`}
-          title="Produce Ready To Pick"
-        />
+          title="Produce Ready To Pick">
+          <Typography variant="h4" align='center' className={classes.deets}>Details</Typography>
+
+          </CardMedia>
         <CardContent>
           <CardHeader
           title={`${tree.type} #${tree.id}: ${tree.variety}`}
