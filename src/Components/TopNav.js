@@ -10,19 +10,18 @@ import Icon from '@material-ui/core/Icon'
 
 
 const useStyles = makeStyles((theme) => ({
-    padding: {
-        marginLeft: 30
-    }, 
-    // root: {
-    //     display: 'flex'
-    // },
+
+    root: {
+        display: 'flex',
+        marginRight: 30
+    },
     pushIcons: {
         flexGrow: 1,
         marginLeft: 30
     },
     iconStyles: {
         color: '#000',
-        marginRight: 10
+        marginRight: 7
 
     },
     headertext: {
@@ -43,13 +42,15 @@ export default function TopNav(){
             color="primary"
         >
             <Toolbar className={classes.customizeToolbar}>
-                <Typography variant="h6" className={classes.headertext}>
+                <Typography variant="h6" className={`${classes.headertext} ${classes.root}`}>
                     Grow for us, pick with us
                 </Typography>
+                
+                <Icon className={`${classes.padding} ${classes.headertext} ${classes.iconStyles} fas fa-map-marker-alt`}/>
                 <Typography 
                     className={`${classes.padding} ${classes.headertext}`}
                 >
-                    United Kingdom, TXB273KE8
+                  United Kingdom, TXB273KE8
                 </Typography>
                 
                 <Typography 
