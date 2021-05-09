@@ -3,12 +3,13 @@ import React from 'react';
 // import { Container, Button, Header } from 'semantic-ui-react'
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link'
+// import Link from '@material-ui/core/Link'
 import { makeStyles } from '@material-ui/core'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import Typography from '@material-ui/core/Typography'
 
-import apples from '../images/apples.jpg'
-import HeaderImg from '../Components/HeaderImg'
+// import apples from '../images/apples.jpg'
+// import HeaderImg from '../Components/HeaderImg'
 
 const useStyles = makeStyles({
   btn: {
@@ -17,7 +18,18 @@ const useStyles = makeStyles({
     '&:hover': {
       backgroundColor: '#868d23',
       color: 'white'
-    }
+    },
+  },
+  title: {
+    // fontSize: 70,
+    fontWeight: 'bold',
+    // color: '#000',
+    paddingTop: '15%',
+    display: 'inline-block',
+    float: 'right'
+  },
+  sweet: {
+    color: '#404A3D'
   }
 })
 
@@ -26,6 +38,12 @@ export default function Home() {
 const classes = useStyles()
     return (
         <div className={'home'}>
+          <Typography variant="h2"  color={'secondary'} className={classes.title}>
+            PICKINGS
+          </Typography>
+          <Typography variant="h2" align='center' className={`${classes.title} ${classes.sweet}`}>
+            SWEET
+          </Typography>
           {/* <HeaderImg /> */}
           <Container align='center'>
             <Button 
