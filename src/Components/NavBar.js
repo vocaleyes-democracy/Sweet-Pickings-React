@@ -7,10 +7,10 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import InputBase from '@material-ui/core/InputBase'
+// import InputBase from '@material-ui/core/InputBase'
 import { fade, makeStyles } from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
-import SearchIcon from '@material-ui/icons/Search'
+// import SearchIcon from '@material-ui/icons/Search'
 import MenuItem from '@material-ui/core/MenuItem'
 import Menu from '@material-ui/core/Menu'
 import Link from '@material-ui/core/Link'
@@ -170,13 +170,11 @@ export default function NavBar() {
             </MenuItem>
           </Menu>
 
-          {/* <Home 
-          color='secondary' 
-          href="/home"
-          /> */}
 
           <Link href="/home" underline="none" className={classes.root}>
-            🍎
+          <Home 
+          color='secondary' 
+          />
           </Link>
             
           <Link

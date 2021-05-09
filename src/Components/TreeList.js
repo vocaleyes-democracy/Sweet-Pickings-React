@@ -1,6 +1,9 @@
 import React from 'react'
 import Tree from './Tree.js'
 
+import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
+
 function TreeList({ assets }){
 
   const renderTrees = () => {
@@ -8,10 +11,11 @@ function TreeList({ assets }){
   } 
 
   return(
-    <div className="tree-page">
-      <h1>Assets:</h1>
-      {renderTrees()}
-    </div>
+    <Container>
+      <Grid container className="tree-page">
+        {renderTrees()}
+      </Grid>
+    </Container>
   )
 }
 

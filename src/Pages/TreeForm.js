@@ -5,7 +5,7 @@ import { addATree } from '../redux/actions'
 
 import { withRouter } from 'react-router-dom'
 
-
+// this should be wrapped inside a Material Container bc it will provide padding/margin
 
 // Data to be moved elsewhere
 const fruitTypes = [
