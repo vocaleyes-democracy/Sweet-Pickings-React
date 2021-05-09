@@ -17,19 +17,6 @@ function Map({assets}) {
 
   const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367 })
 
-  // wellll this wasn't helpful. at all.
-// useEffect(() => {
-//   const tree1 = assets[1]
-//   console.log(tree1)
-//   const [long, lat] = tree1.geometry.coordinates
-//   console.log(long)
-//   console.log(lat)
-//   return setMap({lat: lat, lng: long})
-// }, [])
-
-
-
-
 
   const renderMarkers = () => {
     return assets.map(asset => {

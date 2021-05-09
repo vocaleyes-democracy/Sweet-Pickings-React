@@ -141,6 +141,20 @@
       },
       "comment": "Ruff Ruff!",
       "id": 7
+    },
+    {
+      "type": "Tree",
+      "numberOfTrees": "4",
+      "address1": "474 48th Ave",
+      "address2": "#29F",
+      "geometry": {
+        "coordinates": [
+          0.1166,
+          51.5211
+        ]
+      },
+      "comment": "These are my trees but pls don't pick them",
+      "id": 8
     }
   ]
 }

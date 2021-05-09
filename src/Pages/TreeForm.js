@@ -3,6 +3,10 @@ import { React, useState } from 'react'
 import { Header, Form, Radio } from 'semantic-ui-react'
 import { addATree } from '../redux/actions'
 
+import { withRouter } from 'react-router-dom'
+
+
+
 // Data to be moved elsewhere
 const fruitTypes = [
   {
@@ -43,6 +47,8 @@ function TreeForm(props) {
   const [longitude, setLongitude] = useState(0)
   const [comment, setComment] = useState('')
 
+  
+
   const handleChange = (e) => setOwnerType(e.target.firstChild.data)
 
   // const CoordinateLatLong = (e) => {
@@ -69,7 +75,10 @@ function TreeForm(props) {
     }
 
     props.treePost(assetObj)
-
+    // this sends user to home after POST is complete! We can change the path of course.
+    props.history.push('/')
+    
+    // no longer need this code because we are doing our POST request via redux!
     // fetch("http://localhost:4000/assets", {
     //     method: "POST",
     //     headers: {
@@ -215,4 +224,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(TreeForm)
+export default withRouter(connect(null, mapDispatchToProps)(TreeForm))

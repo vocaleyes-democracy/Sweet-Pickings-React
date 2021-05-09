@@ -45,7 +45,7 @@ export const sendGeocodingRequest = (location) => {
         body: JSON.stringify(assetObj)
     })
     .then(r => r.json())
-    .then(treeObj => dispatch({type: ADD_A_TREE, payload: treeObj}))
+    .then(treeObj => {dispatch({type: ADD_A_TREE, payload: treeObj})})
     }
   }
 
