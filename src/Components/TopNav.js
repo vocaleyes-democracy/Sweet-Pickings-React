@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography'
 // import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
 // import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
 import Icon from '@material-ui/core/Icon'
+import Link from '@material-ui/core/Link'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -46,7 +48,9 @@ export default function TopNav(){
                     Grow for us, pick with us
                 </Typography>
                 
+                <Link href="#">
                 <Icon className={`${classes.padding} ${classes.headertext} ${classes.iconStyles} fas fa-map-marker-alt`}/>
+                </Link>
                 <Typography 
                     className={`${classes.padding} ${classes.headertext}`}
                 >
@@ -59,11 +63,21 @@ export default function TopNav(){
                     help@sweetpickings.com
                 </Typography>
 
+                <Link href="#">
                 <Icon className={`${classes.iconStyles} fab fa-facebook`}/>
+                </Link>
+
+                <Link href="#">
                 <Icon className={`${classes.iconStyles} fab fa-twitter`}/>
+                </Link>
+
+                <Link href="#">
                 <Icon className={`${classes.iconStyles} fab fa-youtube`}/>
+                </Link>
+
+                <Link href="#">
                 <Icon className={`${classes.iconStyles} fab fa-linkedin-in`} />
-                
+                </Link>
             </Toolbar>
         </AppBar>
         </div>
