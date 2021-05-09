@@ -13,7 +13,7 @@ body {
   background-image: url('images/apples.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 500px;
+  height: 450px;
   position: relative;
 }
 
@@ -34,6 +34,31 @@ code {
   height: 300px;
 }
 
+.map-container {
+  width: 60vw;
+  height: 750px;
+  float: right;
+}
+
+/* .applesImg {
+  height: 30vh;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.tree-list{
+display: inline-block;
+width: 35vw;
+height: 750px;
+margin: 1.25rem;
+padding: 1rem;
+}
+
+/* .list-item {
+  line-height: 1.6rem;
+} */
+
 #form {
   padding-left: 3em;
   padding-right: 3em;
@@ -50,4 +75,14 @@ code {
 div.navbar2 {
   background-color: green;
   color: white;
+}
+
+.map-div {
+  background-image: url('images/map.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 150px;
+  margin: 40px auto;
+  width: 55vw;
+  cursor: pointer;
 }

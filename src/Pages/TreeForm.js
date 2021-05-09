@@ -76,7 +76,7 @@ function TreeForm(props) {
 
     props.treePost(assetObj)
     // this sends user to home after POST is complete! We can change the path of course.
-    props.history.push('/')
+    props.history.push('/opportunities')
     
     // no longer need this code because we are doing our POST request via redux!
     // fetch("http://localhost:4000/assets", {

@@ -7,15 +7,23 @@ import Grid from '@material-ui/core/Grid'
 function TreeList({ assets }){
 
   const renderTrees = () => {
-    return assets.map(tree => <Tree key={tree.id} tree={tree}/> )
+    return assets.map(tree =>  {
+      return (
+      <Grid item key={tree.id} xs={12} sm={4} lg={3}>
+        <Tree tree={tree}/>
+      </Grid>
+      )
+    } )
   } 
 
   return(
+    <div className={'trees'}>
     <Container>
-      <Grid container className="tree-page">
+      <Grid container spacing={4}>
         {renderTrees()}
       </Grid>
     </Container>
+    </div>
   )
 }
 

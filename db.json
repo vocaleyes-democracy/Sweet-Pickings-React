@@ -143,6 +143,20 @@
       },
       "comment": "Ruff Ruff!",
       "id": 7
+    },
+    {
+      "type": "Tree",
+      "numberOfTrees": "4",
+      "address1": "test",
+      "address2": "test",
+      "geometry": {
+        "coordinates": [
+          -0.1419436456366562,
+          51.50155766028903
+        ]
+      },
+      "comment": "Are there trees at Buckingham Palace?",
+      "id": 8
     }
   ]
 }

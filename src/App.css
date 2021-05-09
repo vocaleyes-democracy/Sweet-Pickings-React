@@ -29,13 +29,6 @@
   color: #61dafb;
 }
 
-.applesImg {
-  height: 30vh;
-  width: 70vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -45,19 +38,3 @@
   }
 }
 
-.map-container {
-  width: 60vw;
-  height: 750px;
-  float: right;
-}
-.tree-page{
-display: inline-block;
-width: 35vw;
-height: 750px;
-margin: 1.25rem;
-padding: 1rem;
-}
-
-.list-item {
-  line-height: 1.6rem;
-}
