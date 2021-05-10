@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
+import Story from './Story.js'
 
 export default function About() {
 
@@ -31,23 +32,32 @@ export default function About() {
     })
 
     const classes = useStyles()
+
+    const handleOnClick = () => {
+        return (
+            <Story />
+        )
+    }
     
     return (
 
         <Container className={classes.root}>
 
-            <div className={classes.subPage}>
-                <Link href="/story" underline="none">
+            <div className={classes.subPage} onClick={handleOnClick}>
+                {/* <Link 
+                    href="/story" 
+                    underline="none"
+                > */}
                     <Typography
                         variant="h4"
                         className={classes.subCategory}
                     >
                         Story
                     </Typography>
-                </Link> 
+                {/* </Link>  */}
             </div>
             
-            <div className={classes.subPage}>
+            <div className={classes.subPage} onClick={handleOnClick}>
                 <Link href="/pickers" underline="none">
                     <Typography
                         variant="h4"
@@ -58,7 +68,7 @@ export default function About() {
                 </Link> 
             </div>
             
-            <div className={classes.subPage}>
+            <div className={classes.subPage} onClick={handleOnClick}>
                 <Link href="/growers" underline="none">
                     <Typography
                         variant="h4"
@@ -69,7 +79,7 @@ export default function About() {
                 </Link> 
             </div>
 
-            <div className={classes.subPage}>
+            <div className={classes.subPage} onClick={handleOnClick}>
                 <Link href="/recipients" underline="none">
                     <Typography
                         variant="h4"
@@ -78,6 +88,9 @@ export default function About() {
                         Recipients
                     </Typography>
                 </Link>
+            </div>
+
+            <div >
             </div>
         </Container>
     )
