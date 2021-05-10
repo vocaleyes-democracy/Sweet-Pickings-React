@@ -1,15 +1,84 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { makeStyles } from '@material-ui/core/styles'
+import Link from '@material-ui/core/Link'
+import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
 
 export default function About() {
 
+    const useStyles = makeStyles({
+        root: {
+            display: "flex",
+            flexWrap: "wrap",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+        },
+        subPage: {
+            height: 150,
+            width: 200,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: 30,
+            backgroundColor: "#C4C4C4",
+        },
+        subCategory: {
+            '&:hover': {
+                color: '#6B0F1A',
+            }
+        }
+    })
+
+    const classes = useStyles()
+    
     return (
-        <div>
-            <h1>About Page</h1>
-            <NavLink to="/story">Story</NavLink> / 
-            <NavLink to="/pickers">Pickers</NavLink> / 
-            <NavLink to="/growers">Growers</NavLink> / 
-            <NavLink to="/recipients">Recipients</NavLink>
-        </div>
+
+        <Container className={classes.root}>
+
+            <div className={classes.subPage}>
+                <Link href="/story" underline="none">
+                    <Typography
+                        variant="h4"
+                        className={classes.subCategory}
+                    >
+                        Story
+                    </Typography>
+                </Link> 
+            </div>
+            
+            <div className={classes.subPage}>
+                <Link href="/pickers" underline="none">
+                    <Typography
+                        variant="h4"
+                        className={classes.subCategory}
+                    >
+                        Pickers
+                    </Typography>
+                </Link> 
+            </div>
+            
+            <div className={classes.subPage}>
+                <Link href="/growers" underline="none">
+                    <Typography
+                        variant="h4"
+                        className={classes.subCategory}
+                    >
+                        Growers
+                    </Typography>
+                </Link> 
+            </div>
+
+            <div className={classes.subPage}>
+                <Link href="/recipients" underline="none">
+                    <Typography
+                        variant="h4"
+                        className={classes.subCategory}
+                    >
+                        Recipients
+                    </Typography>
+                </Link>
+            </div>
+        </Container>
     )
 }
