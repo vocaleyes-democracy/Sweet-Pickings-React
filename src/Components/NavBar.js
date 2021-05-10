@@ -198,7 +198,7 @@ export default function NavBar() {
             color='inherit'
             className={classes.title} 
           >
-            <Typography textAlign="right">Login</Typography>
+            <Typography >Login</Typography>
           </Link>
 
           <Link
@@ -208,7 +208,7 @@ export default function NavBar() {
             color='inherit'
             className={classes.title}
           >
-            <Typography textAlign="right">Signup</Typography>
+            <Typography >Signup</Typography>
           </Link>
 
           {/* <Typography className={classes.title} variant="h6" noWrap>
