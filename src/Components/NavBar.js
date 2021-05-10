@@ -19,7 +19,7 @@ import Home from '@material-ui/icons/Home';
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  burger: {
     flexGrow: 1,
   },
   menuButton: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(3),
     '&:hover': {
       color: fade('#6B0F1A', 0.55),
-    },
+    }
     // flexGrow: 1,
     // display: 'none',
     // [theme.breakpoints.up('sm')]: {
@@ -115,77 +115,79 @@ export default function NavBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'center',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'center',
-            }}
-            open={open}
-            onClose={handleClose}
-            // MenuListProps={{ something: 'something' }}
-          >
-            <MenuItem
+          
+          <div className={classes.burger}>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'center',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'center',
+              }}
+              open={open}
+              onClose={handleClose}
+              // MenuListProps={{ something: 'something' }}
+            >
+              <MenuItem
+                onClick={handleClose}
+                // as={NavLink}
+                // to="/about"
+              >
+                <Link 
+                href="/about" 
+                underline="none"
+                className={classes.menuItem}
+                >
+                  About
+                </Link>
+              </MenuItem>
+
+              <MenuItem 
               onClick={handleClose}
-              // as={NavLink}
-              // to="/about"
-            >
-              <Link 
-              href="/about" 
-              underline="none"
-              className={classes.menuItem}
               >
-                About
-              </Link>
-            </MenuItem>
+                <Link 
+                href="/opportunities" 
+                underline="none"
+                className={classes.menuItem}
+                >
+                  Browse Opportunities
+                </Link>
+              </MenuItem>
 
-            <MenuItem 
-            onClick={handleClose}
-            >
-              <Link 
-              href="/opportunities" 
-              underline="none"
-              className={classes.menuItem}
+              <MenuItem 
+              onClick={handleClose}
               >
-                Browse Opportunities
-              </Link>
-            </MenuItem>
+                <Link 
+                href="/tree-form" 
+                underline="none"
+                className={classes.menuItem}
+                >
+                  Let Us Know About A Tree
+                </Link>
+              </MenuItem>
 
-            <MenuItem 
-            onClick={handleClose}
-            >
-              <Link 
-              href="/tree-form" 
-              underline="none"
-              className={classes.menuItem}
+              <MenuItem 
+              onClick={handleClose}
               >
-                Let Us Know About A Tree
-              </Link>
-            </MenuItem>
+                <Link 
+                href="/contact" 
+                underline="none"
+                className={classes.menuItem}
+                >
+                  Contact Us
+                </Link>
+              </MenuItem>
+            </Menu>
+          </div>
 
-            <MenuItem 
-            onClick={handleClose}
-            >
-              <Link 
-              href="/contact" 
-              underline="none"
-              className={classes.menuItem}
-              >
-                Contact Us
-              </Link>
-            </MenuItem>
-          </Menu>
-
-
-          <Link href="/home" underline="none" className={classes.root}>
+          <Link href="/home" underline="none">
           <Home 
-          color='secondary' 
+            color='secondary' 
           />
           </Link>
             
@@ -196,7 +198,7 @@ export default function NavBar() {
             color='inherit'
             className={classes.title} 
           >
-            Login
+            <Typography textAlign="right">Login</Typography>
           </Link>
 
           <Link
@@ -206,7 +208,7 @@ export default function NavBar() {
             color='inherit'
             className={classes.title}
           >
-            Sign Up
+            <Typography textAlign="right">Signup</Typography>
           </Link>
 
           {/* <Typography className={classes.title} variant="h6" noWrap>
