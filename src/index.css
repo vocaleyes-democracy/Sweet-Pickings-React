@@ -16,6 +16,10 @@ body {
   height: 450px;
   position: relative;
   z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: center;
 }
 
  .home::before {
