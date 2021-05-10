@@ -26,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 7
 
     },
-    headertext: {
-      color: '#000'
+    headerText: {
+        color: '#000'
     },
-      customizeToolbar: {
+        customizeToolbar: {
         minHeight: 15
-      }
+        }
 }));
 
 export default function TopNav(){
@@ -44,21 +44,21 @@ export default function TopNav(){
             color="primary"
         >
             <Toolbar className={classes.customizeToolbar}>
-                <Typography variant="h6" className={`${classes.headertext} ${classes.root}`}>
+                <Typography variant="h6" className={`${classes.headerText} ${classes.root}`}>
                     Grow for us, pick with us
                 </Typography>
                 
                 <Link href="#">
-                <Icon className={`${classes.padding} ${classes.headertext} ${classes.iconStyles} fas fa-map-marker-alt`}/>
+                <Icon className={`${classes.padding} ${classes.headerText} ${classes.iconStyles} fas fa-map-marker-alt`}/>
                 </Link>
                 <Typography 
-                    className={`${classes.padding} ${classes.headertext}`}
+                    className={`${classes.padding} ${classes.headerText}`}
                 >
-                  United Kingdom, TXB273KE8
+                    United Kingdom, TXB273KE8
                 </Typography>
                 
                 <Typography 
-                    className={`${classes.pushIcons} ${classes.headertext}`}
+                    className={`${classes.pushIcons} ${classes.headerText}`}
                 >
                     help@sweetpickings.com
                 </Typography>

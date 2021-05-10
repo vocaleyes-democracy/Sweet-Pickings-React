@@ -19,10 +19,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
     height: 400,
-    padding: theme.spacing(1)
+    // padding: theme.spacing(1),
+    overflow: "auto"
   },
   media: {
-    height: 140,
+    height: 140
   },
   deets: {
     backgroundColor: 'rgba(237, 226, 225, 0.5)',

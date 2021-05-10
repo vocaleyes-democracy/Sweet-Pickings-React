@@ -40,10 +40,22 @@ code {
   height: 300px;
 }
 
+.map-tree-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* margin: 2px; */
+}
+
 .map-container {
-  width: 60vw;
+  width: 40vw;
   height: 750px;
-  float: right;
+  /* float: right; */
+  /* display: inline; */
+  margin: 1.25rem;
+  padding-right: 9px;
+  /* padding: 1rem; */
 }
 
 /* .applesImg {
@@ -55,10 +67,11 @@ code {
 
 .tree-list{
 display: inline-block;
-width: 35vw;
+width: 50vw;
 height: 750px;
 margin: 1.25rem;
-padding: 1rem;
+/* padding: 1rem; */
+overflow: auto;
 }
 
 /* .list-item {

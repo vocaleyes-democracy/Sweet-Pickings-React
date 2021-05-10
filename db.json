@@ -157,6 +157,36 @@
       },
       "comment": "Are there trees at Buckingham Palace?",
       "id": 8
+    },
+    {
+      "type": "Tree",
+      "variety": "Cherry",
+      "numberOfTrees": "15",
+      "address1": "TR's Apple Orchard",
+      "address2": "LIC, NY",
+      "geometry": {
+        "coordinates": [
+          -3.9457116966883556,
+          51.62867442043528
+        ]
+      },
+      "comment": "Bryn-y-don is a real place! Come pick our cherries!",
+      "id": 9
+    },
+    {
+      "type": "Tree",
+      "variety": "Pear",
+      "numberOfTrees": "5",
+      "address1": "Community Food Garden",
+      "address2": "41 N Hill Rd, Swansea SA1 6XS, United Kingdom",
+      "geometry": {
+        "coordinates": [
+          -3.9497242813157944,
+          51.6262900835649
+        ]
+      },
+      "comment": "We have some lovely pears for you to pick! Come 'round!",
+      "id": 10
     }
   ]
 }

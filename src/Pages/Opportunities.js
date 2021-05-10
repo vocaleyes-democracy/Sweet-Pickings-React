@@ -24,8 +24,10 @@ function Opportunities({treeArray, treeData}) {
     return (
         <div>
             <div className={'map-div'} onClick={handleRenderMap} ></div>
-            <TreeList assets={treeArray}/>
-            {renderMap ? <Map assets={treeArray}/> : null}
+            <div className={'map-tree-container'}>
+              <TreeList assets={treeArray}/>
+              {renderMap ? <Map assets={treeArray}/> : null}
+            </div>
         </div>
     )
 }

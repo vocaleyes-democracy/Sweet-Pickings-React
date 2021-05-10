@@ -9,7 +9,7 @@ function TreeList({ assets }){
   const renderTrees = () => {
     return assets.map(tree =>  {
       return (
-      <Grid item key={tree.id} xs={12} sm={4} lg={3}>
+      <Grid item key={tree.id} xs={12} sm={4} lg={4}>
         <Tree tree={tree}/>
       </Grid>
       )

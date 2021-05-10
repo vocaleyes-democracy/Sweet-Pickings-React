@@ -7,16 +7,10 @@ import { sendGeocodingRequest } from '../redux/actions'
 
 
 function Map({assets}) {
+  const [ geometry ] = assets
+  // console.log({ geometry })
 
-    // const tree1 = assets[0]
-    // console.log(tree1)
-    // const [long, lat] = tree1.geometry.coordinates
-// having async issues with these variables.....
-    // console.log(long)
-    // console.log(lat)
-
-  const [map, setMap] = useState({ lat: 51.62284989072822, lng: -3.943877083337367 })
-
+  const [map, setMap] = useState( [geometry.geometry.coordinates[1], geometry.geometry.coordinates[0]] )
 
   const renderMarkers = () => {
     return assets.map(asset => {
@@ -28,12 +22,11 @@ function Map({assets}) {
     })
   }
 
-
   return (
     <>
       <MapContainer className="map-container"
-        center={[map.lat, map.lng]}
-        zoom={11}
+        center={[map[0], map[1]]}
+        zoom={14}
         
       >
         <TileLayer
