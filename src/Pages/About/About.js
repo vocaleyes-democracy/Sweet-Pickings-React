@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
@@ -33,10 +33,10 @@ export default function About() {
 
     const classes = useStyles()
 
-    const handleOnClick = () => {
-        return (
-            <Story />
-        )
+    const [renderStory, setRenderStory] = useState(false)
+
+    const handleOnClick = (event) => {
+        console.log(event.target)
     }
     
     return (
