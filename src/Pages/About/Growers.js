@@ -9,7 +9,7 @@ export default function Growers() {
                 variant={"h3"}
                 color={"primary"}
             >
-                GROWERS:
+                {/* GROWERS: */}
             </Typography>
             <Typography
                 variant={"secondaryText"}

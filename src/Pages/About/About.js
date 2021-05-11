@@ -5,6 +5,8 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Story from './Story.js'
 import Pickers from './Pickers.js'
+import Growers from './Growers.js'
+import Recipients from './Recipients.js'
 
 export default function About() {
 
@@ -28,6 +30,9 @@ export default function About() {
         title: {
           margin: theme.spacing(10),
           fontWeight: 'bold'
+        },
+        active: {
+          color: '#fff'
         }
         // subCategory: {
         //     '&:hover': {
@@ -40,12 +45,36 @@ export default function About() {
 
     const [renderStory, setRenderStory] = useState(false)
     const [renderPickers, setRenderPickers] = useState(false)
+    const [renderGrowers, setRenderGrowers] = useState(false)
+    const [renderRecipients, setRenderRecipients] = useState(false)
+
+    function subCategoriesFalse(event) {
+      setRenderStory(false)
+      setRenderPickers(false)
+      setRenderGrowers(false)
+      setRenderRecipients(false)
+
+      // toggling bg color isn't yet working
+      event.target.style={color: 'black'}
+    }
 
     const handleOnClick = (event) => {
       if(event.target.matches('.story')){
-        setRenderStory(!renderStory)
+        subCategoriesFalse(event)
+        
+        setRenderStory(true)
       } else if (event.target.matches('.pickers')) {
-        setRenderPickers(!renderPickers)
+        subCategoriesFalse(event)
+        
+        setRenderPickers(true)
+      } else if (event.target.matches('.growers')) {
+        subCategoriesFalse(event)
+        
+        setRenderGrowers(true)
+      } else if (event.target.matches('.recipients')) {
+        subCategoriesFalse(event)
+
+        setRenderRecipients(true)
       }
     }
     
@@ -84,8 +113,8 @@ export default function About() {
                 {/* </Link>  */}
             </div>
             
-            <div className={classes.subPage} onClick={handleOnClick}>
-                <Link href="/growers" underline="none">
+            <div className={`${classes.subPage} growers`} onClick={handleOnClick}>
+                {/* <Link href="/growers" underline="none"> */}
                     <Typography
                         variant="h4"
                         color='primary'
@@ -93,11 +122,11 @@ export default function About() {
                     >
                         Growers
                     </Typography>
-                </Link> 
+                {/* </Link>  */}
             </div>
 
-            <div className={classes.subPage} onClick={handleOnClick}>
-                <Link href="/recipients" underline="none">
+            <div className={`${classes.subPage} recipients`} onClick={handleOnClick}>
+                {/* <Link href="/recipients" underline="none"> */}
                     <Typography
                         variant="h4"
                         color='primary'
@@ -105,12 +134,14 @@ export default function About() {
                     >
                         Recipients
                     </Typography>
-                </Link>
+                {/* </Link> */}
             </div>
 
             <div >
               { renderStory? <Story /> : null}
               { renderPickers? <Pickers /> : null}
+              { renderGrowers? <Growers /> : null}
+              { renderRecipients? <Recipients /> : null}
             </div>
         </Container>
     )

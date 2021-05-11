@@ -9,7 +9,7 @@ export default function Recipients() {
                 variant={"h3"}
                 color={"primary"}
             >
-                RECIPIENTS:
+                {/* RECIPIENTS: */}
             </Typography>
             <Typography
                 variant={"secondaryText"}
