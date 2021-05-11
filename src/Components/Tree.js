@@ -17,7 +17,7 @@ import apples from '../images/apples2.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    maxWidth: 545,
     height: 400,
     // padding: theme.spacing(1),
     overflow: "auto"

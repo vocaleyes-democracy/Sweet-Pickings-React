@@ -32,7 +32,7 @@ export default function About() {
           fontWeight: 'bold'
         },
         active: {
-          color: '#fff'
+          backgroundColor: 'secondary'
         }
         // subCategory: {
         //     '&:hover': {
@@ -55,7 +55,7 @@ export default function About() {
       setRenderRecipients(false)
 
       // toggling bg color isn't yet working
-      event.target.style={color: 'black'}
+      event.target.classList.add(`${classes.active}`)
     }
 
     const handleOnClick = (event) => {
