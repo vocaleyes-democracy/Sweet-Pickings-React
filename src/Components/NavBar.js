@@ -45,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
     // },
   },
   btn: {
-    margin: theme.spacing(1)
+    // margin: theme.spacing(1),
+    marginLeft: 12
   }
   // search: {
   //   position: 'relative',

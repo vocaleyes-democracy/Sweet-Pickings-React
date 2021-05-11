@@ -4,10 +4,11 @@ import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Story from './Story.js'
+import Pickers from './Pickers.js'
 
 export default function About() {
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles((theme) => ({
         root: {
             display: "flex",
             flexWrap: "wrap",
@@ -24,55 +25,71 @@ export default function About() {
             margin: 30,
             backgroundColor: "#C4C4C4",
         },
-        subCategory: {
-            '&:hover': {
-                color: '#6B0F1A',
-            }
+        title: {
+          margin: theme.spacing(10),
+          fontWeight: 'bold'
         }
-    })
+        // subCategory: {
+        //     '&:hover': {
+        //         color: '#6B0F1A',
+        //     }
+        // }
+    }))
 
     const classes = useStyles()
 
     const [renderStory, setRenderStory] = useState(false)
+    const [renderPickers, setRenderPickers] = useState(false)
 
     const handleOnClick = (event) => {
-        console.log(event.target)
+      if(event.target.matches('.story')){
+        setRenderStory(!renderStory)
+      } else if (event.target.matches('.pickers')) {
+        setRenderPickers(!renderPickers)
+      }
     }
     
     return (
 
         <Container className={classes.root}>
-
-            <div className={classes.subPage} onClick={handleOnClick}>
+          <div className={'about-image'}>
+          <Typography variant="h2"  color={'secondary'} className={classes.title}>
+            ABOUT US
+          </Typography>
+          </div>
+            <div className={`${classes.subPage} story`} onClick={handleOnClick}>
                 {/* <Link 
                     href="/story" 
                     underline="none"
                 > */}
                     <Typography
                         variant="h4"
-                        className={classes.subCategory}
+                        color='primary'
+                        // className={classes.subCategory}
                     >
                         Story
                     </Typography>
                 {/* </Link>  */}
             </div>
             
-            <div className={classes.subPage} onClick={handleOnClick}>
-                <Link href="/pickers" underline="none">
+            <div className={`${classes.subPage} pickers`}  onClick={handleOnClick}>
+                {/* <Link href="/pickers" underline="none"> */}
                     <Typography
                         variant="h4"
-                        className={classes.subCategory}
+                        color='primary'
+                        // className={classes.subCategory}
                     >
                         Pickers
                     </Typography>
-                </Link> 
+                {/* </Link>  */}
             </div>
             
             <div className={classes.subPage} onClick={handleOnClick}>
                 <Link href="/growers" underline="none">
                     <Typography
                         variant="h4"
-                        className={classes.subCategory}
+                        color='primary'
+                        // className={classes.subCategory}
                     >
                         Growers
                     </Typography>
@@ -83,7 +100,8 @@ export default function About() {
                 <Link href="/recipients" underline="none">
                     <Typography
                         variant="h4"
-                        className={classes.subCategory}
+                        color='primary'
+                        // className={classes.subCategory}
                     >
                         Recipients
                     </Typography>
@@ -91,6 +109,8 @@ export default function About() {
             </div>
 
             <div >
+              { renderStory? <Story /> : null}
+              { renderPickers? <Pickers /> : null}
             </div>
         </Container>
     )
