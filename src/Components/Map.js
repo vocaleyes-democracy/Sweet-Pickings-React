@@ -8,7 +8,7 @@ import { sendGeocodingRequest } from '../redux/actions'
 
 function Map({assets}) {
   const [ tree1 ] = assets
-  // console.log({ geometry })
+  
 
   const [map, setMap] = useState( [tree1.geometry.coordinates[1], tree1.geometry.coordinates[0]] )
 

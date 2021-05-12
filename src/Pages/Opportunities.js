@@ -9,13 +9,13 @@ import Map from '../Components/Map'
 
 function Opportunities({treeArray, treeData}) {
 
-  const [renderMap, setRenderMap] = useState(false)
+  // const [renderMap, setRenderMap] = useState(false)
 
-  function handleRenderMap(){
-    const tree = document.querySelector('.trees')
-    tree.classList.toggle('tree-list')
-    return setRenderMap(!renderMap)
-  }
+  // function handleRenderMap(){
+  //   const tree = document.querySelector('.trees')
+  //   tree.classList.toggle('tree-list')
+  //   return setRenderMap(!renderMap)
+  // }
 
   useEffect(() => {
     treeData()
@@ -23,10 +23,10 @@ function Opportunities({treeArray, treeData}) {
 
     return (
         <div>
-            <div className={'map-div'} onClick={handleRenderMap} ></div>
+            {/* <div className={'map-div'} onClick={handleRenderMap} ></div> */}
             <div className={'map-tree-container'}>
               <TreeList assets={treeArray}/>
-              {renderMap ? <Map assets={treeArray}/> : null}
+              <Map assets={treeArray}/>
             </div>
         </div>
     )

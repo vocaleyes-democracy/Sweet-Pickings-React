@@ -17,7 +17,7 @@ function TreeList({ assets }){
   } 
 
   return(
-    <div className={'trees'}>
+    <div className={'trees tree-list'}>
     <Container>
       <Grid container spacing={4}>
         {renderTrees()}

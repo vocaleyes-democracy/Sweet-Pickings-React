@@ -42,17 +42,25 @@ const classes = useStyles()
           className={classes.media}
           image={`${apples}`}
           title="Produce Ready To Pick">
-          <Typography variant="h4" align='center' className={classes.deets}>Details</Typography>
+          <Typography variant="h4" align='center' className={classes.deets}>{tree.variety}</Typography>
 
           </CardMedia>
         <CardContent>
           <CardHeader
-          title={`${tree.type} #${tree.id}: ${tree.variety}`}
-          subheader={`Location: ${tree.address1}, ${tree.address2}`}
+          title={`${tree.type}# ${tree.id}`}
           />
+          <Typography variant="body2" color="textSecondary">
+          {`Location: ${tree.address1},`}
+          </Typography>
+
+          <Typography variant="body2" color="textSecondary">
+          {tree.address2}
+          </Typography>
+
           <Typography variant="body2" color="textSecondary" component="p">
           {tree.comment ? `Comments: ${tree.comment}` : null}
           </Typography>
+
         </CardContent>
       </CardActionArea>
        </Card>
