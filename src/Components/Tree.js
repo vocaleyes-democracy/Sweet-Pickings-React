@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
+import Container from '@material-ui/core/Container';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,7 +21,8 @@ import apples from '../images/apples2.png'
 // import { List } from 'semantic-ui-react'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  
+  card: {
     maxWidth: 545,
     height: 400,
     overflow: "auto"
@@ -55,8 +57,8 @@ const [expanded, setExpanded] = React.useState(false);
   };
 
   return (
-   <div>
-     <Card elevation={2} className={classes.root} style={{backgroundColor: '#7FA11C'}}>
+   <Container>
+     <Card elevation={2} className={classes.card} style={{backgroundColor: '#7FA11C'}}>
      <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -100,38 +102,8 @@ const [expanded, setExpanded] = React.useState(false);
           </CardContent>
       </Collapse>
        </Card>
-   </div>
+   </Container>
 
-    // <List as="h3" className="list-item">
-    //   <List.Item className="list-item">
-    //     <List.Icon name='leaf' color='green' />
-    //     <List.Content>
-    //       <List.Header>#{tree.id}</List.Header>
-    //     </List.Content>
-    //     <List.Content>
-    //       <List.Description>Type: {tree.type}</List.Description>
-    //     </List.Content>
-    //     <List.Content>
-    //       <List.Description>Variety: {tree.variety}</List.Description>
-    //     </List.Content>
-    //     <List.Content>
-    //       <List.Description>Number of Assets: {tree.numberOfTrees}</List.Description>
-    //     </List.Content>
-    //     <List.Content>
-    //       <List.Description>Address #1: {tree.address1}</List.Description>
-    //     </List.Content>
-    //     <List.Content>
-    //       <List.Description>Address #2: {tree.address2}</List.Description>
-    //     </List.Content>
-    //   {tree.comment ? 
-    //     (<List.Content>
-    //       <List.Description>Comment: {tree.comment}</List.Description>
-    //     </List.Content>)
-    //     :
-    //     null
-    //   }
-    //   </List.Item>
-    // </List>
   )
 }
 

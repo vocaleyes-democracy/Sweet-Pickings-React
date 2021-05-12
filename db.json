@@ -146,20 +146,6 @@
     },
     {
       "type": "Tree",
-      "numberOfTrees": "4",
-      "address1": "test",
-      "address2": "test",
-      "geometry": {
-        "coordinates": [
-          -0.1419436456366562,
-          51.50155766028903
-        ]
-      },
-      "comment": "Are there trees at Buckingham Palace?",
-      "id": 8
-    },
-    {
-      "type": "Tree",
       "variety": "Cherry",
       "numberOfTrees": "15",
       "address1": "TR's Apple Orchard",
@@ -171,7 +157,7 @@
         ]
       },
       "comment": "Bryn-y-don is a real place! Come pick our cherries!",
-      "id": 9
+      "id": 8
     },
     {
       "type": "Tree",
@@ -186,7 +172,7 @@
         ]
       },
       "comment": "We have some lovely pears for you to pick! Come 'round!",
-      "id": 10
+      "id": 9
     }
   ]
 }

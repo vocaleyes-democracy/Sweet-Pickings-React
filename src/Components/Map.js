@@ -1,12 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { sendGeocodingRequest } from '../redux/actions'
 // import { APPLICATION_ID, API_KEY } from '../APIs/travelTimeAPI'
+import Container from '@material-ui/core/Container';
 
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+  padding: '25px 0'
+  }
+}))
 
 
 function Map({assets}) {
+
+  const classes = useStyles()
   const [ tree1 ] = assets
   console.log(tree1)
   
@@ -25,7 +36,7 @@ function Map({assets}) {
   }
 
   return (
-    <>
+    <Container className={classes.root}>
       <MapContainer className="map-container"
         center={[map[0], map[1]]}
         zoom={14}
@@ -37,7 +48,7 @@ function Map({assets}) {
         />
         {renderMarkers()}
       </MapContainer>
-    </>
+    </Container>
 
   )
 
