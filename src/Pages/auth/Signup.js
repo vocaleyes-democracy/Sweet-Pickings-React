@@ -37,7 +37,7 @@ export default function Signup() {
 
     return (
         <div id="form">
-            <h2>Create Account</h2>
+            <h1 style={{textAlign: "center"}}>SIGN UP</h1>
 
             <form className="ui form" onSubmit={handleOnSubmit}>
                 

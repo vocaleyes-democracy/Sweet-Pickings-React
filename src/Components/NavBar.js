@@ -200,7 +200,7 @@ export default function NavBar() {
           </Link>
 
           <ButtonGroup variant="contained" size="medium" className={classes.btn}>
-              <Button  href="/signup" style={{backgroundColor: '#BC4749', color: 'white'}}>Log In</Button>
+              <Button  href="/login" style={{backgroundColor: '#BC4749', color: 'white'}}>Log In</Button>
               <Button  href="/signup" style={{backgroundColor: '#6B0F1A', color: 'white'}}>Sign Up</Button>
             </ButtonGroup>
             
