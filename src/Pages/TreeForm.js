@@ -2,39 +2,11 @@ import { connect } from 'react-redux'
 import { React, useState } from 'react'
 import { Header, Form, Radio } from 'semantic-ui-react'
 import { addATree } from '../redux/actions'
-
 import { withRouter } from 'react-router-dom'
 
+import {FruitTypes} from '../database/FruitTypes'
+
 // this should be wrapped inside a Material Container bc it will provide padding/margin
-
-// Data to be moved elsewhere
-const fruitTypes = [
-  {
-    key: "Apple",
-    text: "Apple",
-    value: "Apple"
-  },
-  {
-    key: "Pear",
-    text: "Pear",
-    value: "Pear"
-  },
-  {
-    key: "Cherry",
-    text: "Cherry",
-    value: "Cherry"
-  },
-  {
-    key: "Walnuts",
-    text: "Walnuts",
-    value: "Walnuts"
-  },
-]
-
-// Need to nest varieties under each fruit type
-// const fruitVarieties = [
-
-// ]
 
 function TreeForm(props) {
   const [address1, setAddress1] = useState('')
@@ -143,7 +115,7 @@ function TreeForm(props) {
           name="fruit-type"
           fluid
           selection
-          options={fruitTypes}
+          options={FruitTypes}
           onChange={e => setFruitType(e.target.firstChild.innerHTML)}
         />
         {/* <Form.Select
