@@ -1,10 +1,18 @@
 import { connect } from 'react-redux'
 import { React, useState } from 'react'
-import { Header, Form, Radio } from 'semantic-ui-react'
+
+import FormControl from '@material-ui/core/FormControl'
+import Input from '@material-ui/core/Input'
+import InputLabel from '@material-ui/core/InputLabel'
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
+import Select from '@material-ui/core/Select'
+import NativeSelect from '@material-ui/core/NativeSelect'
+
 import { addATree } from '../redux/actions'
 import { withRouter } from 'react-router-dom'
 
-import {FruitTypes} from '../database/FruitTypes'
+import { FruitTypes } from '../database/FruitTypes'
 
 // this should be wrapped inside a Material Container bc it will provide padding/margin
 
@@ -18,8 +26,6 @@ function TreeForm(props) {
   const [latitude, setLatitude] = useState(0)
   const [longitude, setLongitude] = useState(0)
   const [comment, setComment] = useState('')
-
-  
 
   const handleChange = (e) => setOwnerType(e.target.firstChild.data)
 
@@ -74,18 +80,70 @@ function TreeForm(props) {
 
   return (
     <div id="form">
-      <Header as="h2" textAlign="center">LET US KNOW ABOUT A TREE</Header>
+      <Typography variant="h2" align="center">LET US KNOW ABOUT A TREE</Typography>
 
-      <Form onSubmit={handleOnSubmit}>
-        <Form.Input
-          label="Address 1"
-          name="address2"
-          type="text"
-          placeholder="House Name/Number and Street Name"
+        <TextField 
+          label="Address 1" 
+          name="Address 1" 
+          placeholder="Street Number and Name"
+          variant="outlined"
+          fullWidth
+          margin="normal"
           onChange={e => setAddress1(e.target.value)}
-        />
+        ></TextField>
+      
+        <TextField 
+          label="Address 2" 
+          name="Address 2" 
+          placeholder="Town/City, Postcode and Country"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          onChange={e => setAddress2(e.target.value)}
+        ></TextField>
+        
+        <TextField 
+          label="Latitude" 
+          name="latitude"
+          placeholder="Please Enter Latitude --Test"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          onChange={e => setLatitude(parseFloat(e.target.value))}
+        ></TextField>
+        
+        <TextField 
+          label="Longitude" 
+          name="longitude"
+          placeholder="Please Enter Longitude --Test"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          onChange={e => setLongitude(parseFloat(e.target.value))}
+        ></TextField>
 
-        <Form.Input
+        <InputLabel htmlFor="fruit-type">Fruit Type</InputLabel>
+        <Select
+          native 
+          defaultValue=""
+        >
+          <option aria-label="None" value="" />
+          
+        </Select>
+
+    </div>
+  )
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    treePost: (treeObj) => dispatch(addATree(treeObj))
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(TreeForm))
+
+{/* <Form.Input
           label="Address 2"
           name="address2"
           type="text"
@@ -117,7 +175,7 @@ function TreeForm(props) {
           selection
           options={FruitTypes}
           onChange={e => setFruitType(e.target.firstChild.innerHTML)}
-        />
+        /> */}
         {/* <Form.Select
                 label="Variety"
                 placeholder="Select Fruit Variety"
@@ -126,74 +184,62 @@ function TreeForm(props) {
                 options={fruitVarieties}
                 onChange={e => setFruitVariety(e.target.value)}
             /> */}
-        <Form.Input
-          label="Quantity of Trees"
-          type="number"
-          name="quantity"
-          placeholder=">= 1"
-          min="1"
-          width="4"
-          onChange={e => setQuantity(e.target.value)}
-        />
+        {/* // <Form.Input */}
+        {/* //   label="Quantity of Trees"
+        //   type="number"
+        //   name="quantity"
+        //   placeholder=">= 1"
+        //   min="1"
+        //   width="4"
+        //   onChange={e => setQuantity(e.target.value)}
+        // />
 
-        <Form.Group grouped>
-          <label>Owner Type</label>
-          <Form.Field
-            control={Radio}
-            label="Council Land"
-            value="Council Land"
-            checked={ownerType === 'Council Land'}
-            name="owner-type"
-            onChange={handleChange}
-          />
-          <Form.Field
-            control={Radio}
-            label="Private Property"
-            value="Private Property"
-            checked={ownerType === 'Private Property'}
-            name="owner-type"
-            onChange={handleChange}
-          />
-          <Form.Field
-            control={Radio}
-            label="Not Sure"
-            value="Not Sure"
-            checked={ownerType === 'Not Sure'}
-            name="owner-type"
-            onChange={handleChange}
-          />
-          <Form.Field
-            control={Radio}
-            inline
-            label="Other"
-            value="Other"
-            checked={ownerType === 'Other'}
-            name="owner-type"
-            onChange={handleChange}
-          />
-        </Form.Group>
+        // <Form.Group grouped>
+        //   <label>Owner Type</label>
+        //   <Form.Field */}
+        {/* //     control={Radio}
+        //     label="Council Land"
+        //     value="Council Land"
+        //     checked={ownerType === 'Council Land'}
+        //     name="owner-type"
+        //     onChange={handleChange}
+        //   />
+        //   <Form.Field */}
+        {/* //     control={Radio}
+        //     label="Private Property"
+        //     value="Private Property"
+        //     checked={ownerType === 'Private Property'}
+        //     name="owner-type"
+        //     onChange={handleChange}
+        //   />
+        //   <Form.Field */}
+        {/* //     control={Radio}
+        //     label="Not Sure"
+        //     value="Not Sure"
+        //     checked={ownerType === 'Not Sure'}
+        //     name="owner-type"
+        //     onChange={handleChange}
+        //   />
+        //   <Form.Field */}
+        {/* //     control={Radio}
+        //     inline
+        //     label="Other"
+        //     value="Other"
+        //     checked={ownerType === 'Other'}
+        //     name="owner-type"
+        //     onChange={handleChange}
+        //   />
+        // </Form.Group> */}
 
-        <Form.Checkbox
-          label="I am the owner"
-        />
+        {/* // <Form.Checkbox */}
+        {/* //   label="I am the owner"
+        // />
 
-        <Form.TextArea
-          label="Any additional comments or questions?"
-          name="comment"
-          placeholder="Tell us more here"
-          onChange={e => setComment(e.target.value)}
-        />
+        // <Form.TextArea */}
+        {/* //   label="Any additional comments or questions?"
+        //   name="comment"
+        //   placeholder="Tell us more here"
+        //   onChange={e => setComment(e.target.value)}
+        // />
 
-        <Form.Button type="submit" color="blue" >SIGN UP YOUR TREE</Form.Button>
-      </Form>
-    </div>
-  )
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    treePost: (treeObj) => dispatch(addATree(treeObj))
-  }
-}
-
-export default withRouter(connect(null, mapDispatchToProps)(TreeForm))
+        // <Form.Button type="submit" color="blue" >SIGN UP YOUR TREE</Form.Button> */}
