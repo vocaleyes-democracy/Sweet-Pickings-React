@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 545,
     height: 400,
-    overflow: "auto"
+    overflow: "auto",
+    marginBottom: 35
   },
   media: {
     height: 140
@@ -68,15 +69,16 @@ const [expanded, setExpanded] = React.useState(false);
 
           </CardMedia>
         <CardContent>
-          <CardHeader
+          <CardHeader align='center'
           title={`${tree.type}# ${tree.id}`}
           />
-          <Typography variant="body2" color="textSecondary">
-          {`Location: ${tree.address1},`}
+
+          <Typography variant="h5" color="inherit" align='center' gutterBottom='true'>
+          {tree.numberOfTrees > 1 ? `${tree.numberOfTrees} ${tree.variety} Trees`: `${tree.numberOfTrees} ${tree.variety} Tree`}
           </Typography>
 
-          <Typography variant="body2" color="textSecondary">
-          {tree.address2}
+          <Typography variant="body2" color="textSecondary" align='center'>
+          {`Location: ${tree.address1}, ${tree.address2}`}
           </Typography>
 
         </CardContent>
@@ -95,7 +97,6 @@ const [expanded, setExpanded] = React.useState(false);
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Number of Trees: {tree.numberOfTrees}</Typography>
           <Typography paragraph>Comments:
           {tree.comment ? ` ${tree.comment}` : " No comment."}
           </Typography>

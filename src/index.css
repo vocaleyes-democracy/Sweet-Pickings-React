@@ -49,11 +49,11 @@ code {
 }
 
 .map-container {
-  width: 40vw;
+  width: 45vw;
   height: 750px;
   /* float: right; */
   /* display: inline; */
-  margin: 0 1.25rem 1.25rem 1.25rem;
+  margin: 0 2rem 1.25rem;
   padding-right: 9px;
   /* padding: 1rem; */
 }
@@ -89,10 +89,8 @@ code {
 
 .tree-list{
 display: inline-block;
-width: 70vw;
 height: 750px;
-margin: 0 1.25rem 1.25rem 1.25rem;
-/* padding: 1rem; */
+margin: 0 0.5rem 1.25rem;
 overflow: auto;
 }
 
@@ -124,6 +122,6 @@ div.navbar2 {
   background-size: contain;
   height: 150px;
   margin: 40px auto 0 auto;
-  width: 55vw;
+  width: 35vw;
   cursor: pointer;
 }

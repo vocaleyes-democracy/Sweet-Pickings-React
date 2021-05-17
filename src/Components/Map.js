@@ -29,14 +29,14 @@ function Map({assets}) {
     return assets.map(asset => {
       return (<Marker  key={asset.id} position={[asset.geometry.coordinates[1], asset.geometry.coordinates[0]]}>
         <Popup>
-          Asset #{asset.id}, {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} trees`: `${asset.numberOfTrees} tree`}
+          #{asset.id}: {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} ${asset.variety} Trees`: `${asset.numberOfTrees} ${asset.variety} Tree`}
     </Popup>
       </Marker>)
     })
   }
 
   return (
-    <Container className={classes.root}>
+    <div className={classes.root}>
       <MapContainer className="map-container"
         center={[map[0], map[1]]}
         zoom={14}
@@ -48,7 +48,7 @@ function Map({assets}) {
         />
         {renderMarkers()}
       </MapContainer>
-    </Container>
+    </div>
 
   )
 
