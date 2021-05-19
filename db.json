@@ -42,9 +42,20 @@
   "assets": [
     {
       "id": 1,
-      "type": "Tree",
-      "variety": "Apple-Bramley",
-      "numberOfTrees": 1,
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Apple", 
+          "subVariety": "Bramley",
+          "numberOfTrees": 1
+        },
+        {
+          "type": "Tree",
+          "variety": "Cherry", 
+          "subVariety": "Bing",
+          "numberOfTrees": 7
+        }
+      ],
       "address1": "17 Glan yr Afon Gardens",
       "address2": "Sketty, Swansea SA2 9HX, UK",
       "geometry": {
@@ -57,8 +68,8 @@
     },
     {
       "id": 2,
-      "type": "Tree",
-      "variety": "Apple-Honeycrisp",
+      "asset": "Tree",
+      "type": "Apple-Honeycrisp",
       "numberOfTrees": 4,
       "address1": "Tycoch Coch Road",
       "address2": "Sketty, Swansea SA2 9EB, UK",
@@ -72,8 +83,8 @@
     },
     {
       "id": 3,
-      "type": "Tree",
-      "variety": "Apple-Gala",
+      "asset": "Tree",
+      "type": "Apple-Gala",
       "numberOfTrees": 100,
       "address1": "Fairy Lodge",
       "address2": "Burry, Reynoldston, Swansea SA3 1BH, UK",
@@ -86,8 +97,8 @@
       }
     },
     {
-      "type": "Tree",
-      "variety": "Pear",
+      "asset": "Tree",
+      "type": "Pear",
       "numberOfTrees": "5",
       "address1": "Ari's House",
       "address2": "Brooklyn, NY 11218",
@@ -100,8 +111,8 @@
       "id": 4
     },
     {
-      "type": "Tree",
-      "variety": "Pear",
+      "asset": "Tree",
+      "type": "Pear",
       "numberOfTrees": "4",
       "address1": "Ari's House",
       "address2": "Brooklyn, NY 11218",
@@ -115,9 +126,9 @@
       "id": 5
     },
     {
-      "type": "Tree",
+      "asset": "Tree",
+      "type": "Cherry",
       "numberOfTrees": "6",
-      "variety": "Cherry",
       "address1": "Ziggy's Dog Haus",
       "address2": "Bronx, NY 11225",
       "geometry": {
@@ -130,8 +141,8 @@
       "id": 6
     },
     {
-      "type": "Tree",
-      "variety": "Apple",
+      "asset": "Tree",
+      "type": "Apple",
       "numberOfTrees": "10",
       "address1": "TR's Apple Orchard",
       "address2": "LIC, NY 11109",
@@ -145,8 +156,8 @@
       "id": 7
     },
     {
-      "type": "Tree",
-      "variety": "Cherry",
+      "asset": "Tree",
+      "type": "Cherry",
       "numberOfTrees": "15",
       "address1": "TR's Apple Orchard",
       "address2": "LIC, NY",
@@ -160,8 +171,8 @@
       "id": 8
     },
     {
-      "type": "Tree",
-      "variety": "Pear",
+      "asset": "Tree",
+      "type": "Pear",
       "numberOfTrees": "5",
       "address1": "Community Food Garden",
       "address2": "41 N Hill Rd, Swansea SA1 6XS, United Kingdom",

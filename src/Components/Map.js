@@ -29,7 +29,7 @@ function Map({assets}) {
     return assets.map(asset => {
       return (<Marker  key={asset.id} position={[asset.geometry.coordinates[1], asset.geometry.coordinates[0]]}>
         <Popup>
-          #{asset.id}: {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} ${asset.variety} Trees`: `${asset.numberOfTrees} ${asset.variety} Tree`}
+          #{asset.id}: {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} Trees`: `${asset.numberOfTrees} Tree`}
     </Popup>
       </Marker>)
     })

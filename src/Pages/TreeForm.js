@@ -20,7 +20,8 @@ function TreeForm(props) {
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
   // const [coordinates, setCoordinates] = useState([])
-  const [fruitType, setFruitType] = useState('')
+  const [variety, setVariety] = useState('')
+  const [subVariety, setSubVariety] = useState('')
   const [quantity, setQuantity] = useState(0)
   const [ownerType, setOwnerType] = useState(null)
   const [latitude, setLatitude] = useState(0)
@@ -37,13 +38,45 @@ function TreeForm(props) {
   //   setCoordinates(coordinates)
   // }
 
+  // "assets": [
+  //   {
+  //     "id": 1,
+  //     "asset": [
+  //       {
+  //         "type": "Tree",
+  //         "variety": "Apple", 
+  //         "subVariety": "Bramley",
+  //         "numberOfTrees": 1
+  //       },
+  //       {
+  //         "type": "Tree",
+  //         "variety": "Cherry", 
+  //         "subVariety": "Bing",
+  //         "numberOfTrees": 7
+  //       }
+  //     ],
+  //     "address1": "17 Glan yr Afon Gardens",
+  //     "address2": "Sketty, Swansea SA2 9HX, UK",
+  //     "geometry": {
+  //       "type": "Point",
+  //       "coordinates": [
+  //         -3.9942229729238115,
+  //         51.61902699211486
+  //       ]
+  //     }
+  //   },
+
   const handleOnSubmit = e => {
     e.preventDefault()
 
     const assetObj = {
-      type: "Tree",
-      variety: fruitType,
-      numberOfTrees: quantity,
+      asset: [
+        {
+          type: "Tree",
+          variety: variety,
+          subVariety: subVariety,
+          numberOfTrees: quantity
+        }],
       address1: address1,
       address2: address2,
       geometry: {
@@ -55,27 +88,6 @@ function TreeForm(props) {
     props.treePost(assetObj)
     // this sends user to home after POST is complete! We can change the path of course.
     props.history.push('/opportunities')
-    
-    // no longer need this code because we are doing our POST request via redux!
-    // fetch("http://localhost:4000/assets", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(assetObj)
-    // })
-    // .then(r => r.json())
-    // .then(console.log)
-    // .then(()=> { 
-    //   setAddress1('')
-    //   setAddress2('')
-    //   setFruitType('')
-    //   setQuantity(0)
-    //   setOwnerType(null)
-    //   setLatitude(0)
-    //   setLongitude(0)
-    //   setComment('')
-    // })
   }
 
   return (
@@ -122,7 +134,7 @@ function TreeForm(props) {
           onChange={e => setLongitude(parseFloat(e.target.value))}
         ></TextField>
 
-        <InputLabel htmlFor="fruit-type">Fruit Type</InputLabel>
+        <InputLabel htmlFor="variety">Variety</InputLabel>
         <Select
           native 
           defaultValue=""

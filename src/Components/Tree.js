@@ -58,9 +58,9 @@ const [expanded, setExpanded] = React.useState(false);
   };
 
   return (
-   <Container>
-     <Card elevation={2} className={classes.card} style={{backgroundColor: '#7FA11C'}}>
-     <CardActionArea>
+    <Container>
+      <Card elevation={2} className={classes.card} style={{backgroundColor: '#7FA11C'}}>
+      <CardActionArea  CardActionArea>
         <CardMedia
           className={classes.media}
           image={`${apples}`}
@@ -73,9 +73,9 @@ const [expanded, setExpanded] = React.useState(false);
           title={`${tree.type}# ${tree.id}`}
           />
 
-          <Typography variant="h5" color="inherit" align='center' gutterBottom='true'>
+          {/* <Typography variant="h5" color="inherit" align='center' gutterBottom='true'>
           {tree.numberOfTrees > 1 ? `${tree.numberOfTrees} ${tree.variety} Trees`: `${tree.numberOfTrees} ${tree.variety} Tree`}
-          </Typography>
+          </Typography> */}
 
           <Typography variant="body2" color="textSecondary" align='center'>
           {`Location: ${tree.address1}, ${tree.address2}`}
