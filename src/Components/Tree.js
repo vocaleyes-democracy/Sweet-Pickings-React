@@ -24,16 +24,21 @@ const useStyles = makeStyles((theme) => ({
   
   card: {
     maxWidth: 545,
-    height: 400,
+    height: 300,
     overflow: "auto",
     marginBottom: 35
   },
+
+  header: {
+    padding: 2
+  },
+
   media: {
     height: 140
   },
   mediaTitle: {
     backgroundColor: 'rgba(237, 226, 225, 0.5)',
-    color: '#423e3e'
+    color: '#423e3e',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -49,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Tree({ tree }) {
+  // console.log("tree.asset in Tree Component", tree.asset)
 const classes = useStyles()
 
 const [expanded, setExpanded] = React.useState(false);
@@ -57,33 +63,37 @@ const [expanded, setExpanded] = React.useState(false);
     setExpanded(!expanded);
   };
 
+  // console.log(tree.asset.type ? tree.asset.map(treeObj => treeObj.variety) : null)
+
   return (
     <Container>
       <Card elevation={2} className={classes.card} style={{backgroundColor: '#7FA11C'}}>
-      <CardActionArea  CardActionArea>
+      <CardActionArea>
         <CardMedia
           className={classes.media}
           image={`${apples}`}
           title="Produce">
-          <Typography variant="h4" align='center' className={classes.mediaTitle}>{tree.variety}</Typography>
+
+          {/* {tree.type ? <Typography key={tree.id} variant="h4" align='center' className={classes.mediaTitle}>{tree.type}</Typography> : tree.asset.map(treeObj => <Typography key={tree.variety} variant="h4" align='center' className={classes.mediaTitle}>{treeObj.variety} | </Typography>)} */}
+          <Typography key={tree.id} variant="h4" align="center" className={classes.mediaTitle}>{tree.address1}</Typography>
 
           </CardMedia>
         <CardContent>
-          <CardHeader align='center'
-          title={`${tree.type}# ${tree.id}`}
+          <CardHeader className={classes.header} align='center'
+          title={`Site# ${tree.id}`}
           />
 
-          {/* <Typography variant="h5" color="inherit" align='center' gutterBottom='true'>
-          {tree.numberOfTrees > 1 ? `${tree.numberOfTrees} ${tree.variety} Trees`: `${tree.numberOfTrees} ${tree.variety} Tree`}
-          </Typography> */}
+          <Typography variant="body2" color="inherit" align='center' gutterBottom='true'>
+          Variety: {tree.asset.map(treeObj => treeObj.variety).join(', ')}
+          </Typography>
 
           <Typography variant="body2" color="textSecondary" align='center'>
-          {`Location: ${tree.address1}, ${tree.address2}`}
+          {`Location: ${tree.address2}`}
           </Typography>
 
         </CardContent>
       </CardActionArea>
-      <CardActions disableSpacing>
+      {/* <CardActions disableSpacing>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -94,16 +104,16 @@ const [expanded, setExpanded] = React.useState(false);
         >
           <ExpandMoreIcon />
         </IconButton>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      </CardActions> */}
+      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Comments:
           {tree.comment ? ` ${tree.comment}` : " No comment."}
           </Typography>
           </CardContent>
-      </Collapse>
-       </Card>
-   </Container>
+      </Collapse> */}
+        </Card>
+  </Container>
 
   )
 }

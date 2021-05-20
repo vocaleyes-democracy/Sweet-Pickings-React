@@ -19,7 +19,7 @@ function Map({assets}) {
 
   const classes = useStyles()
   const [ tree1 ] = assets
-  console.log(tree1)
+  // console.log(tree1)
   
 
   const [map, setMap] = useState( [51.61915697268178, -3.9376372029662274] )
