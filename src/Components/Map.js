@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { sendGeocodingRequest } from '../redux/actions'
 // import { APPLICATION_ID, API_KEY } from '../APIs/travelTimeAPI'
-import Container from '@material-ui/core/Container';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -18,18 +17,25 @@ const useStyles = makeStyles((theme) => ({
 function Map({assets}) {
 
   const classes = useStyles()
-  const [ tree1 ] = assets
-  // console.log(tree1)
+  // console.log(assets)
+  const [ asset1 ] = assets
+  const [id, setId] = useState(null)
+//  console.log(id)
+  // console.log(asset1)
+
+  function handleClick(){
+    console.log('i\'m clicking')
+  }
   
 
   const [map, setMap] = useState( [51.61915697268178, -3.9376372029662274] )
-  // const [map, setMap] = useState( [tree1.geometry.coordinates[1], tree1.geometry.coordinates[0]] )
+  // const [map, setMap] = useState( [asset.geometry.coordinates[1], asset.geometry.coordinates[0]] )
 
   const renderMarkers = () => {
     return assets.map(asset => {
-      return (<Marker  key={asset.id} position={[asset.geometry.coordinates[1], asset.geometry.coordinates[0]]}>
+      return (<Marker  key={asset.id} position={[asset.geometry.coordinates[1], asset.geometry.coordinates[0]]} scrollWheelZoom={false} doubleClickZoom={false}> 
         <Popup>
-          #{asset.id}: {asset.numberOfTrees > 1 ? `${asset.numberOfTrees} Trees`: `${asset.numberOfTrees} Tree`}
+          Site #{asset.id}
     </Popup>
       </Marker>)
     })
@@ -40,7 +46,8 @@ function Map({assets}) {
       <MapContainer className="map-container"
         center={[map[0], map[1]]}
         zoom={14}
-        
+        scrollWheelZoom={false}
+        doubleClickZoom={false}
       >
         <TileLayer
           attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
