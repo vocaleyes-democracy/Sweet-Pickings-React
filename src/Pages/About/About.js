@@ -103,7 +103,7 @@ import Recipients from './Recipients.js'
   ]
 
   function renderCategories(){
-    return categories.map(category =>  (<div key={category.id} className={`${classes.subPage} ${category.class} ${category.state ? classes.active : null }`} onClick={handleOnClick} >
+    return categories.map(category =>  (<div key={category.id} className={`${classes.subPage} ${category.class} ${category.state ? classes.active : null }`} onClick={handleOnClick} onMouseOver={handleOnClick}>
     
     <Typography
       variant="h4"
