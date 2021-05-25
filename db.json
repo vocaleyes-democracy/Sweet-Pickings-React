@@ -245,6 +245,27 @@
       "ownerType": "Private Property",
       "isOwner": true,
       "id": 10
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Pears",
+          "subVariety": "Unknown",
+          "quantity": "40"
+        }
+      ],
+      "address1": "9 South Close",
+      "address2": "Bishopston, UK 66677",
+      "geometry": {
+        "coordinates": [
+          -0.1278,
+          51.5074
+        ]
+      },
+      "ownerType": "Private Property",
+      "isOwner": true,
+      "id": 11
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { React, useState } from 'react'
+import { makeStyles } from '@material-ui/core'
 
 import FormControl from '@material-ui/core/FormControl'
 import Input from '@material-ui/core/Input'
@@ -13,22 +14,44 @@ import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormLabel from '@material-ui/core/FormLabel'
 import Checkbox from '@material-ui/core/Checkbox'
+import Divider from '@material-ui/core/Divider'
 
-import Button from '@material-ui/core/Button';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import Button from '@material-ui/core/Button'
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 
 import { addATree } from '../redux/actions'
 import { withRouter } from 'react-router-dom'
 
 import { FruitTypes } from '../database/FruitTypes'
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'left',
+    padding: theme.spacing(3),
+  },
+  btn: {
+    fontSize: 20,
+    marginTop: '5%',
+    maxWidth: 260,
+    '&:hover': {
+      backgroundColor: '#868d23',
+    },
+  },
+}))
+
 // this should be wrapped inside a Material Container bc it will provide padding/margin
 
 function TreeForm(props) {
+  const classes = useStyles()
   // const [coordinates, setCoordinates] = useState([])
   const [variety, setVariety] = useState('')
   const [subVariety, setSubVariety] = useState('')
   const [quantity, setQuantity] = useState(0)
+  const [addAsset, setAddAsset] = useState(false)
 
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
@@ -53,34 +76,6 @@ function TreeForm(props) {
 
   //   setCoordinates(coordinates)
   // }
-
-  // "assets": [
-  //   {
-  //     "id": 1,
-  //     "asset": [
-  //       {
-  //         "type": "Tree",
-  //         "variety": "Apple",
-  //         "subVariety": "Bramley",
-  //         "numberOfTrees": 1
-  //       },
-  //       {
-  //         "type": "Tree",
-  //         "variety": "Cherry",
-  //         "subVariety": "Bing",
-  //         "numberOfTrees": 7
-  //       }
-  //     ],
-  //     "address1": "17 Glan yr Afon Gardens",
-  //     "address2": "Sketty, Swansea SA2 9HX, UK",
-  //     "geometry": {
-  //       "type": "Point",
-  //       "coordinates": [
-  //         -3.9942229729238115,
-  //         51.61902699211486
-  //       ]
-  //     }
-  //   },
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
@@ -109,9 +104,45 @@ function TreeForm(props) {
     props.history.push('/opportunities')
   }
 
+  const additionalFruit = (
+    <>
+      <TextField
+        label="Fruit Type"
+        name="type"
+        placeholder="Please Enter Fruit Type"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        onChange={(e) => setVariety(e.target.value)}
+      ></TextField>
+
+      <TextField
+        label="Sub-Type"
+        name="subType"
+        placeholder="Please Enter Fruit Sub-Type"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        onChange={(e) => setSubVariety(e.target.value)}
+      ></TextField>
+
+      <TextField
+        label="Quantity"
+        name="quantity"
+        type="number"
+        InputProps={{ inputProps: { min: 0 } }}
+        placeholder="Please Enter Quantity of Trees"
+        variant="outlined"
+        fullWidth
+        margin="normal"
+        onChange={(e) => setQuantity(e.target.value)}
+      ></TextField>
+    </>
+  )
+
   return (
     <div id="form">
-      <form noValidate onSubmit={handleOnSubmit}>
+      <form className={classes.root} noValidate onSubmit={handleOnSubmit}>
         <Typography variant="h2" align="center">
           LET US KNOW ABOUT A TREE
         </Typography>
@@ -176,17 +207,6 @@ function TreeForm(props) {
           onChange={(e) => setSubVariety(e.target.value)}
         ></TextField>
 
-        <FormControlLabel
-          control={<Checkbox checked={isOwner} onChange={handleChange} />}
-          label="Add Another Tree?"
-        />
-
-        {/* we'll get select menu rendering at a later date */}
-        <InputLabel htmlFor="variety">Variety</InputLabel>
-        <Select native defaultValue="">
-          <option aria-label="None" value="" />
-        </Select>
-
         <TextField
           label="Quantity"
           name="quantity"
@@ -198,6 +218,26 @@ function TreeForm(props) {
           margin="normal"
           onChange={(e) => setQuantity(e.target.value)}
         ></TextField>
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={addAsset}
+              onChange={() => setAddAsset(!addAsset)}
+            />
+          }
+          label="Add Another Fruit Type?"
+        />
+
+        {addAsset ? additionalFruit : null}
+
+        {/* we'll get select menu rendering at a later date */}
+        <InputLabel htmlFor="variety">Variety</InputLabel>
+        <Select native defaultValue="">
+          <option aria-label="None" value="" />
+        </Select>
+
+        <Divider variant="fullWidth" />
 
         <FormControl component="fieldset">
           <FormLabel component="legend">Owner Type</FormLabel>
@@ -230,14 +270,16 @@ function TreeForm(props) {
           control={<Checkbox checked={isOwner} onChange={handleChange} />}
           label="I am the owner"
         />
-        <Button 
-            variant="contained"
-            size="large"
-            color="secondary"
-            type="submit"
-            endIcon={<KeyboardArrowRight/>}>
-            Submit
-            </Button>
+        <Button
+          className={classes.btn}
+          variant="contained"
+          size="large"
+          color="secondary"
+          type="submit"
+          endIcon={<KeyboardArrowRight />}
+        >
+          Submit
+        </Button>
       </form>
     </div>
   )
