@@ -45,15 +45,15 @@
       "asset": [
         {
           "type": "Tree",
-          "variety": "Apple", 
+          "variety": "Apple",
           "subVariety": "Bramley",
-          "numberOfTrees": 1
+          "quantity": 1
         },
         {
           "type": "Tree",
-          "variety": "Cherry", 
+          "variety": "Cherry",
           "subVariety": "Bing",
-          "numberOfTrees": 7
+          "quantity": 7
         }
       ],
       "address1": "17 Glan yr Afon Gardens",
@@ -73,7 +73,7 @@
           "type": "Tree",
           "variety": "Apple",
           "subVariety": "Honeycrisp",
-          "numberOfTrees": 4
+          "quantity": 4
         }
       ],
       "address1": "Tycoch Coch Road",
@@ -93,7 +93,7 @@
           "type": "Tree",
           "variety": "Apple",
           "subVariety": "Gala",
-          "numberOfTrees": 100
+          "quantity": 100
         }
       ],
       "address1": "Fairy Lodge",
@@ -112,7 +112,7 @@
           "type": "Tree",
           "variety": "Pear",
           "subVariety": "",
-          "numberOfTrees": 5
+          "quantity": 5
         }
       ],
       "address1": "Ari's House",
@@ -131,7 +131,7 @@
           "type": "Tree",
           "variety": "Pear",
           "subVariety": "",
-          "numberOfTrees": 4
+          "quantity": 4
         }
       ],
       "address1": "Ari's House",
@@ -151,7 +151,7 @@
           "type": "Tree",
           "variety": "Cherry",
           "subVariety": "",
-          "numberOfTrees": 6
+          "quantity": 6
         }
       ],
       "address1": "Ziggy's Dog Haus",
@@ -171,7 +171,7 @@
           "type": "Tree",
           "variety": "Apple",
           "subVariety": "",
-          "numberOfTrees": 10
+          "quantity": 10
         }
       ],
       "address1": "TR's Apple Orchard",
@@ -191,7 +191,7 @@
           "type": "Tree",
           "variety": "Cherry",
           "subVariety": "",
-          "numberOfTrees": 15
+          "quantity": 15
         }
       ],
       "address1": "TR's Apple Orchard",
@@ -211,7 +211,7 @@
           "type": "Tree",
           "variety": "Pear",
           "subVariety": "",
-          "numberOfTrees": 5
+          "quantity": 5
         }
       ],
       "address1": "Community Food Garden",
@@ -224,6 +224,27 @@
       },
       "comment": "We have some lovely pears for you to pick! Come 'round!",
       "id": 9
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Apple",
+          "subVariety": "Pink Lady",
+          "quantity": "14"
+        }
+      ],
+      "address1": "testing",
+      "address2": "really testing",
+      "geometry": {
+        "coordinates": [
+          -118.614807,
+          34.271038
+        ]
+      },
+      "ownerType": "Private Property",
+      "isOwner": true,
+      "id": 10
     }
   ]
 }
