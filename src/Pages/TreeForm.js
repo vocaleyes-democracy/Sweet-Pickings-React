@@ -52,6 +52,7 @@ function TreeForm(props) {
   const [subVariety, setSubVariety] = useState('')
   const [quantity, setQuantity] = useState(0)
   const [addAsset, setAddAsset] = useState(false)
+  const [url, setUrl] = useState('')
 
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
@@ -87,6 +88,7 @@ function TreeForm(props) {
           variety: variety,
           subVariety: subVariety,
           quantity: quantity,
+          url: url
         },
       ],
       address1: address1,
@@ -219,6 +221,16 @@ function TreeForm(props) {
           onChange={(e) => setQuantity(e.target.value)}
         ></TextField>
 
+<TextField
+          label="Picture"
+          name="url"
+          placeholder="Please Enter URL Image of Fruit If You Have One"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          onChange={(e) => setUrl(e.target.value)}
+        ></TextField>
+
         <FormControlLabel
           control={
             <Checkbox
@@ -232,10 +244,10 @@ function TreeForm(props) {
         {addAsset ? additionalFruit : null}
 
         {/* we'll get select menu rendering at a later date */}
-        <InputLabel htmlFor="variety">Variety</InputLabel>
+        {/* <InputLabel htmlFor="variety">Variety</InputLabel>
         <Select native defaultValue="">
           <option aria-label="None" value="" />
-        </Select>
+        </Select> */}
 
         <Divider variant="fullWidth" />
 
