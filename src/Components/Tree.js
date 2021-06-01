@@ -60,6 +60,7 @@ const [cardFlip, setCardFlip] = React.useState(false);
     setCardFlip(!cardFlip);
   };
 
+  // there is an issue here where if there is more than one asset we aren't iterating thru and returning any url. using .find should return the first url but i haven't worked it out yet
   function renderFruitImage() {
     return tree.asset.map(asset => {
       return asset.url ? asset.url : apples
