@@ -54,27 +54,31 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Tree({ tree }) {
-  // console.log("tree.asset in Tree Component", tree.asset)
 const classes = useStyles()
 
-const [expanded, setExpanded] = React.useState(false);
+const [cardFlip, setCardFlip] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+// cardflip function not being utilized yet
+  const handleClick = () => {
+    setCardFlip(!cardFlip);
   };
 
+  function renderFruitImage() {
+    return tree.asset.map(asset => {
+      return asset.url ? asset.url : apples
+    })
+  }
   // console.log(tree.asset.type ? tree.asset.map(treeObj => treeObj.variety) : null)
 
   return (
     <Container>
-      <Card elevation={2} className={classes.card} style={{backgroundColor: '#7FA11C'}}>
+      <Card elevation={2} className={classes.card} style={{backgroundColor: '#7FA11C'}} onClick={handleClick}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={`${apples}`}
+          image={renderFruitImage()}
           title="Produce">
 
-          {/* {tree.type ? <Typography key={tree.id} variant="h4" align='center' className={classes.mediaTitle}>{tree.type}</Typography> : tree.asset.map(treeObj => <Typography key={tree.variety} variant="h4" align='center' className={classes.mediaTitle}>{treeObj.variety} | </Typography>)} */}
           <Typography key={tree.id} variant="h4" align="center" className={classes.mediaTitle}>{tree.address1}</Typography>
 
           </CardMedia>

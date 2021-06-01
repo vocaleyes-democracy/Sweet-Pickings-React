@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getTreeData } from '../redux/actions.js'
 
@@ -9,13 +9,6 @@ import Map from '../Components/Map'
 
 function Opportunities({treeArray, treeData}) {
 
-  // const [renderMap, setRenderMap] = useState(false)
-
-  // function handleRenderMap(){
-  //   const tree = document.querySelector('.trees')
-  //   tree.classList.toggle('tree-list')
-  //   return setRenderMap(!renderMap)
-  // }
 
   useEffect(() => {
     treeData()
@@ -23,7 +16,6 @@ function Opportunities({treeArray, treeData}) {
 
     return (
         <div>
-            {/* <div className={'map-div'} onClick={handleRenderMap} ></div> */}
             <div className={'map-tree-container'}>
               <TreeList assets={treeArray}/>
               <Map assets={treeArray}/>

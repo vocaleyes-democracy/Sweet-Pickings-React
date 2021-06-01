@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-import Link from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 import Story from './Story.js'
@@ -32,9 +30,6 @@ import Recipients from './Recipients.js'
       fontWeight: 'bold',
     },
     active: {
-      backgroundColor: 'secondary',
-    },
-    active: {
             backgroundColor: '#6B0F1A',
     }
   }))
@@ -42,7 +37,6 @@ import Recipients from './Recipients.js'
   export default function About() {
 
   const classes = useStyles()
-  const history = useHistory()
 
   const [renderStory, setRenderStory] = useState(false)
   const [renderPickers, setRenderPickers] = useState(false)

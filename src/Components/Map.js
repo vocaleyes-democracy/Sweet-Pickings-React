@@ -18,8 +18,8 @@ function Map({assets}) {
 
   const classes = useStyles()
   // console.log(assets)
-  const [ asset1 ] = assets
-  const [id, setId] = useState(null)
+  // const [ asset1 ] = assets
+  // const [id, setId] = useState(null)
 //  console.log(id)
   // console.log(asset1)
 

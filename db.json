@@ -266,6 +266,28 @@
       "ownerType": "Private Property",
       "isOwner": true,
       "id": 11
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Peaches",
+          "subVariety": "Georgian",
+          "quantity": "47",
+          "url": "https://billsberryfarm.com/wp-content/uploads/2020/08/peach.png"
+        }
+      ],
+      "address1": "19 N Hill Rd",
+      "address2": "Swansea SA1 6XS, United Kingdom",
+      "geometry": {
+        "coordinates": [
+          -3.9480827823475693,
+          51.62775200328184
+        ]
+      },
+      "ownerType": "Council Land",
+      "isOwner": false,
+      "id": 12
     }
   ]
 }
