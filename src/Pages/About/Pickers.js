@@ -9,7 +9,6 @@ export default function Pickers() {
                 variant={"h3"}
                 color={"primary"}
             >
-                {/* PICKERS: */}
             </Typography>
             <Typography
                 variant={"secondaryText"}

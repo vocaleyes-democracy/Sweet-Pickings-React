@@ -1,15 +1,10 @@
 import React from 'react'
-// import { NavLink } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-// import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
-// import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
 import Icon from '@material-ui/core/Icon'
 import Link from '@material-ui/core/Link'
-
-
 
 const useStyles = makeStyles((theme) => ({
 

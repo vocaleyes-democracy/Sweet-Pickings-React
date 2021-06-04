@@ -5,17 +5,9 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import clsx from 'clsx';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Collapse from '@material-ui/core/Collapse';
 import Container from '@material-ui/core/Container';
-
 import { makeStyles } from '@material-ui/core/styles';
-
 import apples from '../images/apples2.png'
-
-
 
 const useStyles = makeStyles((theme) => ({
   
@@ -53,11 +45,11 @@ const useStyles = makeStyles((theme) => ({
 function Tree({ tree }) {
 const classes = useStyles()
 
-const [cardFlip, setCardFlip] = React.useState(false);
+// const [cardFlip, setCardFlip] = React.useState(false);
 
-// cardflip function not being utilized yet
+// this handleClick function will take user to show page of site/tree
   const handleClick = () => {
-    setCardFlip(!cardFlip);
+    console.log('going to site show page...');
   };
 
   // there is an issue here where if there is more than one asset we aren't iterating thru and returning any url. using .find should return the first url but i haven't worked it out yet
@@ -95,28 +87,8 @@ const [cardFlip, setCardFlip] = React.useState(false);
 
         </CardContent>
       </CardActionArea>
-      {/* <CardActions disableSpacing>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
-      </CardActions> */}
-      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Comments:
-          {tree.comment ? ` ${tree.comment}` : " No comment."}
-          </Typography>
-          </CardContent>
-      </Collapse> */}
-        </Card>
+      </Card>
   </Container>
-
   )
 }
 

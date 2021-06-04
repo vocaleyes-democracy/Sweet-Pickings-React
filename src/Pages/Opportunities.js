@@ -1,14 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getTreeData } from '../redux/actions.js'
-
 import TreeList from '../Components/TreeList'
 import Map from '../Components/Map'
 
-
-
 function Opportunities({treeArray, treeData}) {
-
 
   useEffect(() => {
     treeData()

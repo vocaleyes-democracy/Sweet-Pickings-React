@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm'
 import ThreeDRotation from '@material-ui/icons/ThreeDRotation'
-// import { Dropdown } from 'semantic-ui-react'
 
 // -about sweet pickings, browse opportunities, get started, let us know about a Tree, contact
 // Sign Up / Log In

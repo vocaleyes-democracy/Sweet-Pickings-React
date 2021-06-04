@@ -1,10 +1,11 @@
 import React from 'react'
-import HeaderImg from '../../Components/HeaderImg.js'
+// import HeaderImg from '../../Components/HeaderImg.js'
 
 function Gallery() {
     return (
       <div className="applesImg">
-      <HeaderImg/>
+        // HeaderImg has been ice-boxed
+      {/* <HeaderImg/> */}
       {/* why doesn't image render? create account page renders in its place */}
       </div>
     )

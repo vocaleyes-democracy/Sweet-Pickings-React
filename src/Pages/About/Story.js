@@ -9,7 +9,6 @@ export default function Story() {
                 variant={"h3"}
                 color={"primary"}
             >
-                {/* STORY: */}
             </Typography>
             <Typography
                 variant={"secondaryText"}

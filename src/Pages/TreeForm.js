@@ -1,28 +1,27 @@
 import { connect } from 'react-redux'
 import { React, useState } from 'react'
-import { makeStyles } from '@material-ui/core'
 
+import { makeStyles } from '@material-ui/core'
+import Container from '@material-ui/core/Container'
 import FormControl from '@material-ui/core/FormControl'
-import Input from '@material-ui/core/Input'
-import InputLabel from '@material-ui/core/InputLabel'
+// import Input from '@material-ui/core/Input'
+// import InputLabel from '@material-ui/core/InputLabel'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
-import Select from '@material-ui/core/Select'
-import NativeSelect from '@material-ui/core/NativeSelect'
+// import Select from '@material-ui/core/Select'
+// import NativeSelect from '@material-ui/core/NativeSelect'
 import Radio from '@material-ui/core/Radio'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormLabel from '@material-ui/core/FormLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 import Divider from '@material-ui/core/Divider'
-
 import Button from '@material-ui/core/Button'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 
 import { addATree } from '../redux/actions'
 import { withRouter } from 'react-router-dom'
-
-import { FruitTypes } from '../database/FruitTypes'
+// import { FruitTypes } from '../database/FruitTypes'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
 // this should be wrapped inside a Material Container bc it will provide padding/margin
 
 function TreeForm(props) {
+
   const classes = useStyles()
-  // const [coordinates, setCoordinates] = useState([])
   const [variety, setVariety] = useState('')
   const [subVariety, setSubVariety] = useState('')
   const [quantity, setQuantity] = useState(0)
@@ -66,17 +65,6 @@ function TreeForm(props) {
   const handleChange = (event) => {
     setIsOwner(event.target.checked)
   }
-
-  console.log(isOwner)
-  // const handleChange = (e) => setOwnerType(e.target.firstChild.data)
-
-  // const CoordinateLatLong = (e) => {
-  //   const coordinates = []
-
-  //   coordinates.push(parseFloat(e.target.value))
-
-  //   setCoordinates(coordinates)
-  // }
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
@@ -143,7 +131,7 @@ function TreeForm(props) {
   )
 
   return (
-    <div id="form">
+    <Container>
       <form className={classes.root} noValidate onSubmit={handleOnSubmit}>
         <Typography variant="h2" align="center">
           LET US KNOW ABOUT A TREE
@@ -221,7 +209,7 @@ function TreeForm(props) {
           onChange={(e) => setQuantity(e.target.value)}
         ></TextField>
 
-<TextField
+        <TextField
           label="Picture"
           name="url"
           placeholder="Please Enter URL Image of Fruit If You Have One"
@@ -293,7 +281,7 @@ function TreeForm(props) {
           Submit
         </Button>
       </form>
-    </div>
+    </Container>
   )
 }
 
@@ -305,32 +293,8 @@ const mapDispatchToProps = (dispatch) => {
 
 export default withRouter(connect(null, mapDispatchToProps)(TreeForm))
 
-{
-  /* <Form.Input
-          label="Address 2"
-          name="address2"
-          type="text"
-          placeholder="Town/City, Postcode and Country"
-          onChange={e => setAddress2(e.target.value)}
-        />
 
-        <Form.Input
-          label="Latitude"
-          name="latitude"
-          type="text"
-          placeholder="Please Enter Latitude --Test"
-          onChange={e => setLatitude(parseFloat(e.target.value))}
-        />
-
-        <Form.Input
-          label="Longitude"
-          name="longitude"
-          type="text"
-          placeholder="Please Enter Longitude --Test"
-          onChange={e => setLongitude(parseFloat(e.target.value))}
-        />
-
-        <Form.Select
+  /* <Form.Select
           label="Fruit Type"
           placeholder="Select Fruit Type"
           name="fruit-type"
@@ -339,8 +303,7 @@ export default withRouter(connect(null, mapDispatchToProps)(TreeForm))
           options={FruitTypes}
           onChange={e => setFruitType(e.target.firstChild.innerHTML)}
         /> */
-}
-{
+
   /* <Form.Select
                 label="Variety"
                 placeholder="Select Fruit Variety"
@@ -349,81 +312,4 @@ export default withRouter(connect(null, mapDispatchToProps)(TreeForm))
                 options={fruitVarieties}
                 onChange={e => setFruitVariety(e.target.value)}
             /> */
-}
-{
-  /* // <Form.Input */
-}
-{
-  /* //   label="Quantity of Trees"
-        //   type="number"
-        //   name="quantity"
-        //   placeholder=">= 1"
-        //   min="1"
-        //   width="4"
-        //   onChange={e => setQuantity(e.target.value)}
-        // />
 
-        // <Form.Group grouped>
-        //   <label>Owner Type</label>
-        //   <Form.Field */
-}
-{
-  /* //     control={Radio}
-        //     label="Council Land"
-        //     value="Council Land"
-        //     checked={ownerType === 'Council Land'}
-        //     name="owner-type"
-        //     onChange={handleChange}
-        //   />
-        //   <Form.Field */
-}
-{
-  /* //     control={Radio}
-        //     label="Private Property"
-        //     value="Private Property"
-        //     checked={ownerType === 'Private Property'}
-        //     name="owner-type"
-        //     onChange={handleChange}
-        //   />
-        //   <Form.Field */
-}
-{
-  /* //     control={Radio}
-        //     label="Not Sure"
-        //     value="Not Sure"
-        //     checked={ownerType === 'Not Sure'}
-        //     name="owner-type"
-        //     onChange={handleChange}
-        //   />
-        //   <Form.Field */
-}
-{
-  /* //     control={Radio}
-        //     inline
-        //     label="Other"
-        //     value="Other"
-        //     checked={ownerType === 'Other'}
-        //     name="owner-type"
-        //     onChange={handleChange}
-        //   />
-        // </Form.Group> */
-}
-
-{
-  /* // <Form.Checkbox */
-}
-{
-  /* //   label="I am the owner"
-        // />
-
-        // <Form.TextArea */
-}
-{
-  /* //   label="Any additional comments or questions?"
-        //   name="comment"
-        //   placeholder="Tell us more here"
-        //   onChange={e => setComment(e.target.value)}
-        // />
-
-        // <Form.Button type="submit" color="blue" >SIGN UP YOUR TREE</Form.Button> */
-}

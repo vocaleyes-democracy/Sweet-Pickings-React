@@ -7,7 +7,6 @@ import Pickers from './Pickers.js'
 import Growers from './Growers.js'
 import Recipients from './Recipients.js'
 
-
   const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -30,7 +29,7 @@ import Recipients from './Recipients.js'
       fontWeight: 'bold',
     },
     active: {
-            backgroundColor: '#6B0F1A',
+      backgroundColor: '#6B0F1A',
     }
   }))
 
@@ -62,8 +61,6 @@ import Recipients from './Recipients.js'
       setRenderRecipients(true)
     }
   }
-
-
 
   const categories = [
     {
