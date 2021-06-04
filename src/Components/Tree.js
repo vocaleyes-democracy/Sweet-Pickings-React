@@ -55,7 +55,11 @@ const classes = useStyles()
   // there is an issue here where if there is more than one asset we aren't iterating thru and returning any url. using .find should return the first url but i haven't worked it out yet
   function renderFruitImage() {
     return tree.asset.map(asset => {
-      return asset.url ? asset.url : apples
+      console.log(asset.variety.length)
+      // if (asset.url > 1) {
+      //   return asset.url[0]
+      // }
+      // return asset.url ? asset.url : apples
     })
   }
   // console.log(tree.asset.type ? tree.asset.map(treeObj => treeObj.variety) : null)
