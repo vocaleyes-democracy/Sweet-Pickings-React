@@ -10,25 +10,22 @@ import shadow from '../images/shadow.png'
 
 import { makeStyles } from '@material-ui/core/styles';
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
   padding: '25px 0'
   }
 }))
 
-
 function Map({assets}) {
+  const [asset] = assets
 
   const classes = useStyles()
 
   function handleClick(){
     console.log('i\'m clicking')
   }
-  
 
-  const [map, setMap] = useState( [51.61915697268178, -3.9376372029662274] )
-  // const [map, setMap] = useState( [asset.geometry.coordinates[1], asset.geometry.coordinates[0]] )
+  const [map, setMap] = useState( [asset.geometry.coordinates[1], asset.geometry.coordinates[0]] )
 
   const appleIcon = L.icon({
     iconUrl: strawberry,

@@ -11,11 +11,13 @@ function Opportunities({treeArray, treeData}) {
   },[treeData])
 
     return (
-        <div>
+      <div>
+          {treeArray.length === 0 ? <h1>Loading...</h1> : 
             <div className={'map-tree-container'}>
               <TreeList assets={treeArray}/>
               <Map assets={treeArray}/>
             </div>
+          }
         </div>
     )
 }
