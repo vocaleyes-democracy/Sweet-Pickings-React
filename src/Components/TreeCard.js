@@ -42,21 +42,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function Tree({ tree }) {
-const classes = useStyles()
+function TreeCard({ tree }) {
+  const classes = useStyles()
 
 // const [cardFlip, setCardFlip] = React.useState(false);
 
 // this handleClick function will take user to show page of site/tree
   const handleClick = () => {
-    console.log('going to site show page...');
+    console.log('Tree ID: ', tree.id)
   };
 
   // there is an issue here where if there is more than one asset we aren't iterating thru and returning any url. using .find should return the first url but i haven't worked it out yet
   function renderFruitImage() {
-    return tree.asset.map(asset => {
-      return asset.url ? asset.url : apples
-    })
+    return apples
+    // I commented out the bottom return to get rid of the browser console errors for now
+    // return tree.asset.map(asset => {
+    //   return asset.url ? asset.url : apples
+    // })
   }
   // console.log(tree.asset.type ? tree.asset.map(treeObj => treeObj.variety) : null)
 
@@ -77,7 +79,7 @@ const classes = useStyles()
           title={`Site# ${tree.id}`}
           />
 
-          <Typography variant="body2" color="inherit" align='center' gutterBottom='true'>
+          <Typography variant="body2" color="inherit" align='center' gutterBottom={true}>
           Variety: {tree.asset.map(treeObj => treeObj.variety).join(', ')}
           </Typography>
 
@@ -92,4 +94,4 @@ const classes = useStyles()
   )
 }
 
-export default Tree
+export default TreeCard

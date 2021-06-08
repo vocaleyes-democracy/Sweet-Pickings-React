@@ -1,5 +1,5 @@
 import React from 'react'
-import Tree from './Tree.js'
+import Tree from './TreeCard.js'
 
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'

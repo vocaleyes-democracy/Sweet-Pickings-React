@@ -19,7 +19,7 @@ export default function HeaderImg() {
       className={classes.root}>
       <CardMedia 
         className={classes.media}
-        image={`${apples}`}
+        image={apples}
         alt="apples hanging from tree"
       >
         <Typography

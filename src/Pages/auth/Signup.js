@@ -18,7 +18,8 @@ export default function Signup() {
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(`Phone: ${phone1} ${phone2} ${phone3}`);
+        // Just console logging here to get ride of errors in browser
+        console.log(firstName, lastName, address1, address2, country, zip, email, phone1, phone2, phone3);
     }
 
     // const userObj = {

@@ -58,7 +58,6 @@ function App() {
             <NavBar />
         
             <Switch>
-
               <Route exact path="/">
                 <Redirect to="/home" />
               </Route>

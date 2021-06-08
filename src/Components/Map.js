@@ -21,9 +21,9 @@ function Map({assets}) {
 
   const classes = useStyles()
 
-  function handleClick(){
-    console.log('i\'m clicking')
-  }
+  // function handleClick(){
+  //   console.log('i\'m clicking')
+  // }
 
   const [map, setMap] = useState( [asset.geometry.coordinates[1], asset.geometry.coordinates[0]] )
 
