@@ -61,7 +61,7 @@ function Map({ assets }) {
   ])
 
   const fruitIcon = L.icon({
-    iconUrl: fruits,
+    iconUrl: {renderFruitIcon},
     // shadowUrl: shadow,
     iconSize: [28, 30], // size of the icon
     // shadowSize:   [50, 45], // size of the shadow
@@ -70,6 +70,7 @@ function Map({ assets }) {
     popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
   })
 
+  // haven't yet figured out how to pass fruit to icon successfully. switch statement on line 30 works but fruitIcon doesn't want to convert to a function so I can pass fruit type.... :/
   const renderMarkers = () => {
     return assets.map((asset) => {
       return (
