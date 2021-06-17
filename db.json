@@ -17,8 +17,8 @@
       "lastName": "Knowles",
       "email": "bryn.knowles@gmail.com",
       "telephone": "415-359-3563",
-      "address1": "1234 Sesame Street",
-      "address2": "",
+      "address1": "1235 Sesame Street",
+      "address2": "Apt 3",
       "city": "Brooklyn",
       "country": "United States",
       "zip": "11218",
@@ -275,6 +275,28 @@
       "ownerType": "Council Land",
       "isOwner": false,
       "id": 12
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Cherries",
+          "subVariety": "Bing",
+          "quantity": "6",
+          "url": "https://cdn3.1800baskets.com/wcsstore/Baskets/images/catalog/93681revx.jpg?width=545&height=597&quality=80&auto=webp&optimize={medium}"
+        }
+      ],
+      "address1": "474 48th Ave",
+      "address2": "#29F",
+      "geometry": {
+        "coordinates": [
+          -3.938956736542164,
+          51.61681210165504
+        ]
+      },
+      "ownerType": "Council Land",
+      "isOwner": true,
+      "id": 13
     }
   ]
 }

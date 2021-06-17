@@ -54,11 +54,11 @@ function TreeCard({ tree }) {
 
   // there is an issue here where if there is more than one asset we aren't iterating thru and returning any url. using .find should return the first url but i haven't worked it out yet
   function renderFruitImage() {
-    return apples
+    // return apples
     // I commented out the bottom return to get rid of the browser console errors for now
-    // return tree.asset.map(asset => {
-    //   return asset.url ? asset.url : apples
-    // })
+    return tree.asset.map(asset => {
+      return asset.url ? asset.url : apples
+    })
   }
   // console.log(tree.asset.type ? tree.asset.map(treeObj => treeObj.variety) : null)
 
