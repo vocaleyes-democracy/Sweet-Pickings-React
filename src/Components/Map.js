@@ -30,17 +30,47 @@ function Map({ assets }) {
   function renderFruitIcon(fruit) {
     switch (fruit) {
       case 'Apple':
-        return apple
+        return L.icon({
+          iconUrl: apple,
+          iconSize: [28, 30], // size of the icon
+          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+        })
       case 'Cherry':
-        return cherries
+        return L.icon({
+          iconUrl: cherries,
+          iconSize: [28, 30], // size of the icon
+          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+        })
       case 'Blueberry':
-        return blueberry
+        return L.icon({
+          iconUrl: blueberry,
+          iconSize: [28, 30], // size of the icon
+          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+        })
       case 'Strawberry':
-        return strawberries
+        return L.icon({
+          iconUrl: strawberries,
+          iconSize: [28, 30], // size of the icon
+          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+        })
       case 'Pear':
-        return pear
+        return L.icon({
+          iconUrl: pear,
+          iconSize: [28, 30], // size of the icon
+          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+        })
       default:
-        return fruits
+        return L.icon({
+          iconUrl: fruits,
+          iconSize: [28, 30], // size of the icon
+          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+        })
     }
   }
 
@@ -60,22 +90,24 @@ function Map({ assets }) {
     asset.geometry.coordinates[0],
   ])
 
-  const fruitIcon = L.icon({
-    iconUrl: {renderFruitIcon},
-    // shadowUrl: shadow,
-    iconSize: [28, 30], // size of the icon
-    // shadowSize:   [50, 45], // size of the shadow
-    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-    // shadowAnchor: [4, 62], // the same for the shadow
-    popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-  })
 
-  // haven't yet figured out how to pass fruit to icon successfully. switch statement on line 30 works but fruitIcon doesn't want to convert to a function so I can pass fruit type.... :/
+
+  // const fruitIcon = L.icon({
+  //   iconUrl: {renderFruitIcon},
+  //   // shadowUrl: shadow,
+  //   iconSize: [28, 30], // size of the icon
+  //   // shadowSize:   [50, 45], // size of the shadow
+  //   iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+  //   // shadowAnchor: [4, 62], // the same for the shadow
+  //   popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+  // })
+
+ 
   const renderMarkers = () => {
     return assets.map((asset) => {
       return (
         <Marker
-          icon={fruitIcon}
+          icon={renderFruitIcon(asset.asset[0].variety)}
           key={asset.id}
           position={[
             asset.geometry.coordinates[1],
