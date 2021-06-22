@@ -9,6 +9,12 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import apples from '../images/apples2.png'
 
+// fruit card images
+import apple from '../images/cardImgApples.jpg'
+import pear from '../images/cardImgPear.jpg'
+import cherry from '../images/cardImgCherries.jpg'
+import genericFruit from '../images/cardImgFruit.jpg'
+
 const useStyles = makeStyles((theme) => ({
   
   card: {
@@ -52,14 +58,26 @@ function TreeCard({ tree }) {
     console.log('Tree ID: ', tree.id)
   };
 
-  // there is an issue here where if there is more than one asset we aren't iterating thru and returning any url. using .find should return the first url but i haven't worked it out yet
-  function renderFruitImage() {
+  // there is an issue here where if there is more than one asset we aren't iterating thru and returning any url. using .find should return the first url but i haven't worked it out yet. For now our data only shows one fruit per site
+  function renderFruitImage(fruit) {
+
+    switch(fruit) {
+      case 'Apple':
+        return apple;
+        case 'Cherry':
+          return cherry;
+          case 'Pear':
+            return pear;
+            default:
+              return genericFruit;
+    }
+  }
     // return apples
     // I commented out the bottom return to get rid of the browser console errors for now
-    return tree.asset.map(asset => {
-      return asset.url ? asset.url : apples
-    })
-  }
+  //   return tree.asset.map(asset => {
+  //     return asset.url ? asset.url : apples
+  //   })
+  // }
   // console.log(tree.asset.type ? tree.asset.map(treeObj => treeObj.variety) : null)
 
   return (
@@ -68,7 +86,8 @@ function TreeCard({ tree }) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={renderFruitImage()}
+          // renders first fruit regardless of how many fruit types. for now. we'll see if this still works when we add additional fruit types
+          image={renderFruitImage(tree.asset[0].variety)}
           title="Produce">
 
           <Typography key={tree.id} variant="h4" align="center" className={classes.mediaTitle}>{tree.address1}</Typography>
