@@ -26,13 +26,12 @@ const useStyles = makeStyles((theme) => ({
 function Map({ assets }) {
   const [asset] = assets
 
-  
   function renderFruitIcon(fruit) {
     switch (fruit) {
       case 'Apple':
         return L.icon({
           iconUrl: apple,
-          iconSize: [28, 30], // size of the icon
+          iconSize: [23, 25], // size of the icon
           iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
           popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
         })
@@ -67,7 +66,7 @@ function Map({ assets }) {
       default:
         return L.icon({
           iconUrl: fruits,
-          iconSize: [28, 30], // size of the icon
+          iconSize: [32, 34], // size of the icon
           iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
           popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
         })
