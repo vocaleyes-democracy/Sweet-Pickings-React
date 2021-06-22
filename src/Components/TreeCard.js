@@ -63,13 +63,16 @@ function TreeCard({ tree }) {
 
     switch(fruit) {
       case 'Apple':
+      case 'Apples':
         return apple;
-        case 'Cherry':
-          return cherry;
-          case 'Pear':
-            return pear;
-            default:
-              return genericFruit;
+      case 'Cherry':
+      case 'Cherries':
+        return cherry;
+      case 'Pear':
+      case 'Pears':
+        return pear;
+      default:
+        return genericFruit;
     }
   }
     // return apples
