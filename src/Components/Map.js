@@ -23,62 +23,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+function icon(fruit, size1, size2) {
+  return L.icon({
+    iconUrl: fruit,
+    iconSize: [size1, size2], // size of the icon
+    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+  })
+}
+
 function Map({ assets }) {
+  const classes = useStyles()
   const [asset] = assets
 
   function renderFruitIcon(fruit) {
     switch (fruit) {
       case 'Apple':
-        return L.icon({
-          iconUrl: apple,
-          iconSize: [23, 25], // size of the icon
-          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-        })
+        return icon(apple, 23, 23)
       case 'Cherry':
-        return L.icon({
-          iconUrl: cherries,
-          iconSize: [28, 30], // size of the icon
-          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-        })
+        return icon(cherries, 28, 30)
       case 'Blueberry':
-        return L.icon({
-          iconUrl: blueberry,
-          iconSize: [28, 30], // size of the icon
-          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-        })
+        return icon(blueberry, 28, 30)
       case 'Strawberry':
-        return L.icon({
-          iconUrl: strawberries,
-          iconSize: [28, 30], // size of the icon
-          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-        })
+        return icon(strawberries, 28, 30)
       case 'Pear':
-        return L.icon({
-          iconUrl: pear,
-          iconSize: [28, 30], // size of the icon
-          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-        })
+        return icon(pear, 28, 30)
       default:
-        return L.icon({
-          iconUrl: fruits,
-          iconSize: [32, 34], // size of the icon
-          iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-          popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-        })
+        return icon(fruits, 32, 34)
     }
   }
 
-  console.log(renderFruitIcon("Pear"))
-
-  const fruit = assets.map((asset) => asset.asset[0].variety)
-  console.log(fruit)
-
-  const classes = useStyles()
+  // const fruit = assets.map((asset) => asset.asset[0].variety)
 
   // function handleClick(){
   //   console.log('i\'m clicking')
@@ -88,18 +63,6 @@ function Map({ assets }) {
     asset.geometry.coordinates[1],
     asset.geometry.coordinates[0],
   ])
-
-
-
-  // const fruitIcon = L.icon({
-  //   iconUrl: {renderFruitIcon},
-  //   // shadowUrl: shadow,
-  //   iconSize: [28, 30], // size of the icon
-  //   // shadowSize:   [50, 45], // size of the shadow
-  //   iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-  //   // shadowAnchor: [4, 62], // the same for the shadow
-  //   popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-  // })
 
  
   const renderMarkers = () => {
