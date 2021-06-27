@@ -6,7 +6,6 @@ import { sendGeocodingRequest } from '../redux/actions'
 
 import L from 'leaflet'
 
-
 import strawberries from '../images/strawberries.png'
 import blueberry from '../images/blueberry.png'
 import apple from '../images/apple.png'
@@ -39,14 +38,19 @@ function Map({ assets }) {
   function renderFruitIcon(fruit) {
     switch (fruit) {
       case 'Apple':
-        return icon(apple, 23, 23)
+      case 'Apples':
+        return icon(apple, 21, 20)
       case 'Cherry':
+      case 'Cherries':
         return icon(cherries, 28, 30)
       case 'Blueberry':
+      case 'Blueberries':
         return icon(blueberry, 28, 30)
       case 'Strawberry':
+      case 'Strawberries':
         return icon(strawberries, 28, 30)
       case 'Pear':
+      case 'Pears':
         return icon(pear, 28, 30)
       default:
         return icon(fruits, 32, 34)
@@ -55,17 +59,18 @@ function Map({ assets }) {
 
   // const fruit = assets.map((asset) => asset.asset[0].variety)
 
-  // function handleClick(){
-  //   console.log('i\'m clicking')
-  // }
+  // still working thru documentation to get this working. i see how to do it via Vanilla JS but for React needs more digging
+  function handleClick(e) {
+    const { lat, lng } = e.latlng
+    console.log(lat, lng)
+  }
 
   const [map, setMap] = useState([
     asset.geometry.coordinates[1],
     asset.geometry.coordinates[0],
   ])
 
- 
-  const renderMarkers = () => {
+  function renderMarkers() {
     return assets.map((asset) => {
       return (
         <Marker
@@ -78,7 +83,9 @@ function Map({ assets }) {
           scrollWheelZoom={false}
           doubleClickZoom={false}
         >
-          <Popup>Site #{asset.id}</Popup>
+          <Popup>
+            Site #{asset.id}: {asset.asset[0].variety}
+          </Popup>
         </Marker>
       )
     })
@@ -92,6 +99,7 @@ function Map({ assets }) {
         zoom={14}
         scrollWheelZoom={false}
         doubleClickZoom={false}
+        onClick={handleClick}
       >
         <TileLayer
           attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

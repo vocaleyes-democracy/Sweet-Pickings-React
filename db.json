@@ -291,6 +291,50 @@
       "ownerType": "Council Land",
       "isOwner": true,
       "id": 13
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Oranges",
+          "subVariety": "Cara",
+          "quantity": "20",
+          "url": ""
+        }
+      ],
+      "address1": "444 Brynmill",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.970996023969631,
+          51.61162499536505
+        ]
+      },
+      "ownerType": "Council Land",
+      "isOwner": false,
+      "id": 14
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Blueberries",
+          "subVariety": "",
+          "quantity": "300",
+          "url": ""
+        }
+      ],
+      "address1": "111 Port Tennant",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.9153313700572427,
+          51.621957196855114
+        ]
+      },
+      "ownerType": "Private Property",
+      "isOwner": true,
+      "id": 15
     }
   ]
 }

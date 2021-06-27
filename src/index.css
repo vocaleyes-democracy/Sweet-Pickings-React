@@ -40,8 +40,9 @@ code {
   height: 300px;
 }
 
-.map-tree-container {
+.map-tree-container, .form-tree-container {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;

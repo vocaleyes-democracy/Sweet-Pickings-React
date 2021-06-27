@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { React, useState } from 'react'
+import Map2 from '../Components/Map2'
 
 import { makeStyles } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'left',
     padding: theme.spacing(3),
+    width: '50vw'
   },
   btn: {
     fontSize: 20,
@@ -47,6 +49,10 @@ const useStyles = makeStyles((theme) => ({
 function TreeForm(props) {
 
   const classes = useStyles()
+
+  const [formCoords, setFormCoords] = useState([0,0])
+  // console.log('this is state', formCoords)
+
   const [variety, setVariety] = useState('')
   const [subVariety, setSubVariety] = useState('')
   const [quantity, setQuantity] = useState(0)
@@ -55,8 +61,8 @@ function TreeForm(props) {
 
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
-  const [latitude, setLatitude] = useState(0)
-  const [longitude, setLongitude] = useState(0)
+  // const [latitude, setLatitude] = useState(0)
+  // const [longitude, setLongitude] = useState(0)
 
   const [ownerType, setOwnerType] = useState(null)
   const [isOwner, setIsOwner] = useState(false)
@@ -82,7 +88,7 @@ function TreeForm(props) {
       address1: address1,
       address2: address2,
       geometry: {
-        coordinates: [longitude, latitude],
+        coordinates: formCoords,
       },
       ownerType: ownerType,
       isOwner: isOwner,
@@ -131,7 +137,8 @@ function TreeForm(props) {
   )
 
   return (
-    <Container>
+    <Container className={'form-tree-container'}>
+      <Map2 formCoords={formCoords} setFormCoords={setFormCoords}/>
       <form className={classes.root} noValidate onSubmit={handleOnSubmit}>
         <Typography variant="h2" align="center">
           LET US KNOW ABOUT A TREE
@@ -157,7 +164,7 @@ function TreeForm(props) {
           onChange={(e) => setAddress2(e.target.value)}
         ></TextField>
 
-        <TextField
+        {/* <TextField
           label="Latitude"
           name="latitude"
           placeholder="Please Enter Latitude --Test"
@@ -175,7 +182,7 @@ function TreeForm(props) {
           fullWidth
           margin="normal"
           onChange={(e) => setLongitude(parseFloat(e.target.value))}
-        ></TextField>
+        ></TextField> */}
 
         <TextField
           label="Fruit Type"
