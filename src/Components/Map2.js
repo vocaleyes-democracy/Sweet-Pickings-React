@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+
 function Map2({formCoords, setFormCoords}) {
   const classes = useStyles()
   const [map, setMap] = useState([51.63019953098332, -3.9596806597695333])

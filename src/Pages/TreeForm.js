@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-// this should be wrapped inside a Material Container bc it will provide padding/margin
+// still need to style and add instructions to map onClick for better UI
 
 function TreeForm(props) {
 
