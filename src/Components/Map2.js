@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-function Map2({formCoords, setFormCoords}) {
+function Map2({formCoords, setFormCoords, clicked, setClicked}) {
   const classes = useStyles()
   const [map, setMap] = useState([51.63019953098332, -3.9596806597695333])
 
@@ -50,8 +50,9 @@ function Map2({formCoords, setFormCoords}) {
           // console.log("map center:", map.getCenter());
           map.on('click', function (e) {
             const { lat, lng } = e.latlng
-            // console.log(lat, lng)
+            console.log(lat, lng)
             setFormCoords([lng,lat])
+            setClicked(true)
           })
           return null
         }}

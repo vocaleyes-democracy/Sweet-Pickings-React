@@ -335,6 +335,28 @@
       "ownerType": "Private Property",
       "isOwner": true,
       "id": 15
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Blueberries",
+          "subVariety": "",
+          "quantity": "20",
+          "url": ""
+        }
+      ],
+      "address1": "1 Orchard Pl",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.955116637531744,
+          51.65422798135014
+        ]
+      },
+      "ownerType": null,
+      "isOwner": true,
+      "id": 16
     }
   ]
 }

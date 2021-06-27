@@ -3,7 +3,7 @@ import { React, useState } from 'react'
 import Map2 from '../Components/Map2'
 
 import { makeStyles } from '@material-ui/core'
-import Container from '@material-ui/core/Container'
+// import Container from '@material-ui/core/Container'
 import FormControl from '@material-ui/core/FormControl'
 // import Input from '@material-ui/core/Input'
 // import InputLabel from '@material-ui/core/InputLabel'
@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     width: '50vw'
   },
+  instructions: {
+    width: '40vw'
+  },
   btn: {
     fontSize: 20,
     marginTop: '5%',
@@ -44,15 +47,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-// still need to style and add instructions to map onClick for better UI
+// still need to improve styling of map component
 
 function TreeForm(props) {
 
   const classes = useStyles()
 
   const [formCoords, setFormCoords] = useState([0,0])
-  // console.log('this is state', formCoords)
-
+  
   const [variety, setVariety] = useState('')
   const [subVariety, setSubVariety] = useState('')
   const [quantity, setQuantity] = useState(0)
@@ -68,9 +70,13 @@ function TreeForm(props) {
   const [isOwner, setIsOwner] = useState(false)
   // const [comment, setComment] = useState('')
 
+  const [clicked, setClicked] = useState(false)
+
   const handleChange = (event) => {
     setIsOwner(event.target.checked)
   }
+
+
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
@@ -96,7 +102,7 @@ function TreeForm(props) {
     }
 
     props.treePost(assetObj)
-    // this sends user to home after POST is complete! We can change the path of course.
+    // this sends user to opportunities after POST is complete! We can change the path of course.
     props.history.push('/opportunities')
   }
 
@@ -137,12 +143,13 @@ function TreeForm(props) {
   )
 
   return (
-    <Container className={'form-tree-container'}>
-      <Map2 formCoords={formCoords} setFormCoords={setFormCoords}/>
-      <form className={classes.root} noValidate onSubmit={handleOnSubmit}>
-        <Typography variant="h2" align="center">
+    <div >
+      <Typography variant="h2" align="center">
           LET US KNOW ABOUT A TREE
         </Typography>
+        <div className={'form-tree-container'}>
+      <form className={classes.root} noValidate onSubmit={handleOnSubmit}>
+        
 
         <TextField
           label="Address 1"
@@ -288,7 +295,12 @@ function TreeForm(props) {
           Submit
         </Button>
       </form>
-    </Container>
+      <div> 
+<h2 className={classes.instructions}>{!clicked ? 'Please select an area on the map below that corresponds with the address you have entered in the form:' : 'Thank you for selecting a map location. You can "click" as many times as you need to get the most accurate location.'}</h2>
+      <Map2 formCoords={formCoords} setFormCoords={setFormCoords} clicked={clicked} setClicked={setClicked}/>
+      </div>
+      </div>
+    </div>
   )
 }
 

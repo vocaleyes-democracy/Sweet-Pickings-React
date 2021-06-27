@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // fruit card images
 import apple from '../images/cardImgApples.jpg'
+import blueberries from '../images/blueberries.jpg'
 import pear from '../images/cardImgPear.jpg'
 import cherry from '../images/cardImgCherries.jpg'
 import genericFruit from '../images/cardImgFruit.jpg'
@@ -61,6 +62,9 @@ function TreeCard({ tree }) {
   function renderFruitImage(fruit) {
 
     switch(fruit) {
+      case 'Blueberry':
+      case 'Blueberries':
+        return blueberries;
       case 'Apple':
       case 'Apples':
         return apple;
