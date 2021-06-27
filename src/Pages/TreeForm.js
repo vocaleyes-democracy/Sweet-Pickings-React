@@ -3,7 +3,6 @@ import { React, useState } from 'react'
 import Map2 from '../Components/Map2'
 
 import { makeStyles } from '@material-ui/core'
-// import Container from '@material-ui/core/Container'
 import FormControl from '@material-ui/core/FormControl'
 // import Input from '@material-ui/core/Input'
 // import InputLabel from '@material-ui/core/InputLabel'
@@ -32,10 +31,20 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     textAlign: 'left',
     padding: theme.spacing(3),
-    width: '50vw'
+    width: '50vw',
+    
   },
   instructions: {
-    width: '40vw'
+    height: '15vh',
+    width: '30vw',
+    border: '1px solid #bbb',
+    borderRadius: '5px',
+    padding: '10px',
+    display: 'flex',
+    textAlign: 'center',
+    alignItems: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   btn: {
     fontSize: 20,
@@ -54,6 +63,7 @@ function TreeForm(props) {
   const classes = useStyles()
 
   const [formCoords, setFormCoords] = useState([0,0])
+  console.log(formCoords)
   
   const [variety, setVariety] = useState('')
   const [subVariety, setSubVariety] = useState('')
@@ -296,7 +306,7 @@ function TreeForm(props) {
         </Button>
       </form>
       <div> 
-<h2 className={classes.instructions}>{!clicked ? 'Please select an area on the map below that corresponds with the address you have entered in the form:' : 'Thank you for selecting a map location. You can "click" as many times as you need to get the most accurate location.'}</h2>
+<Typography variant="h6" className={classes.instructions}>{!clicked ? 'Please select an area on the map below that corresponds with the address you have entered in the form:' : 'Thank you for selecting a map location. You can "click" as many times as you need to get the most accurate location.'}</Typography>
       <Map2 formCoords={formCoords} setFormCoords={setFormCoords} clicked={clicked} setClicked={setClicked}/>
       </div>
       </div>

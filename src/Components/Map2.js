@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import {
   MapContainer,
   TileLayer,
-  useMapEvents,
   MapConsumer,
 } from 'react-leaflet'
 
+import MyMap from './MyMap'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '40vw',
     height: '60vh',
+    marginTop: '20px'
   },
 }))
 
@@ -20,16 +21,7 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
   const classes = useStyles()
   const [map, setMap] = useState([51.63019953098332, -3.9596806597695333])
 
-  // child component necessary to use useMapEvents hook
-  function MyMap() {
-    const map = useMapEvents({
-      click: (e) => {
-        const { lat, lng } = e.latlng
-        // setFormCoords([lng])
-      },
-    })
-    return null
-  }
+  
 
   return (
     <MapContainer 
@@ -50,7 +42,7 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
           // console.log("map center:", map.getCenter());
           map.on('click', function (e) {
             const { lat, lng } = e.latlng
-            console.log(lat, lng)
+            // console.log(lat, lng)
             setFormCoords([lng,lat])
             setClicked(true)
           })
