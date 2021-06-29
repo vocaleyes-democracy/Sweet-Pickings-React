@@ -7,8 +7,7 @@ function MyMap() {
   const map = useMapEvents({
     click: (e) => {
       // const { lat, lng } = e.latlng
-      // setFormCoords([lng])
-      console.log(e.latlng)
+      // console.log(e.latlng)
     },
   })
   return null

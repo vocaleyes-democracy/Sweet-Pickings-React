@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import {
   MapContainer,
   TileLayer,
-  MapConsumer,
+  MapConsumer
 } from 'react-leaflet'
+import L from "leaflet";
 
-import MyMap from './MyMap'
+// import MyMap from './MyMap'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -21,8 +22,24 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
   const classes = useStyles()
   const [map, setMap] = useState([51.63019953098332, -3.9596806597695333])
 
-  
+  // const layer = L.layerGroup().addTo(map);
+  // console.log("layer in Map2", layer)
 
+  // function updateMarkers(e) {
+  //   layer.clearLayers();
+  //     L.marker(
+  //       e.latLng
+  //     ).addTo(layer);
+  // }
+
+  const icon = L.icon({
+    iconSize: [25, 41],
+    iconAnchor: [10, 41],
+    popupAnchor: [2, -40],
+    iconUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-icon.png",
+    shadowUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-shadow.png"
+  });
+  
   return (
     <MapContainer 
     className={classes.root} 
@@ -41,8 +58,16 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
         {(map) => {
           // console.log("map center:", map.getCenter());
           map.on('click', function (e) {
+            const layer = L.layerGroup().addTo(map);
+            console.log("layer in Map2", layer)
             const { lat, lng } = e.latlng
-            // console.log(lat, lng)
+            console.log("lat, long in Map2", lat, lng)
+
+            // layer.clearLayers();
+            layer.removeLayer()
+
+            L.marker([lat, lng], { icon }).addTo(layer);
+            // updateMarkers(e)
             setFormCoords([lng,lat])
             setClicked(true)
           })

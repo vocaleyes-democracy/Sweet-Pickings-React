@@ -63,7 +63,7 @@ function TreeForm(props) {
   const classes = useStyles()
 
   const [formCoords, setFormCoords] = useState([0,0])
-  console.log(formCoords)
+  // console.log(formCoords)
   
   const [variety, setVariety] = useState('')
   const [subVariety, setSubVariety] = useState('')
