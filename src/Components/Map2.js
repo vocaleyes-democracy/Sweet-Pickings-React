@@ -1,8 +1,5 @@
-import React, { useState, useRef, useMemo, useCallback } from 'react'
-import { MapContainer, TileLayer, Marker, Popup
- // MapConsumer
-} from 'react-leaflet'
-// import L from "leaflet";
+import React, { useState, useRef, useMemo } from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +21,6 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
   }
   
   function DraggableMarker() {
-    // const [draggable, setDraggable] = useState(false)
     const [position, setPosition] = useState(center)
     const markerRef = useRef(null)
     const eventHandlers = useMemo(
@@ -38,9 +34,7 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
       }),
       [],
     )
-    // const toggleDraggable = useCallback(() => {
-    //   setDraggable((d) => !d)
-    // }, [])
+  
   
     return (
       <Marker
@@ -50,30 +44,13 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
         ref={markerRef}>
         <Popup minWidth={90}>
           <span>
-            Test Test
+           
           </span>
         </Popup>
       </Marker>
     )
   }
-
-  // const layer = L.layerGroup().addTo(map);
-  // console.log("layer in Map2", layer)
-
-  // function updateMarkers(e) {
-  //   layer.clearLayers();
-  //     L.marker(
-  //       e.latLng
-  //     ).addTo(layer);
-  // }
-
-  // const icon = L.icon({
-  //   iconSize: [25, 41],
-  //   iconAnchor: [10, 41],
-  //   popupAnchor: [2, -40],
-  //   iconUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-icon.png",
-  //   shadowUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-shadow.png"
-  // });
+  
   
   return (
     <MapContainer 
@@ -87,28 +64,6 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {/* <MapConsumer
-      scrollWheelZoom={false} 
-      doubleClickZoom={false}>
-        {(map) => {
-          // console.log("map center:", map.getCenter());
-          map.on('click', function (e) {
-            const layer = L.layerGroup().addTo(map);
-            console.log("layer in Map2", layer)
-            const { lat, lng } = e.latlng
-            console.log("lat, long in Map2", lat, lng)
-
-            // layer.clearLayers();
-            layer.removeLayer()
-
-            L.marker([lat, lng], { icon }).addTo(layer);
-            // updateMarkers(e)
-            setFormCoords([lng,lat])
-            setClicked(true)
-          })
-          return null
-        }}
-      </MapConsumer> */}
       <DraggableMarker />
     </MapContainer>
   )

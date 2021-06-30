@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-// still need to improve styling of map component
+// still need to work on styling of map component
 
 function TreeForm(props) {
 
@@ -73,14 +73,11 @@ function TreeForm(props) {
 
   const [address1, setAddress1] = useState('')
   const [address2, setAddress2] = useState('')
-  // const [latitude, setLatitude] = useState(0)
-  // const [longitude, setLongitude] = useState(0)
 
   const [ownerType, setOwnerType] = useState(null)
   const [isOwner, setIsOwner] = useState(false)
   // const [comment, setComment] = useState('')
 
-  const [clicked, setClicked] = useState(false)
 
   const handleChange = (event) => {
     setIsOwner(event.target.checked)
@@ -180,26 +177,6 @@ function TreeForm(props) {
           margin="normal"
           onChange={(e) => setAddress2(e.target.value)}
         ></TextField>
-
-        {/* <TextField
-          label="Latitude"
-          name="latitude"
-          placeholder="Please Enter Latitude --Test"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          onChange={(e) => setLatitude(parseFloat(e.target.value))}
-        ></TextField>
-
-        <TextField
-          label="Longitude"
-          name="longitude"
-          placeholder="Please Enter Longitude --Test"
-          variant="outlined"
-          fullWidth
-          margin="normal"
-          onChange={(e) => setLongitude(parseFloat(e.target.value))}
-        ></TextField> */}
 
         <TextField
           label="Fruit Type"
@@ -306,9 +283,9 @@ function TreeForm(props) {
         </Button>
       </form>
       <div> 
-        <Typography variant="h6" className={classes.instructions}>Please move the map marker below to a location that most closely corresponds with the address you have entered in the form.</Typography>
-{/* <Typography variant="h6" className={classes.instructions}>{!clicked ? 'Please select an area on the map below that corresponds with the address you have entered in the form:' : 'Thank you for selecting a map location. You can "click" as many times as you need to get the most accurate location.'}</Typography> */}
-      <Map2 formCoords={formCoords} setFormCoords={setFormCoords} clicked={clicked} setClicked={setClicked}/>
+        
+<Typography variant="h6" className={classes.instructions}>Please select and move the map marker below to the area that most closely corresponds with the address you have entered in the form.</Typography>
+      <Map2 formCoords={formCoords} setFormCoords={setFormCoords} />
       </div>
       </div>
     </div>
