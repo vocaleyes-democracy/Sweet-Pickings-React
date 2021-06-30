@@ -306,7 +306,8 @@ function TreeForm(props) {
         </Button>
       </form>
       <div> 
-<Typography variant="h6" className={classes.instructions}>{!clicked ? 'Please select an area on the map below that corresponds with the address you have entered in the form:' : 'Thank you for selecting a map location. You can "click" as many times as you need to get the most accurate location.'}</Typography>
+        <Typography variant="h6" className={classes.instructions}>Please move the map marker below to a location that most closely corresponds with the address you have entered in the form.</Typography>
+{/* <Typography variant="h6" className={classes.instructions}>{!clicked ? 'Please select an area on the map below that corresponds with the address you have entered in the form:' : 'Thank you for selecting a map location. You can "click" as many times as you need to get the most accurate location.'}</Typography> */}
       <Map2 formCoords={formCoords} setFormCoords={setFormCoords} clicked={clicked} setClicked={setClicked}/>
       </div>
       </div>

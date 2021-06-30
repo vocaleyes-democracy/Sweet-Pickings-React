@@ -1,12 +1,8 @@
-import React, { useState } from 'react'
-import {
-  MapContainer,
-  TileLayer,
-  MapConsumer
+import React, { useState, useRef, useMemo, useCallback } from 'react'
+import { MapContainer, TileLayer, Marker, Popup
+ // MapConsumer
 } from 'react-leaflet'
-import L from "leaflet";
-
-// import MyMap from './MyMap'
+// import L from "leaflet";
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +18,45 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
   const classes = useStyles()
   const [map, setMap] = useState([51.63019953098332, -3.9596806597695333])
 
+  const center = {
+    lat: 51.63019953098332,
+    lng: -3.9596806597695333,
+  }
+  
+  function DraggableMarker() {
+    // const [draggable, setDraggable] = useState(false)
+    const [position, setPosition] = useState(center)
+    const markerRef = useRef(null)
+    const eventHandlers = useMemo(
+      () => ({
+        dragend() {
+          const marker = markerRef.current
+          if (marker != null) {
+            setPosition(marker.getLatLng())
+          }
+        },
+      }),
+      [],
+    )
+    // const toggleDraggable = useCallback(() => {
+    //   setDraggable((d) => !d)
+    // }, [])
+  
+    return (
+      <Marker
+        draggable={true}
+        eventHandlers={eventHandlers}
+        position={position}
+        ref={markerRef}>
+        <Popup minWidth={90}>
+          <span>
+            Test Test
+          </span>
+        </Popup>
+      </Marker>
+    )
+  }
+
   // const layer = L.layerGroup().addTo(map);
   // console.log("layer in Map2", layer)
 
@@ -32,13 +67,13 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
   //     ).addTo(layer);
   // }
 
-  const icon = L.icon({
-    iconSize: [25, 41],
-    iconAnchor: [10, 41],
-    popupAnchor: [2, -40],
-    iconUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-icon.png",
-    shadowUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-shadow.png"
-  });
+  // const icon = L.icon({
+  //   iconSize: [25, 41],
+  //   iconAnchor: [10, 41],
+  //   popupAnchor: [2, -40],
+  //   iconUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-icon.png",
+  //   shadowUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-shadow.png"
+  // });
   
   return (
     <MapContainer 
@@ -52,7 +87,7 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <MapConsumer
+      {/* <MapConsumer
       scrollWheelZoom={false} 
       doubleClickZoom={false}>
         {(map) => {
@@ -73,7 +108,8 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
           })
           return null
         }}
-      </MapConsumer>
+      </MapConsumer> */}
+      <DraggableMarker />
     </MapContainer>
   )
 }
