@@ -11,24 +11,24 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-function Map2({formCoords, setFormCoords, clicked, setClicked}) {
+function Map2({formCoords, setFormCoords}) {
   const classes = useStyles()
   const [map, setMap] = useState([51.63019953098332, -3.9596806597695333])
 
-  const center = {
-    lat: 51.63019953098332,
-    lng: -3.9596806597695333,
-  }
+  // const center = {
+  //   lat: 51.63019953098332,
+  //   lng: -3.9596806597695333,
+  // }
   
   function DraggableMarker() {
-    const [position, setPosition] = useState(center)
+    
     const markerRef = useRef(null)
     const eventHandlers = useMemo(
       () => ({
         dragend() {
           const marker = markerRef.current
           if (marker != null) {
-            setPosition(marker.getLatLng())
+            setFormCoords(marker.getLatLng())
           }
         },
       }),
@@ -40,7 +40,7 @@ function Map2({formCoords, setFormCoords, clicked, setClicked}) {
       <Marker
         draggable={true}
         eventHandlers={eventHandlers}
-        position={position}
+        position={formCoords}
         ref={markerRef}>
         <Popup minWidth={90}>
           <span>

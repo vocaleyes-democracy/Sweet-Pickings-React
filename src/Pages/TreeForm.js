@@ -24,14 +24,19 @@ import { withRouter } from 'react-router-dom'
 // import { FruitTypes } from '../database/FruitTypes'
 
 const useStyles = makeStyles((theme) => ({
+
   root: {
+    display: 'flex',
+    flexWrap: 'no-wrap',
+  },
+  half: {
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'left',
     padding: theme.spacing(3),
-    width: '50vw',
+    width: '45vw',
     
   },
   instructions: {
@@ -56,14 +61,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-// still need to work on styling of map component
+// still need to tweak styling of map component and the div above it
 
 function TreeForm(props) {
 
   const classes = useStyles()
 
-  const [formCoords, setFormCoords] = useState([0,0])
-  // console.log(formCoords)
+  const [formCoords, setFormCoords] = useState({
+    lat: 51.63019953098332,
+    lng: -3.9596806597695333,
+  })
+  console.log(formCoords)
   
   const [variety, setVariety] = useState('')
   const [subVariety, setSubVariety] = useState('')
@@ -101,7 +109,7 @@ function TreeForm(props) {
       address1: address1,
       address2: address2,
       geometry: {
-        coordinates: formCoords,
+        coordinates: [formCoords.lng, formCoords.lat],
       },
       ownerType: ownerType,
       isOwner: isOwner,
@@ -109,7 +117,7 @@ function TreeForm(props) {
     }
 
     props.treePost(assetObj)
-    // this sends user to opportunities after POST is complete! We can change the path of course.
+    // this sends our user to Opportunities after POST is complete! We can change the path of course.
     props.history.push('/opportunities')
   }
 
@@ -154,8 +162,8 @@ function TreeForm(props) {
       <Typography variant="h2" align="center">
           LET US KNOW ABOUT A TREE
         </Typography>
-        <div className={'form-tree-container'}>
-      <form className={classes.root} noValidate onSubmit={handleOnSubmit}>
+        <div className={classes.root}>
+      <form className={classes.half} noValidate onSubmit={handleOnSubmit}>
         
 
         <TextField
@@ -282,11 +290,11 @@ function TreeForm(props) {
           Submit
         </Button>
       </form>
-      <div> 
-        
-<Typography variant="h6" className={classes.instructions}>Please select and move the map marker below to the area that most closely corresponds with the address you have entered in the form.</Typography>
+
+        <div className={classes.half}>
+<Typography variant="h6" className={classes.instructions}>Please move the map marker to the area that most closely corresponds with the address you have entered in the form.</Typography>
       <Map2 formCoords={formCoords} setFormCoords={setFormCoords} />
-      </div>
+        </div>
       </div>
     </div>
   )

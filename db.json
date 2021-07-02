@@ -357,6 +357,72 @@
       "ownerType": null,
       "isOwner": true,
       "id": 16
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Kumquats",
+          "subVariety": "",
+          "quantity": "59",
+          "url": ""
+        }
+      ],
+      "address1": "12 Ocean Blvd",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.9536011532908653,
+          51.60497664850691
+        ]
+      },
+      "ownerType": "Not Sure",
+      "isOwner": false,
+      "id": 17
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Kumquat",
+          "subVariety": "",
+          "quantity": "5",
+          "url": ""
+        }
+      ],
+      "address1": "25 Ocean Dr",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.973004174138005,
+          51.64145614952818
+        ]
+      },
+      "ownerType": "Not Sure",
+      "isOwner": false,
+      "id": 18
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "w",
+          "subVariety": "c",
+          "quantity": 0,
+          "url": ""
+        }
+      ],
+      "address1": "hfhfhs",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.931178059139287,
+          51.60500155252947
+        ]
+      },
+      "ownerType": null,
+      "isOwner": false,
+      "id": 19
     }
   ]
 }
