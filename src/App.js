@@ -16,7 +16,7 @@ import Story from './Pages/About/Story'
 import Pickers from './Pages/About/Pickers'
 import Growers from './Pages/About/Growers'
 import Recipients from './Pages/About/Recipients'
-import TreeForm from './Pages/TreeForm'
+import NewTree from './Pages/NewTree'
 import Contact from './Pages/Contact'
 import Opportunities from './Pages/Opportunities'
 import Login from './Pages/auth/Login'
@@ -86,8 +86,8 @@ function App() {
                 <Recipients />
               </Route>
               
-              <Route path="/tree-form">
-                <TreeForm />
+              <Route path="/tree-new">
+                <NewTree />
               </Route>
               
               <Route path="/contact">

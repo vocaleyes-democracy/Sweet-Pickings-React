@@ -423,6 +423,50 @@
       "ownerType": null,
       "isOwner": false,
       "id": 19
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Oranges",
+          "subVariety": "Cara",
+          "quantity": "2",
+          "url": ""
+        }
+      ],
+      "address1": "2 Oyster Point",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.9715262269601235,
+          51.56606953747456
+        ]
+      },
+      "ownerType": null,
+      "isOwner": true,
+      "id": 20
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Apples",
+          "subVariety": "Gala",
+          "quantity": "300",
+          "url": ""
+        }
+      ],
+      "address1": "25 Ocean Blvd",
+      "address2": "",
+      "geometry": {
+        "coordinates": [
+          -3.921735936054785,
+          51.609829300552015
+        ]
+      },
+      "ownerType": null,
+      "isOwner": true,
+      "id": 21
     }
   ]
 }

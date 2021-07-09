@@ -113,7 +113,7 @@ export default function NavBar() {
               onClick={handleClose}
               >
                 <Link 
-                href="/tree-form" 
+                href="/tree-new" 
                 underline="none"
                 className={classes.menuItem}
                 >

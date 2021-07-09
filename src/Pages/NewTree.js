@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 
 // still need to tweak styling of map component and the div above it
 
-function TreeForm(props) {
+function NewTree(props) {
 
   const classes = useStyles()
 
@@ -306,7 +306,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default withRouter(connect(null, mapDispatchToProps)(TreeForm))
+export default withRouter(connect(null, mapDispatchToProps)(NewTree))
 
 
   /* <Form.Select
