@@ -6,6 +6,8 @@ import TreeList from '../Components/TreeList'
 import TreeCard from '../Components/TreeCard'
 import Map from '../Components/Map'
 
+import Typography from '@material-ui/core/Typography'
+
 function Opportunities({treeArray, treeData}) {
 
   useEffect(() => {
@@ -14,6 +16,9 @@ function Opportunities({treeArray, treeData}) {
 
     return (
       <div>
+        <Typography variant="h2" align="center">
+        HARVEST OPPORTUNITIES
+      </Typography>
         {treeArray.length === 0 ? <h1>Loading...</h1> : 
         <>
           <Switch>

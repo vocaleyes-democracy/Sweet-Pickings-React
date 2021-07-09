@@ -467,6 +467,28 @@
       "ownerType": null,
       "isOwner": true,
       "id": 21
+    },
+    {
+      "asset": [
+        {
+          "type": "Tree",
+          "variety": "Cherry",
+          "subVariety": "Bing",
+          "quantity": "35",
+          "url": ""
+        }
+      ],
+      "address1": "12 Cherry Tree Ln",
+      "address2": "Apt 3",
+      "geometry": {
+        "coordinates": [
+          -3.9726295148759903,
+          51.597751356765706
+        ]
+      },
+      "ownerType": "Council Land",
+      "isOwner": false,
+      "id": 22
     }
   ]
 }
